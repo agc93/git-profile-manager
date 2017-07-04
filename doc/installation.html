@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>GPM Installation | Git Profile Manager </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="GPM Installation | Git Profile Manager ">
+    <meta name="generator" content="docfx 2.19.2.0">
+    
+    <link rel="shortcut icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../assets/git-logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                <ul class="nav level1 navbar-nav">
+                  <li class="active">
+                    <a href="../doc/intro.html" title="User Documentation" class="active">User Documentation</a>
+                  </li>
+                  <li class="">
+                    <a href="../api/index.html" title="Developer Reference" class="">Developer Reference</a>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <a href="intro.html" title="Introduction" class="">Introduction</a>
+                    </li>
+                    <li class="">
+                      <a href="download.html" title="Download" class="">Download</a>
+                    </li>
+                    <li class="active">
+                      <a href="installation.html" title="Installation" class="active">Installation</a>
+                    </li>
+                    <li class="">
+                      <a href="usage.html" title="Usage" class="">Usage</a>
+                    </li>
+                    <li class="">
+                      <a href="profiles.html" title="Profiles" class="">Profiles</a>
+                    </li>
+                    <li class="">
+                      <a href="faq.html" title="FAQ" class="">FAQ</a>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a class="">Developers</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="contributing.html" title="Contributing" class="">Contributing</a>
+                          </li>
+                          <li class="">
+                            <a href="developers.html" title="Developer Guide" class="">Developer Guide</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="gpm-installation">GPM Installation</h1>
+
+<p>Installing Git Profile Manager is simple and easy, and supports a huge range of platforms.</p>
+<p>Currently installers are provided for: Windows 10, Ubuntu (16.04, 14.04), RHEL 7, Debian 8, and CentOS 7.</p>
+<p>You can also manually install on any of the above, as well as macOS 10.12 <em>Sierra</em>.</p>
+<h2 id="linux">Linux</h2>
+<h3 id="debian-ubuntu">Debian, Ubuntu</h3>
+<p>First, you need to install some dependencies:</p>
+<pre><code class="lang-bash">apt-get install -y libicu52 libunwind8
+</code></pre><div class="WARNING"><h5>Warning</h5><p>There is a <a href="https://github.com/dotnet/cli/issues/2018#issuecomment-221633831">known issue</a> with .NET Core packaging that means you will need to add the <code>trusty-security</code> repositories to get <code>libicu52</code> on Ubuntu 16.04</p>
+</div>
+<p>Now, just download the <code>deb</code> for your distro and install it with:</p>
+<pre><code class="lang-bash">dpkg -i git-profile-manager*.deb
+</code></pre><p>This will install the app to <code>/usr/lib/git-profile-manager</code> and automatically add <code>gpm</code> to your <code>PATH</code>.</p>
+<p>Just run <code>gpm</code> to get the help.</p>
+<h3 id="rhel-centos">RHEL, CentOS</h3>
+<p>First, install dependencies:</p>
+<pre><code class="lang-bash">yum install -y libicu libunwind
+</code></pre><p>Now, download the <code>rpm</code> for your flavour and install it with:</p>
+<pre><code class="lang-bash">rpm -i git-profile-manager*.deb
+</code></pre><p>This will install the app to <code>/usr/lib/git-profile-manager</code> and automatically add <code>gpm</code> to your <code>PATH</code>.</p>
+<p>Just run <code>gpm</code> to get the help.</p>
+<h2 id="windows">Windows</h2>
+<p>Chocolatey users can quickly install Git Profile Manager using the <code>git-profile-manager.install</code> package:</p>
+<pre><code class="lang-powershell">choco install git-profile-manager.install
+</code></pre><p>This will install the app to the default Chocolatey location and should automatically add <code>git-profile-manager.exe</code> to your PATH.</p>
+<div class="NOTE"><h5>Note</h5><p>You can also download the release package, extract it somewhere and add that location to your <code>PATH</code> manually.</p>
+</div>
+<p>Just run <code>git-profile-manager</code> to get the help.</p>
+<div class="TIP"><h5>Tip</h5><p>You can use PowerShell&#39;s <code>Set-Alias</code> command to alias <code>git-profile-manager</code> to <code>gpm</code> to cut down on typing</p>
+</div>
+<h2 id="macos">macOS</h2>
+<p>At this time, there is no automated install available for macOS (since building for macOS requires a Mac and I don&#39;t have one).</p>
+<p>10.12/<em>Sierra</em> users can download the release package, extract it to a directory (say <code>/Applications/git-profile-manager</code> for example) and add that folder to your <code>PATH</code>. You can then run <code>git-profile-manager</code> from a terminal to run the app.</p>
+<div class="WARNING"><h5>Warning</h5><p>Note that the macOS version is largely untested and may be somewhat unstable. Please report issues and bugs on GitHub.</p>
+</div>
+<div class="TIP"><h5>Tip</h5><p>Add <code>alias gpm=git-profile-manager</code> to your <code>~/.bashrc</code> to cut down on typing</p>
+</div>
+<h2 id="docker">Docker</h2>
+<p>We do also provide a Docker image, based on CentOS 7, that you can use to quickly test out GPM without installing it on your local machine. Note that this is not a recommended way of running GPM as it requires you to bind your current directory into the container using volumes, and profiles won&#39;t be shared with the host unless you also bind <code>~/.gitprofiles</code> into the container.</p>
+<pre><code class="lang-bash"># Basic run
+docker run -it agc93/gpm
+# Advanced usage (for Bash)
+docker run -it -v $PWD:/app -v $HOME/.gitprofiles:/home/app/.gitprofiles -w /app agc93/gpm
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/agc93/git-profile-manager/blob/develop/docfx/doc/installation.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Git Profile Manager is MIT licensed. Git icon used under CC-BY 3.0 license.
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
