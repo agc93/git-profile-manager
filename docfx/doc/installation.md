@@ -76,3 +76,14 @@ At this time, there is no automated install available for macOS (since building 
 
 > [!TIP]
 > Add `alias gpm=git-profile-manager` to your `~/.bashrc` to cut down on typing
+
+## Docker
+
+We do also provide a Docker image, based on CentOS 7, that you can use to quickly test out GPM without installing it on your local machine. Note that this is not a recommended way of running GPM as it requires you to bind your current directory into the container using volumes, and profiles won't be shared with the host unless you also bind `~/.gitprofiles` into the container.
+
+```bash
+# Basic run
+docker run -it agc93/gpm
+# Advanced usage (for Bash)
+docker run -it -v $PWD:/app -v $HOME/.gitprofiles:/home/app/.gitprofiles -w /app agc93/gpm
+```

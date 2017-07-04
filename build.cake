@@ -3,6 +3,7 @@
 #tool nuget:?package=docfx.console
 #addin nuget:?package=Cake.DocFx
 #addin nuget:?package=Cake.Docker
+#addin nuget:?package=Cake.AzCopy&prerelease
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -110,6 +111,7 @@ Task("Run-Unit-Tests")
 Task("Generate-Docs")
 	.Does(() => 
 {
+	DocFxMetadata("./docfx/docfx.json");
 	DocFxBuild("./docfx/docfx.json");
 	Zip("./docfx/_site/", artifacts + "/docfx.zip");
 })
@@ -121,7 +123,6 @@ Task("Generate-Docs")
 Task("Post-Build")
 	.IsDependentOn("Build")
 	.IsDependentOn("Run-Unit-Tests")
-	//.IsDependentOn("Generate-Docs")
 	.Does(() =>
 {
 	CreateDirectory(artifacts + "build");
@@ -145,6 +146,7 @@ Task("Publish-Runtimes")
 		foreach (var framework in frameworks) {
 			var projectDir = $"{artifacts}publish/{project.Name}";
 			CreateDirectory(projectDir);
+			// runtime (native) publish
 			foreach(var runtime in runtimes) {
 				var runtimeDir = $"{projectDir}/{runtime}";
 				CreateDirectory(runtimeDir);
@@ -162,12 +164,21 @@ Task("Publish-Runtimes")
 				CopyDirectory(publishDir, runtimeDir);
 				CopyFiles(GetFiles("./build/*.sh"), runtimeDir);
 			}
+			// platform (dotnet) publish
+			var pDir = MakeAbsolute(Directory($"{projectDir}/dotnet-any/"));
+			Information("Publishing {0} for {1} runtime", project.Name, "dotnet");
+			var pSettings = new DotNetCorePublishSettings {
+				ArgumentCustomization = args => args.Append($"-o {pDir}"),
+				Configuration = configuration
+			};
+			DotNetCorePublish(project.Path.FullPath, pSettings);
 		}
 	}
 });
 
 Task("Build-Linux-Packages")
 	.IsDependentOn("Publish-Runtimes")
+	.WithCriteria(IsRunningOnUnix())
 	.Does(() => 
 {
 	Information("Building packages in new container");
@@ -184,7 +195,7 @@ Task("Build-Linux-Packages")
 				Rm = true,
 				//User = "1000"
 			};
-			var opts = @"-s dir -a all --force
+			var opts = @"-s dir -a x86_64 --force
 			-m 'Alistair Chapman <alistair@agchapman.com>'
 			-n 'git-profile-manager'
 			--after-install /src/post-install.sh
@@ -196,6 +207,7 @@ Task("Build-Linux-Packages")
 
 Task("Build-Windows-Packages")
 	.IsDependentOn("Publish-Runtimes")
+	.WithCriteria(IsRunningOnUnix())
 	.Does(() => 
 {
 	Information("Building Chocolatey package in new container");
@@ -224,12 +236,42 @@ Task("Build-Windows-Packages")
 	}
 });
 
+Task("Build-Runtime-Package")
+	.IsDependentOn("Publish-Runtimes")
+	.Does(() => 
+{
+	Information("Building dotnet package");
+	foreach(var project in projects.SourceProjects) {
+		CreateDirectory($"{artifacts}packages/dotnet-any");
+		Zip($"{artifacts}publish/{project.Name}/dotnet-any/", $"{artifacts}packages/dotnet-any/gpm-dotnet.zip");
+	}
+});
+
+Task("Build-Docker-Image")
+	.WithCriteria(IsRunningOnUnix())
+	.IsDependentOn("Build-Linux-Packages")
+	.Does(() =>
+{
+	Information("Building Docker image...");
+	CopyFileToDirectory("./build/Dockerfile", artifacts);
+	var bSettings = new DockerBuildSettings { Tag = new[] { $"agc93/gpm:{versionInfo.FullSemVer}"}};
+	DockerBuild(bSettings, artifacts);
+	DeleteFile(artifacts + "Dockerfile");
+});
+
+#load "build/publish.cake"
+Task("Release")
+.IsDependentOn("Publish")
+.IsDependentOn("Copy-To-Azure");
 
 Task("Default")
     .IsDependentOn("Post-Build");
 
 Task("Publish")
 	.IsDependentOn("Build-Linux-Packages")
-	.IsDependentOn("Build-Windows-Packages");
+	.IsDependentOn("Build-Windows-Packages")
+	.IsDependentOn("Build-Runtime-Package")
+	.IsDependentOn("Build-Docker-Image")
+	.IsDependentOn("Generate-Docs");
 
 RunTarget(target);
