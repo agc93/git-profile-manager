@@ -146,6 +146,7 @@ Task("Post-Build")
 			CopyFiles(files, frameworkDir);
 		}
 	}
+	CopyFileToDirectory("./build/Dockerfile", artifacts);
 });
 
 Task("Publish-Runtimes")
@@ -264,7 +265,6 @@ Task("Build-Docker-Image")
 	.Does(() =>
 {
 	Information("Building Docker image...");
-	CopyFileToDirectory("./build/Dockerfile", artifacts);
 	var bSettings = new DockerBuildSettings { Tag = new[] { $"agc93/gpm:{packageVersion}"}};
 	DockerBuild(bSettings, artifacts);
 });
