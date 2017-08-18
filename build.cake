@@ -28,8 +28,8 @@ var solutionPath = File("./src/GitProfileManager.sln");
 var projects = GetProjects(solutionPath, configuration);
 var artifacts = "./dist/";
 var testResultsPath = MakeAbsolute(Directory(artifacts + "./test-results"));
-var frameworks = new List<string> { "netcoreapp1.1" };
-var runtimes = new List<string> { "win10-x64", "osx.10.12-x64", "ubuntu.16.04-x64", "ubuntu.14.04-x64", "centos.7-x64", "debian.8-x64", "rhel.7-x64" };
+var frameworks = new List<string> { "netcoreapp2.0" };
+var runtimes = new List<string> { "win10-x64", "osx.10.12-x64", "ubuntu.16.04-x64", "ubuntu.14.04-x64", "centos.7-x64", "debian.8-x64", "rhel.7-x64", "fedora.26-x64" };
 var PackagedRuntimes = new List<string> { "centos", "ubuntu", "debian", "fedora", "rhel" };
 
 ///////////////////////////////////////////////////////////////////////////////

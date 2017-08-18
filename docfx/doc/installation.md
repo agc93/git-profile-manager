@@ -13,17 +13,31 @@ You can also manually install on any of the above, as well as macOS 10.12 *Sierr
 First, you need to install some dependencies:
 
 ```bash
+# for Ubuntu 14.04, Debian 8
 apt-get install -y libicu52 libunwind8
+# for Ubuntu 16.04
+apt-get install -y libicu55 libunwind8
 ```
-
-> [!WARNING]
-> There is a [known issue](https://github.com/dotnet/cli/issues/2018#issuecomment-221633831) with .NET Core packaging that means you will need to add the `trusty-security` repositories to get `libicu52` on Ubuntu 16.04
 
 Now, just download the `deb` for your distro and install it with:
 
 ```bash
 dpkg -i git-profile-manager*.deb
 ```
+
+This will install the app to `/usr/lib/git-profile-manager` and automatically add `gpm` to your `PATH`.
+
+Just run `gpm` to get the help.
+
+### Fedora
+
+Download the `rpm` for Fedora and install it with:
+
+```bash
+dnf install git-profile-manager*.rpm
+```
+
+> Despite the naming, this package should work fine for Fedora 25 and 26
 
 This will install the app to `/usr/lib/git-profile-manager` and automatically add `gpm` to your `PATH`.
 
@@ -86,4 +100,12 @@ We do also provide a Docker image, based on CentOS 7, that you can use to quickl
 docker run -it agc93/gpm
 # Advanced usage (for Bash)
 docker run -it -v $PWD:/app -v $HOME/.gitprofiles:/home/app/.gitprofiles -w /app agc93/gpm
+```
+
+## .NET Runtime
+
+If you're on another platform, GPM _might_ still work! If you can install the .NET Core runtime on your system (this is bundled with the SDK if you're on a supported OS), you should be able to use it to run GPM from the `dotnet-any` package. The main executable is the `git-profile-manager.dll` file:
+
+```bash
+dotnet git-profile-manager.dll
 ```
