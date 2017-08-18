@@ -290,3 +290,4 @@ tools/**
 *.xsd.cs
 
 dist/**
+build/.dotnet/**

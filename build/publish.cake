@@ -1,8 +1,8 @@
 Task("Copy-To-Azure")
 .IsDependentOn("Publish")
 .Does(() => {
-    Information("Uploading packages for {0} using AzCopy...", versionInfo.FullSemVer);
-    AzCopy($"{artifacts}packages/", $"https://appstored.blob.core.windows.net/gpm/{versionInfo.FullSemVer}", settings => {
+    Information("Uploading packages for {0} using AzCopy...", packageVersion);
+    AzCopy($"{artifacts}packages/", $"https://appstored.blob.core.windows.net/gpm/{packageVersion}", settings => {
         settings.CopyRecursively()
             .UseDestinationAccountKey(EnvironmentVariable("AZURE_STORAGE_KEY"));
     });

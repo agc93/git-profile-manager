@@ -11,6 +11,14 @@
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
+var fallbackVersion = Argument<string>("force-version", EnvironmentVariable("FALLBACK_VERSION") ?? "0.2.0");
+
+///////////////////////////////////////////////////////////////////////////////
+// VERSIONING
+///////////////////////////////////////////////////////////////////////////////
+
+var packageVersion = string.Empty;
+#load "build/version.cake"
 
 ///////////////////////////////////////////////////////////////////////////////
 // GLOBAL VARIABLES
@@ -20,7 +28,6 @@ var solutionPath = File("./src/GitProfileManager.sln");
 var projects = GetProjects(solutionPath, configuration);
 var artifacts = "./dist/";
 var testResultsPath = MakeAbsolute(Directory(artifacts + "./test-results"));
-GitVersion versionInfo = null;
 var frameworks = new List<string> { "netcoreapp1.1" };
 var runtimes = new List<string> { "win10-x64", "osx.10.12-x64", "ubuntu.16.04-x64", "ubuntu.14.04-x64", "centos.7-x64", "debian.8-x64", "rhel.7-x64" };
 var PackagedRuntimes = new List<string> { "centos", "ubuntu", "debian", "fedora", "rhel" };
@@ -33,8 +40,11 @@ Setup(ctx =>
 {
 	// Executed BEFORE the first task.
 	Information("Running tasks...");
-	versionInfo = GitVersion();
-	Information("Building for version {0}", versionInfo.FullSemVer);
+	packageVersion = BuildVersion(fallbackVersion);
+	if (FileExists("./build/.dotnet/dotnet.exe")) {
+		Information("Using local install of `dotnet` SDK!");
+		Context.Tools.RegisterFile("./build/.dotnet/dotnet.exe");
+	}
 	Verbose("Building for " + string.Join(", ", frameworks));
 });
 
@@ -109,6 +119,7 @@ Task("Run-Unit-Tests")
 });
 
 Task("Generate-Docs")
+.IsDependentOn("Post-Build") //since we're now using assemblies because docfx broke Linux compat
 	.Does(() => 
 {
 	DocFxMetadata("./docfx/docfx.json");
@@ -200,7 +211,7 @@ Task("Build-Linux-Packages")
 			-n 'git-profile-manager'
 			--after-install /src/post-install.sh
 			--before-remove /src/pre-remove.sh";
-			DockerRun(runSettings, "tenzer/fpm", $"{opts} -v {versionInfo.FullSemVer} {GetRuntimeBuild(runtime)} /src/=/usr/lib/git-profile-manager/");
+			DockerRun(runSettings, "tenzer/fpm", $"{opts} -v {packageVersion} {GetRuntimeBuild(runtime)} /src/=/usr/lib/git-profile-manager/");
 		}
 	}
 });
@@ -231,7 +242,7 @@ Task("Build-Windows-Packages")
 			var opts = @"-y -v
 				--outputdirectory /out/
 				/src/package.nuspec";
-			DockerRun(runSettings, "agc93/mono-choco", $"choco pack --version {versionInfo.NuGetVersionV2} {opts}");
+			DockerRun(runSettings, "agc93/mono-choco", $"choco pack --version {packageVersion} {opts}");
 		}
 	}
 });
@@ -254,9 +265,8 @@ Task("Build-Docker-Image")
 {
 	Information("Building Docker image...");
 	CopyFileToDirectory("./build/Dockerfile", artifacts);
-	var bSettings = new DockerBuildSettings { Tag = new[] { $"agc93/gpm:{versionInfo.FullSemVer}"}};
+	var bSettings = new DockerBuildSettings { Tag = new[] { $"agc93/gpm:{packageVersion}"}};
 	DockerBuild(bSettings, artifacts);
-	DeleteFile(artifacts + "Dockerfile");
 });
 
 #load "build/publish.cake"
