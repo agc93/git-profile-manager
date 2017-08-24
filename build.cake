@@ -174,7 +174,8 @@ Task("Publish-Runtimes")
 				DotNetCorePublish(project.Path.FullPath, settings);
 				var publishDir = $"{project.Path.GetDirectory()}/bin/{configuration}/{framework}/{runtime}/publish/";
 				CopyDirectory(publishDir, runtimeDir);
-				CopyFiles(GetFiles("./build/*.sh"), runtimeDir);
+				CopyFiles(GetFiles("./scripts/*.sh"), runtimeDir);
+				CopyFiles(GetFiles("./scripts/*.ps1"), runtimeDir);
 			}
 			// platform (dotnet) publish
 			var pDir = MakeAbsolute(Directory($"{projectDir}/dotnet-any/"));

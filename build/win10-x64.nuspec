@@ -22,5 +22,7 @@ Now, you can quickly create and manage a collection of Git profiles with unique 
     </metadata>
     <files>
         <file src="win10-x64/**" target="tools" />
+        <file src="**/chocolateyInstall.ps1" target="tools" />
+        <file src="**/chocolateyUninstall.ps1" target="tools" />
     </files>
 </package>

@@ -1,0 +1,1 @@
+Remove-BinFile "gpm" "$PackageFolder/tools/git-profile-manager.exe"
