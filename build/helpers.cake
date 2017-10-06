@@ -34,16 +34,8 @@ ProjectCollection GetProjects(FilePath slnPath, string configuration) {
     
 }
 
-
-public string GetRuntimeBuild(string runtime) {
-    var commands = new Dictionary<string, string> {
-        ["centos.7-x64"] = "-t rpm -d libunwind -d libicu",
-        ["fedora.26-x64"] = "-t rpm -d libunwind -d libicu",
-        ["ubuntu.14.04-x64"] = "-t deb -d libunwind8 -d libicu52",
-        ["ubuntu.16.04-x64"] = "-t deb -d libunwind8 -d libicu55",
-        ["debian.8-x64"] = "-t deb -d libunwind8 -d libicu52",
-        ["rhel.7-x64"] = "-t rpm -d libunwind -d libicu"
-    };
-    var s = commands[runtime];
-    return s;
-}
+var Runtimes = new Dictionary<string, string> {
+    ["ubuntu"] = "-t deb -d libunwind8 -d libicu55",
+    ["debian"] = "-t deb -d libunwind8 -d libicu52",
+    ["linux-rpm"] = "-t rpm -d libunwind -d libicu"
+};

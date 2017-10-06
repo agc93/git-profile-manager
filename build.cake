@@ -29,8 +29,8 @@ var projects = GetProjects(solutionPath, configuration);
 var artifacts = "./dist/";
 var testResultsPath = MakeAbsolute(Directory(artifacts + "./test-results"));
 var frameworks = new List<string> { "netcoreapp2.0" };
-var runtimes = new List<string> { "win10-x64", "osx.10.12-x64", "ubuntu.16.04-x64", "ubuntu.14.04-x64", "centos.7-x64", "debian.8-x64", "rhel.7-x64", "fedora.26-x64" };
-var PackagedRuntimes = new List<string> { "centos", "ubuntu", "debian", "fedora", "rhel" };
+var runtimes = new List<string> { "win-x64", "osx.10.12-x64", "linux-x64" };
+// var PackagedRuntimes = new List<string> { "centos", "ubuntu", "debian", "fedora", "rhel" };
 
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
@@ -197,8 +197,10 @@ Task("Build-Linux-Packages")
 	Information("Building packages in new container");
 	CreateDirectory($"{artifacts}/packages/");
 	foreach(var project in projects.SourceProjects) {
-		foreach(var runtime in runtimes.Where(rt => PackagedRuntimes.Any(r => rt.Contains(r)))) {
-			var publishDir = $"{artifacts}publish/{project.Name}/{runtime}";
+		foreach(var runtimeRef in Runtimes) {
+			var runtime = runtimeRef.Key;
+			// var publishDir = $"{artifacts}publish/{project.Name}/{runtime}";
+			var publishDir = $"{artifacts}publish/{project.Name}/linux-x64";
 			var sourceDir = MakeAbsolute(Directory(publishDir));
 			var packageDir = MakeAbsolute(Directory($"{artifacts}packages/{runtime}"));
 			var runSettings = new DockerRunSettings {
@@ -213,7 +215,7 @@ Task("Build-Linux-Packages")
 			-n 'git-profile-manager'
 			--after-install /src/post-install.sh
 			--before-remove /src/pre-remove.sh";
-			DockerRun(runSettings, "tenzer/fpm", $"{opts} -v {packageVersion} {GetRuntimeBuild(runtime)} /src/=/usr/lib/git-profile-manager/");
+			DockerRun(runSettings, "tenzer/fpm", $"{opts} -v {packageVersion} {runtimeRef.Value} /src/=/usr/lib/git-profile-manager/");
 		}
 	}
 });
