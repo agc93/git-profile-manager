@@ -4,9 +4,9 @@ using Spectre.CommandLine;
 
 namespace GitProfileManager
 {
-    internal class InjectionResolver : IResolver
+    internal class DependencyInjectionResolver : ITypeResolver
     {
-        public InjectionResolver(IServiceCollection services)
+        public DependencyInjectionResolver(IServiceCollection services)
         {
             Services = services;
         }
@@ -14,7 +14,7 @@ namespace GitProfileManager
 
         public object Resolve(Type type)
         {
-            return (Services.BuildServiceProvider()).GetService(type) ?? Activator.CreateInstance(type);
+            return (Services.BuildServiceProvider()).GetService(type);
         }
     }
 }

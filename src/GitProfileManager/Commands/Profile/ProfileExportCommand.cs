@@ -3,12 +3,13 @@ using System.ComponentModel;
 using System.IO;
 using GitProfileManager.Services;
 using Spectre.CommandLine;
+using Spectre.CommandLine.Annotations;
 
 namespace GitProfileManager.Commands.Profile
 {
     public class ProfileExportCommand : Command<ProfileExportCommand.Settings>
     {
-        public ProfileExportCommand(IGitProfileStore store, ICommandFileService fileService) : base("export")
+        public ProfileExportCommand(IGitProfileStore store, ICommandFileService fileService)
         {
             Store = store;
             FileService = fileService;
@@ -48,7 +49,7 @@ namespace GitProfileManager.Commands.Profile
 
         public sealed class Settings : ProfileSettings {
 
-            [Argument("<FILE>", Order = 1)]
+            [Argument(1, "<FILE>")]
             [Description("The path to export the profile to")]
             public string FilePath {get;set;}           
 

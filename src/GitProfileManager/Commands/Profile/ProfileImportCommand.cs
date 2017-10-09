@@ -4,12 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using GitProfileManager.Services;
 using Spectre.CommandLine;
+using Spectre.CommandLine.Annotations;
 
 namespace GitProfileManager.Commands.Profile
 {
     public class ProfileImportCommand : Command<ProfileImportCommand.Settings>
     {
-        public ProfileImportCommand(IGitProfileStore store, ICommandFileService fileService) : base("import")
+        public ProfileImportCommand(IGitProfileStore store, ICommandFileService fileService)
         {
             Store = store;
             FileService = fileService;
@@ -50,15 +51,15 @@ namespace GitProfileManager.Commands.Profile
             return settings.ProfileName;
         }
 
-        public sealed class Settings
+        public sealed class Settings : ProfileSettings
         {
-            [Argument("<FILE>", Order = 0)]
+            [Argument(0, "<FILE>")]
             [Description("A file of git commands to create a profile from.")]
             public string CommandFile { get; set; }
 
             [Option("-n|--profile-name")]
             [Description("Name of the profile to create. Defaults to the input file name")]
-            public string ProfileName {get;set;}
+            public new string ProfileName {get;set;}
 
             [Option("--from-config")]
             [Description("Read commands from config, rather than command file")]

@@ -11,7 +11,7 @@ namespace GitProfileManager.Commands.Deactivate
     [Description("Deactivates a profile")]
     public class DeactivateCommand : Command<ActivationSettings>
     {
-        public DeactivateCommand(IGitConfigService command, IGitProfileStore store) : base("deactivate") {
+        public DeactivateCommand(IGitConfigService command, IGitProfileStore store) {
             Service = command;
             Store = store;
         }

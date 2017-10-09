@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using GitProfileManager.Services;
 using Spectre.CommandLine;
+using Spectre.CommandLine.Annotations;
 
 namespace GitProfileManager.Commands.Profile
 {
     public class ProfileEditCommand : Command<ProfileEditCommand.Settings>
     {
-        public ProfileEditCommand(IGitProfileStore store) : base("edit")
+        public ProfileEditCommand(IGitProfileStore store)
         {
             Store = store;
         }
@@ -31,13 +32,13 @@ namespace GitProfileManager.Commands.Profile
             return result ? 0 : 2;
         }
 
-        public sealed class Settings
+        public sealed class Settings : ProfileSettings
         {
-            [Argument("<NAME>", Order = 1)]
+            [Argument(0, "<NAME>")]
             [Description("The profile to add a new configuration to. Will be created if it does not exist")]
-            public string ProfileName { get; set; }
+            public new string ProfileName { get; set; }
 
-            [Argument("<CONFIG>", Order = 2)]
+            [Argument(1, "<CONFIG>")]
             [Description("The config value to add to the profile, separated by an '=' symbol.")]
             public string RawConfig { get; set; }
 

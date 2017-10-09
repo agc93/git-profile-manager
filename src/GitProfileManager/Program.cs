@@ -21,19 +21,30 @@ namespace GitProfileManager
                     .AddClasses(f => f.AssignableTo(typeof(Command<>)))
                     .AsSelf()
                 );
-            using (var app = new DependencyInjectionApp(services, disableAutoRegistration: true))
+            var app = new CommandApp(new DependencyInjectionResolver(services));
+            app.Configure(config =>
             {
                 // Set additional information.
-                app.SetTitle("Git Profile Manager");
-                app.SetHelpText("Create, manage and activate git profiles for multiple projects");
+                config.SetApplicationName("Git Profile Manager");
+                // app.SetHelpText("Create, manage and activate git profiles for multiple projects");
 
                 /*// Register commands. */
-                app.RegisterCommand<Commands.Profile.ProfileCommand>();
-                app.RegisterCommand<Commands.Activate.ActivateCommand>();
+                config.AddCommand<Commands.Activate.ActivateCommand>("activate");
+                config.AddCommand<Commands.Deactivate.DeactivateCommand>("deactivate");
+                config.AddCommand<Commands.List.ProfileListCommand>("list");
+                config.AddProxy<Commands.ProfileSettings>("profile", profile =>
+                {
+                    profile.AddCommand<Commands.Profile.ProfileCreateCommand>("cereate");
+                    profile.AddCommand<Commands.Profile.ProfileImportCommand>("import");
+                    profile.AddCommand<Commands.Profile.ProfileDeleteCommand>("delete");
+                    profile.AddCommand<Commands.Profile.ProfileEditCommand>("edit");
+                    profile.AddCommand<Commands.Profile.ProfileExportCommand>("export");
+                });
 
                 // Run the application.
-                return app.Run(args);
-            }
+
+            });
+            return app.Run(args);
         }
     }
 }

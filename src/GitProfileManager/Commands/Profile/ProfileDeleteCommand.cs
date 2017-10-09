@@ -2,12 +2,13 @@ using System;
 using System.ComponentModel;
 using GitProfileManager.Services;
 using Spectre.CommandLine;
+using Spectre.CommandLine.Annotations;
 
 namespace GitProfileManager.Commands.Profile
 {
     public class ProfileDeleteCommand : Command<ProfileDeleteCommand.Settings>
     {
-        public ProfileDeleteCommand(IGitProfileStore store) : base("delete")
+        public ProfileDeleteCommand(IGitProfileStore store)
         {
             Store = store;
         }
@@ -48,13 +49,8 @@ namespace GitProfileManager.Commands.Profile
             return 1;
         }
 
-        public sealed class Settings
+        public sealed class Settings : ProfileSettings
         {
-            [Argument("<NAME>", Order = 0)]
-            [Description("The profile name to delete")]
-            public string ProfileName {get;set;}
-
-
             [Option("--non-interactive")]
             [Description("Do not prompt for user input or confirmations.")]
             public bool NonInteractive { get; set; }

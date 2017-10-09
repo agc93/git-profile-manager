@@ -2,11 +2,12 @@ using System;
 using GitProfileManager.Services;
 using Spectre.CommandLine;
 
-namespace GitProfileManager.Commands.Profile
+namespace GitProfileManager.Commands.List
 {
+    [System.ComponentModel.Description("Lists available profiles")]
     public class ProfileListCommand : Command<ProfileListCommand.Settings>
     {
-        public ProfileListCommand(IGitProfileStore store) : base("list")
+        public ProfileListCommand(IGitProfileStore store)
         {
             Store = store;
         }

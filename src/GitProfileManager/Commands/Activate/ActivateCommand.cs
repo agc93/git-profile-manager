@@ -10,7 +10,7 @@ namespace GitProfileManager.Commands.Activate
     [Description("Activates a profile")]
     public class ActivateCommand : Command<ActivationSettings>
     {
-        public ActivateCommand(IGitConfigService command, IGitProfileStore store) : base("activate") {
+        public ActivateCommand(IGitConfigService command, IGitProfileStore store) {
             Service = command;
             Store = store;
         }
