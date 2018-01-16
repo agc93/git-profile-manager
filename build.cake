@@ -194,9 +194,10 @@ Task("Build-Linux-Packages")
 	.WithCriteria(IsRunningOnUnix())
 	.Does(() => 
 {
-	Information("Building packages in new container");
+	Information("Building packages in fpm containers");
 	CreateDirectory($"{artifacts}/packages/");
 	foreach(var project in projects.SourceProjects) {
+		Information("Packaging {0}", project.Name);
 		foreach(var runtimeRef in Runtimes) {
 			var runtime = runtimeRef.Key;
 			// var publishDir = $"{artifacts}publish/{project.Name}/{runtime}";
@@ -215,6 +216,7 @@ Task("Build-Linux-Packages")
 			-n 'git-profile-manager'
 			--after-install /src/post-install.sh
 			--before-remove /src/pre-remove.sh";
+			Information("Starting {0} for {1} ({2})", runSettings.Name, runtime, "linux-x64");
 			DockerRun(runSettings, "tenzer/fpm", $"{opts} -v {packageVersion} {runtimeRef.Value} /src/=/usr/lib/git-profile-manager/");
 		}
 	}

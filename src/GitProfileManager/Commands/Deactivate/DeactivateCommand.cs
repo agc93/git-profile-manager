@@ -19,7 +19,7 @@ namespace GitProfileManager.Commands.Deactivate
         public IGitConfigService Service { get; private set; }
         public IGitProfileStore Store { get; private set; }
 
-        public override int Run(ActivationSettings settings)
+        public override int Execute(ActivationSettings settings, ILookup<string, string> unmapped)
         {
             //Console.WriteLine($"Service loaded: {Service != null}");
             var profile = Store.ReadProfile(settings.ProfileName);

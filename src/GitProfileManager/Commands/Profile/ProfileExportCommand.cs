@@ -1,12 +1,13 @@
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using GitProfileManager.Services;
 using Spectre.CommandLine;
-using Spectre.CommandLine.Annotations;
 
 namespace GitProfileManager.Commands.Profile
 {
+    [Description("Export a saved profile to a command file")]
     public class ProfileExportCommand : Command<ProfileExportCommand.Settings>
     {
         public ProfileExportCommand(IGitProfileStore store, ICommandFileService fileService)
@@ -18,7 +19,7 @@ namespace GitProfileManager.Commands.Profile
         public IGitProfileStore Store { get; private set; }
         public ICommandFileService FileService { get; private set; }
 
-        public override int Run(Settings settings)
+        public override int Execute(Settings settings, ILookup<string, string> unmapped)
         {
             if (string.IsNullOrWhiteSpace(settings.ProfileName)) {
                 Console.Error.WriteLine("No profile name provided!");
@@ -47,9 +48,9 @@ namespace GitProfileManager.Commands.Profile
             return 1;
         }
 
-        public sealed class Settings : ProfileSettings {
+        public sealed class Settings : ProfileCommandSettings {
 
-            [Argument(1, "<FILE>")]
+            [CommandArgument(1, "<FILE>")]
             [Description("The path to export the profile to")]
             public string FilePath {get;set;}           
 

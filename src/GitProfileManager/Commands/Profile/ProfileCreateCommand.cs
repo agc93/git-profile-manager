@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using GitProfileManager.Services;
 using Spectre.CommandLine;
-using Spectre.CommandLine.Annotations;
 
 namespace GitProfileManager.Commands.Profile
 {
+    [Description("Create a new (blank) profile")]
     public class ProfileCreateCommand : Command<ProfileCreateCommand.Settings>
     {
         public ProfileCreateCommand(IGitProfileStore store, ICommandFileService fileService)
@@ -19,7 +20,7 @@ namespace GitProfileManager.Commands.Profile
         public IGitProfileStore Store { get; private set; }
         public ICommandFileService FileService { get; private set; }
 
-        public override int Run(Settings settings)
+        public override int Execute(Settings settings, ILookup<string, string> unmapped)
         {
             var source = !string.IsNullOrWhiteSpace(settings.SourceProfileName);
             var cmds = new Dictionary<string, string>();
@@ -37,9 +38,9 @@ namespace GitProfileManager.Commands.Profile
             return 500;
         }
 
-        public sealed class Settings : ProfileSettings
+        public sealed class Settings : ProfileCommandSettings
         {
-            [Option("--from <PROFILE>")]
+            [CommandOption("--from <PROFILE>")]
             [Description("An existing profile to base the new profile on (essentially duplicates the existing profile)")]
             public string SourceProfileName {get;set;}
         }

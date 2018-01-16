@@ -2,7 +2,7 @@ using System;
 using Microsoft.Extensions.DependencyInjection;
 using Spectre.CommandLine;
 
-namespace GitProfileManager
+namespace GitProfileManager.Composition
 {
     internal class DependencyInjectionResolver : ITypeResolver
     {
@@ -14,7 +14,7 @@ namespace GitProfileManager
 
         public object Resolve(Type type)
         {
-            return (Services.BuildServiceProvider()).GetService(type);
+            return (Services.BuildServiceProvider()).GetService(type) ?? Activator.CreateInstance(type);
         }
     }
 }

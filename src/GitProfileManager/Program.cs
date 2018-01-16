@@ -1,4 +1,5 @@
 ﻿using System;
+using GitProfileManager.Composition;
 using GitProfileManager.Services;
 using LightInject;
 using LightInject.Microsoft.DependencyInjection;
@@ -19,9 +20,10 @@ namespace GitProfileManager
                 .AddSingleton<ICommandFileService, CommandFileService>()
                 .Scan(s => s.FromAssemblyOf<Program>()
                     .AddClasses(f => f.AssignableTo(typeof(Command<>)))
+                    .AddClasses(f => f.AssignableTo(typeof(Commands.ProfileCommandSettings)))
                     .AsSelf()
                 );
-            var app = new CommandApp(new DependencyInjectionResolver(services));
+            var app = new CommandApp(new DependencyInjectionRegistrar(services));
             app.Configure(config =>
             {
                 // Set additional information.
@@ -32,9 +34,10 @@ namespace GitProfileManager
                 config.AddCommand<Commands.Activate.ActivateCommand>("activate");
                 config.AddCommand<Commands.Deactivate.DeactivateCommand>("deactivate");
                 config.AddCommand<Commands.List.ProfileListCommand>("list");
-                config.AddProxy<Commands.ProfileSettings>("profile", profile =>
+                config.AddCommand<Commands.ProfileSettings>("profile", profile =>
                 {
-                    profile.AddCommand<Commands.Profile.ProfileCreateCommand>("cereate");
+                    profile.SetDescription("Commands for working with Git profiles");
+                    profile.AddCommand<Commands.Profile.ProfileCreateCommand>("create");
                     profile.AddCommand<Commands.Profile.ProfileImportCommand>("import");
                     profile.AddCommand<Commands.Profile.ProfileDeleteCommand>("delete");
                     profile.AddCommand<Commands.Profile.ProfileEditCommand>("edit");

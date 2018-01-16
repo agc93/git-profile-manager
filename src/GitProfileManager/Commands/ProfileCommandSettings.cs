@@ -1,13 +1,12 @@
 using System.ComponentModel;
 using Spectre.CommandLine;
-using Spectre.CommandLine.Annotations;
 
 namespace GitProfileManager.Commands
 {
-    [Description("Commands for working with Git profiles")]
-    public abstract class ProfileSettings
+    public class ProfileSettings {}
+    public class ProfileCommandSettings : ProfileSettings
     {
-        [Argument(0, argumentName: "[PROFILE]")]
+        [CommandArgument(0, "<PROFILE>")]
         [Description("The profile name")]
         public virtual string ProfileName {get;set;}
     }
