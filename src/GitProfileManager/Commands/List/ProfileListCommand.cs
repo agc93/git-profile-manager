@@ -19,9 +19,14 @@ namespace GitProfileManager.Commands.List
         {
             var profiles = Store.GetProfiles();
             Console.WriteLine("Currently stored profiles: ");
-            foreach (var profile in profiles)
-            {
-                Console.WriteLine($"- {profile}");
+            if (profiles.Any()) {
+                foreach (var profile in profiles)
+                {
+                    Console.WriteLine($"- {profile}");
+                }
+            }
+            else {
+                Console.WriteLine(" <none>");
             }
             return 0;
         }

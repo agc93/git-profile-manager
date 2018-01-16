@@ -76,9 +76,6 @@ This will install the app to the default Chocolatey location and should automati
 
 Just run `git-profile-manager` to get the help.
 
-> [!TIP]
-> You can use PowerShell's `Set-Alias` command to alias `git-profile-manager` to `gpm` to cut down on typing
-
 ## macOS
 
 At this time, there is no automated install available for macOS (since building for macOS requires a Mac and I don't have one).

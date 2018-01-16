@@ -9,7 +9,7 @@ RUN yum install -y sudo && \
 
 RUN yum install -y libicu libunwind git
 
-ADD ./packages/centos.7-x64/git-profile-manager*.rpm /tmp/
+ADD ./packages/linux-rpm/git-profile-manager*.rpm /tmp/
 
 RUN rpm -i /tmp/git-profile-manager*.rpm && rm -f /tmp/git-profile-manager*.rpm
 
