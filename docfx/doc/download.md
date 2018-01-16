@@ -2,12 +2,10 @@
 
 Just pick your platform out of the list below to download GPM:
 
-- [CentOS 7 [x64]](https://gpm.agchapman.com/latest/centos.7/x64)
-- [RHEL 7 [x64]](https://gpm.agchapman.com/latest/rhel.7/x64)
-- [Ubuntu 16.04 [x64]](https://gpm.agchapman.com/latest/ubuntu.16.04/x64)
-- [Ubuntu 14.04 [x64]](https://gpm.agchapman.com/latest/ubuntu.14.04/x64)
-- [Debian 8 [x64]](https://gpm.agchapman.com/latest/debian.8/x64)
-- [Windows 10 [x64/Chocolatey]](https://gpm.agchapman.com/latest/win10/x64)
+- [CentOS/RHEL/Fedora [x64]](https://gpm.agchapman.com/latest/linux-rpm/x64)
+- [Ubuntu (16.04+) [x64]](https://gpm.agchapman.com/latest/ubuntu/x64)
+- [Debian 8 [x64]](https://gpm.agchapman.com/latest/debian/x64)
+- [Windows 10 [x64/Chocolatey]](https://gpm.agchapman.com/latest/win-x64/x64)
 - [Runtime package](https://gpm.agchapman.com/latest/dotnet/any) (requires .NET Core runtime)
 
 > [!TIP]

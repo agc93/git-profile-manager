@@ -1,4 +1,5 @@
 ﻿using System;
+using GitProfileManager.Composition;
 using GitProfileManager.Services;
 using LightInject;
 using LightInject.Microsoft.DependencyInjection;
@@ -19,21 +20,34 @@ namespace GitProfileManager
                 .AddSingleton<ICommandFileService, CommandFileService>()
                 .Scan(s => s.FromAssemblyOf<Program>()
                     .AddClasses(f => f.AssignableTo(typeof(Command<>)))
+                    .AddClasses(f => f.AssignableTo(typeof(Commands.ProfileCommandSettings)))
                     .AsSelf()
                 );
-            using (var app = new DependencyInjectionApp(services, disableAutoRegistration: true))
+            var app = new CommandApp(new DependencyInjectionRegistrar(services));
+            app.Configure(config =>
             {
                 // Set additional information.
-                app.SetTitle("Git Profile Manager");
-                app.SetHelpText("Create, manage and activate git profiles for multiple projects");
+                config.SetApplicationName("Git Profile Manager");
+                // app.SetHelpText("Create, manage and activate git profiles for multiple projects");
 
                 /*// Register commands. */
-                app.RegisterCommand<Commands.Profile.ProfileCommand>();
-                app.RegisterCommand<Commands.Activate.ActivateCommand>();
+                config.AddCommand<Commands.Activate.ActivateCommand>("activate");
+                config.AddCommand<Commands.Deactivate.DeactivateCommand>("deactivate");
+                config.AddCommand<Commands.List.ProfileListCommand>("list");
+                config.AddCommand<Commands.ProfileSettings>("profile", profile =>
+                {
+                    profile.SetDescription("Commands for working with Git profiles");
+                    profile.AddCommand<Commands.Profile.ProfileCreateCommand>("create");
+                    profile.AddCommand<Commands.Profile.ProfileImportCommand>("import");
+                    profile.AddCommand<Commands.Profile.ProfileDeleteCommand>("delete");
+                    profile.AddCommand<Commands.Profile.ProfileEditCommand>("edit");
+                    profile.AddCommand<Commands.Profile.ProfileExportCommand>("export");
+                });
 
                 // Run the application.
-                return app.Run(args);
-            }
+
+            });
+            return app.Run(args);
         }
     }
 }

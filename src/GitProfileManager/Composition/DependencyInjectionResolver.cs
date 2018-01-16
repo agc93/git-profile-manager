@@ -2,11 +2,11 @@ using System;
 using Microsoft.Extensions.DependencyInjection;
 using Spectre.CommandLine;
 
-namespace GitProfileManager
+namespace GitProfileManager.Composition
 {
-    internal class InjectionResolver : IResolver
+    internal class DependencyInjectionResolver : ITypeResolver
     {
-        public InjectionResolver(IServiceCollection services)
+        public DependencyInjectionResolver(IServiceCollection services)
         {
             Services = services;
         }

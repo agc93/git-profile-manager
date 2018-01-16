@@ -3,9 +3,10 @@ using Spectre.CommandLine;
 
 namespace GitProfileManager.Commands
 {
-    public abstract class ProfileSettings
+    public class ProfileSettings {}
+    public class ProfileCommandSettings : ProfileSettings
     {
-        [Argument("<PROFILE>", Order = 0)]
+        [CommandArgument(0, "<PROFILE>")]
         [Description("The profile name")]
         public virtual string ProfileName {get;set;}
     }

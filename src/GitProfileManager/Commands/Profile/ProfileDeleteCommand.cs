@@ -1,20 +1,22 @@
 using System;
 using System.ComponentModel;
+using System.Linq;
 using GitProfileManager.Services;
 using Spectre.CommandLine;
 
 namespace GitProfileManager.Commands.Profile
 {
+    [Description("Delete an existing saved profile")]
     public class ProfileDeleteCommand : Command<ProfileDeleteCommand.Settings>
     {
-        public ProfileDeleteCommand(IGitProfileStore store) : base("delete")
+        public ProfileDeleteCommand(IGitProfileStore store)
         {
             Store = store;
         }
 
         public IGitProfileStore Store { get; private set; }
 
-        public override int Run(Settings settings)
+        public override int Execute(Settings settings, ILookup<string, string> unmapped)
         {
             var profile = Store.ReadProfile(settings.ProfileName);
             if (profile == null) return 404;
@@ -48,14 +50,9 @@ namespace GitProfileManager.Commands.Profile
             return 1;
         }
 
-        public sealed class Settings
+        public sealed class Settings : ProfileCommandSettings
         {
-            [Argument("<NAME>", Order = 0)]
-            [Description("The profile name to delete")]
-            public string ProfileName {get;set;}
-
-
-            [Option("--non-interactive")]
+            [CommandOption("--non-interactive")]
             [Description("Do not prompt for user input or confirmations.")]
             public bool NonInteractive { get; set; }
 

@@ -1,0 +1,7 @@
+branches:
+  master:
+    mode: ContinuousDelivery
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+  develop:
+    track-merge-target: true
