@@ -3,7 +3,7 @@
 #tool nuget:?package=docfx.console
 #addin nuget:?package=Cake.DocFx
 #addin nuget:?package=Cake.Docker
-#addin nuget:?package=Cake.AzCopy&prerelease
+#addin nuget:?package=Cake.AzCopy&version=0.1.1
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -204,7 +204,7 @@ Task("Build-Linux-Packages")
 			var publishDir = $"{artifacts}publish/{project.Name}/linux-x64";
 			var sourceDir = MakeAbsolute(Directory(publishDir));
 			var packageDir = MakeAbsolute(Directory($"{artifacts}packages/{runtime}"));
-			var runSettings = new DockerRunSettings {
+			var runSettings = new DockerContainerRunSettings {
 				Name = $"docker-fpm-{(runtime.Replace(".", "-"))}",
 				Volume = new[] { $"{sourceDir}:/src:ro", $"{packageDir}:/out:rw"},
 				Workdir = "/out",
@@ -235,7 +235,7 @@ Task("Build-Windows-Packages")
 			CopyFiles(GetFiles($"./build/{runtime}.nuspec"), publishDir);
 			var sourceDir = MakeAbsolute(Directory(publishDir));
 			var packageDir = MakeAbsolute(Directory($"{artifacts}packages/{runtime}"));
-			var runSettings = new DockerRunSettings {
+			var runSettings = new DockerContainerRunSettings {
 				Name = $"docker-choco-{(runtime.Replace(".", "-"))}",
 				Volume = new[] { 
 					$"{sourceDir}:/src/{runtime}:ro",
@@ -270,7 +270,7 @@ Task("Build-Docker-Image")
 	.Does(() =>
 {
 	Information("Building Docker image...");
-	var bSettings = new DockerBuildSettings { Tag = new[] { $"agc93/gpm:{packageVersion}"}};
+	var bSettings = new DockerImageBuildSettings { Tag = new[] { $"agc93/gpm:{packageVersion}"}};
 	DockerBuild(bSettings, artifacts);
 });
 
