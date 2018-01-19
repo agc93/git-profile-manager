@@ -59,8 +59,8 @@ namespace GitProfileManager.Services
         }
 
         private FileInfo GetProfileFile() {
-            var home = System.Environment.GetEnvironmentVariable("HOME");
-            var homeDir = new DirectoryInfo(home);
+            var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            var homeDir = new DirectoryInfo(home); 
             if (!homeDir.Exists) throw new DirectoryNotFoundException($"Could not locate home directory (tried {homeDir.FullName})");
             var file = new FileInfo(Path.Combine(homeDir.FullName, _fileName));
             if (!file.Exists) {
