@@ -282,6 +282,11 @@ Task("Release")
 Task("Default")
     .IsDependentOn("Post-Build");
 
+Task("Package")
+	.IsDependentOn("Build-Linux-Packages")
+	.IsDependentOn("Build-Windows-Packages")
+	.IsDependentOn("Build-Runtime-Package");
+
 Task("Publish")
 	.IsDependentOn("Build-Linux-Packages")
 	.IsDependentOn("Build-Windows-Packages")

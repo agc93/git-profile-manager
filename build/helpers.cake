@@ -36,6 +36,6 @@ ProjectCollection GetProjects(FilePath slnPath, string configuration) {
 
 var Runtimes = new Dictionary<string, string> {
     ["ubuntu-x64"] = "-t deb -d libunwind8 -d libicu55",
-    ["debian-x64"] = "-t deb -d libunwind8 -d libicu52",
+    ["debian-x64"] = "-t deb -d libunwind8 -d gettext",
     ["rpm-x64"] = "-t rpm -d libunwind -d libicu"
 };
