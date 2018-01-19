@@ -10,6 +10,8 @@
         <copyright>Alistair Chapman 2017</copyright>
         <licenseUrl>https://raw.githubusercontent.com/agc93/git-profile-manager/master/LICENSE</licenseUrl>
         <projectSourceUrl>https://github.com/agc93/git-profile-manager</projectSourceUrl>
+        <packageSourceUrl>https://github.com/agc93/git-profile-manager</packageSourceUrl>
+        <releaseNotes>https://github.com/agc93/git-profile-manager/tree/master/ReleaseNotes.md</releaseNotes>
         <tags>git profile manager script</tags>
         <summary>Easily manage and activate multiple git config profiles</summary>
         <description>
@@ -24,5 +26,6 @@ Now, you can quickly create and manage a collection of Git profiles with unique 
         <file src="win-x64/**" target="tools" />
         <file src="**/chocolateyInstall.ps1" target="tools" />
         <file src="**/chocolateyUninstall.ps1" target="tools" />
+        <file src="**/*.txt" target="tools" />
     </files>
 </package>

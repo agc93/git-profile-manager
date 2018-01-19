@@ -232,7 +232,7 @@ Task("Build-Windows-Packages")
 	foreach(var project in projects.SourceProjects) {
 		foreach(var runtime in runtimes.Where(r => r.StartsWith("win"))) {
 			var publishDir = $"{artifacts}publish/{project.Name}/{runtime}";
-			CopyFiles(GetFiles($"./build/{runtime}.nuspec"), publishDir);
+			CopyFiles(GetFiles($"./build/{runtime}.nuspec") + GetFiles("./build/choco/*"), publishDir);
 			var sourceDir = MakeAbsolute(Directory(publishDir));
 			var packageDir = MakeAbsolute(Directory($"{artifacts}packages/{runtime}"));
 			var runSettings = new DockerContainerRunSettings {
