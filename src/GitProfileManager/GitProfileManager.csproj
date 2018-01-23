@@ -12,7 +12,7 @@
     <PackageReference Include="LightInject.Microsoft.DependencyInjection" Version="2.0.5" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Scrutor" Version="2.1.2" />
-    <PackageReference Include="Spectre.CommandLine" Version="0.7.0" />
+    <PackageReference Include="Spectre.CommandLine" Version="0.8.0" />
     <PackageReference Include="System.ValueTuple" Version="4.4.0" />
     <PackageReference Include="YamlDotNet" Version="4.2.3" />
   </ItemGroup>
