@@ -52,7 +52,7 @@ namespace GitProfileManager.Commands.Profile
             return settings.ProfileName;
         }
 
-        public sealed class Settings : ProfileCommandSettings
+        public sealed class Settings : ProfileSettings
         {
             [CommandArgument(0, "<FILE>")]
             [Description("A file of git commands to create a profile from.")]
@@ -60,7 +60,7 @@ namespace GitProfileManager.Commands.Profile
 
             [CommandOption("-n|--profile-name")]
             [Description("Name of the profile to create. Defaults to the input file name")]
-            public new string ProfileName {get;set;}
+            public string ProfileName {get;set;}
 
             [CommandOption("--from-config")]
             [Description("Read commands from config, rather than command file")]

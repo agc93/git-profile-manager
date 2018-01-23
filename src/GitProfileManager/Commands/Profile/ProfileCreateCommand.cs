@@ -40,7 +40,7 @@ namespace GitProfileManager.Commands.Profile
 
         public sealed class Settings : ProfileCommandSettings
         {
-            [CommandOption("--from <PROFILE>")]
+            [CommandOption("--from")]
             [Description("An existing profile to base the new profile on (essentially duplicates the existing profile)")]
             public string SourceProfileName {get;set;}
         }

@@ -18,7 +18,7 @@ namespace GitProfileManager
                 .Select(l => l.Trim())
                 .Select(l => {
                     if (l.StartsWith("git ")) {
-                        Console.WriteLine("removing git");
+                        // Console.WriteLine("removing git");
                         l = l.Replace("git", string.Empty).Trim();
                     }
                     return l;

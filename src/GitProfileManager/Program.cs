@@ -4,7 +4,6 @@ using GitProfileManager.Services;
 using LightInject;
 using LightInject.Microsoft.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using Scrutor;
 using Spectre.CommandLine;
 
 namespace GitProfileManager
@@ -17,12 +16,7 @@ namespace GitProfileManager
                 .AddSingleton<IGitConfigService, GitCommandService>()
                 .AddSingleton<GitCommandRunner>()
                 .AddTransient<IGitProfileStore, FileProfileStore>()
-                .AddSingleton<ICommandFileService, CommandFileService>()
-                .Scan(s => s.FromAssemblyOf<Program>()
-                    .AddClasses(f => f.AssignableTo(typeof(Command<>)))
-                    .AddClasses(f => f.AssignableTo(typeof(Commands.ProfileCommandSettings)))
-                    .AsSelf()
-                );
+                .AddSingleton<ICommandFileService, CommandFileService>();
             var app = new CommandApp(new DependencyInjectionRegistrar(services));
             app.Configure(config =>
             {

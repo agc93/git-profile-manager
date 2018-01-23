@@ -33,11 +33,11 @@ namespace GitProfileManager.Commands.Profile
             return result ? 0 : 2;
         }
 
-        public sealed class Settings : ProfileCommandSettings
+        public sealed class Settings : ProfileSettings
         {
             [CommandArgument(0, "<NAME>")]
             [Description("The profile to add a new configuration to. Will be created if it does not exist")]
-            public override string ProfileName { get; set; }
+            public string ProfileName { get; set; }
 
             [CommandArgument(1, "<CONFIG>")]
             [Description("The config value to add to the profile, separated by an '=' symbol.")]
