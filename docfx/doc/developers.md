@@ -23,10 +23,10 @@ These commands are wired up using [Spectre.CommandLine](https://nuget.org/packag
 
 This app includes basic dependency injection support for command implementations. Simply include the types you need in the `ICommand<>`'s constructor, and the app will attempt to resolve this dependency from the DI container. If not found in the DI container, it will attempt to create a new instance (default Spectre.CommandLine behaviour), but this will only work with a parameterless constructor.
 
-You can see an example of this in the [ActivateCommand](#) command type.
+You can see an example of this in the [ActivateCommand](xref:GitProfileManager.Commands.Activate.ActivateCommand) command type.
 
 As with any other DI-controlled app, you must register the dependency first, which is done in `Program.cs` before the app is started.
 
 ## Help Information
 
-Help information is automatically generated from the attributes in the settings class, especially the `Option`/`Argument` attribute (in the `Spectre.CommandLine` namespace) and the `Description` attribute (in the `System.ComponentModel` namespace). The help option is **always** `-h` or `--help`.
+Help information is automatically generated from the attributes in the settings class, especially the `CommandOption`/`CommandArgument` attribute (in the `Spectre.CommandLine` namespace) and the `Description` attribute (in the `System.ComponentModel` namespace). The help option is **always** `-h` or `--help`.

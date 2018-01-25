@@ -10,7 +10,7 @@ A little history first: this tool was actually originally just intended to be a 
 
 ### Technology
 
-Git Profile Manager is built entirely in .NET Core, using the excellent `Spectre.CommandLine` and `YamlDotNet` libraries. Note that since it's using native Git underneath you'll need `git` available and on your `PATH`. Support for running without Git itself may come in a future release.
+Git Profile Manager is built entirely in .NET Core, using the excellent [`Spectre.CommandLine`](https://github.com/spectresystems/spectre.commandline) and `YamlDotNet` libraries. Note that since it's using native Git underneath you'll need `git` available and on your `PATH`. Support for running without Git itself may come in a future release.
 
 ## Getting Started
 
