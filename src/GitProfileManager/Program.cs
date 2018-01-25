@@ -36,6 +36,7 @@ namespace GitProfileManager
                     profile.AddCommand<Commands.Profile.ProfileDeleteCommand>("delete");
                     profile.AddCommand<Commands.Profile.ProfileEditCommand>("edit");
                     profile.AddCommand<Commands.Profile.ProfileExportCommand>("export");
+                    profile.AddCommand<Commands.Profile.ProfileShowCommand>("show");
                 });
 
                 // Run the application.
