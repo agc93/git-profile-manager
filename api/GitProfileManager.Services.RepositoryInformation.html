@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class RepositoryInformation
    | Git Profile Manager ">
-    <meta name="generator" content="docfx 2.19.2.0">
+    <meta name="generator" content="docfx 2.30.0.0">
     
     <link rel="shortcut icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc">
     <meta property="docfx:tocrel" content="toc">
+    
     <meta property="docfx:rel" content="../">
     
   </head>
@@ -94,13 +95,7 @@
                         
                         <ul class="nav level2">
                           <li class="">
-                            <a href="GitProfileManager.DependencyInjectionApp.html" title="DependencyInjectionApp" class="">DependencyInjectionApp</a>
-                          </li>
-                          <li class="">
                             <a href="GitProfileManager.Extensions.html" title="Extensions" class="">Extensions</a>
-                          </li>
-                          <li class="">
-                            <a href="GitProfileManager.GitCommandApp.html" title="GitCommandApp" class="">GitCommandApp</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -108,6 +103,9 @@
                       <a href="GitProfileManager.Commands.html" title="GitProfileManager.Commands" class="">GitProfileManager.Commands</a>
                         
                         <ul class="nav level2">
+                          <li class="">
+                            <a href="GitProfileManager.Commands.ProfileCommandSettings.html" title="ProfileCommandSettings" class="">ProfileCommandSettings</a>
+                          </li>
                           <li class="">
                             <a href="GitProfileManager.Commands.ProfileSettings.html" title="ProfileSettings" class="">ProfileSettings</a>
                           </li>
@@ -135,12 +133,21 @@
                         </ul>  </li>
                     <li class="">
                       <span class="expand-stub"></span>
-                      <a href="GitProfileManager.Commands.Profile.html" title="GitProfileManager.Commands.Profile" class="">GitProfileManager.Commands.Profile</a>
+                      <a href="GitProfileManager.Commands.List.html" title="GitProfileManager.Commands.List" class="">GitProfileManager.Commands.List</a>
                         
                         <ul class="nav level2">
                           <li class="">
-                            <a href="GitProfileManager.Commands.Profile.ProfileCommand.html" title="ProfileCommand" class="">ProfileCommand</a>
+                            <a href="GitProfileManager.Commands.List.ProfileListCommand.html" title="ProfileListCommand" class="">ProfileListCommand</a>
                           </li>
+                          <li class="">
+                            <a href="GitProfileManager.Commands.List.ProfileListCommand.Settings.html" title="ProfileListCommand.Settings" class="">ProfileListCommand.Settings</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="GitProfileManager.Commands.Profile.html" title="GitProfileManager.Commands.Profile" class="">GitProfileManager.Commands.Profile</a>
+                        
+                        <ul class="nav level2">
                           <li class="">
                             <a href="GitProfileManager.Commands.Profile.ProfileCreateCommand.html" title="ProfileCreateCommand" class="">ProfileCreateCommand</a>
                           </li>
@@ -172,10 +179,19 @@
                             <a href="GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html" title="ProfileImportCommand.Settings" class="">ProfileImportCommand.Settings</a>
                           </li>
                           <li class="">
-                            <a href="GitProfileManager.Commands.Profile.ProfileListCommand.html" title="ProfileListCommand" class="">ProfileListCommand</a>
+                            <a href="GitProfileManager.Commands.Profile.ProfileShowCommand.html" title="ProfileShowCommand" class="">ProfileShowCommand</a>
                           </li>
                           <li class="">
-                            <a href="GitProfileManager.Commands.Profile.ProfileListCommand.Settings.html" title="ProfileListCommand.Settings" class="">ProfileListCommand.Settings</a>
+                            <a href="GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.html" title="ProfileShowCommand.Settings" class="">ProfileShowCommand.Settings</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="GitProfileManager.Composition.html" title="GitProfileManager.Composition" class="">GitProfileManager.Composition</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="GitProfileManager.Composition.DependencyInjectionRegistrar.html" title="DependencyInjectionRegistrar" class="">DependencyInjectionRegistrar</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -227,45 +243,20 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">RepositoryInformation</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="GitProfileManager.Services.html">GitProfileManager.Services</a></h6>
   <h6><strong>Assembly</strong>: git-profile-manager.dll</h6>
   <h5 id="GitProfileManager_Services_RepositoryInformation_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RepositoryInformation : IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class RepositoryInformation : Object, IDisposable</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Services_RepositoryInformation_BranchName.md&amp;value=---%0Auid%3A%20GitProfileManager.Services.RepositoryInformation.BranchName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Services/RepositoryInformation.cs/#L18">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Services_RepositoryInformation_BranchName_" data-uid="GitProfileManager.Services.RepositoryInformation.BranchName*"></a>
   <h4 id="GitProfileManager_Services_RepositoryInformation_BranchName" data-uid="GitProfileManager.Services.RepositoryInformation.BranchName">BranchName</h4>
   <div class="markdown level1 summary"></div>
@@ -289,13 +280,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Services_RepositoryInformation_CommitHash.md&amp;value=---%0Auid%3A%20GitProfileManager.Services.RepositoryInformation.CommitHash%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Services/RepositoryInformation.cs/#L10">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Services_RepositoryInformation_CommitHash_" data-uid="GitProfileManager.Services.RepositoryInformation.CommitHash*"></a>
   <h4 id="GitProfileManager_Services_RepositoryInformation_CommitHash" data-uid="GitProfileManager.Services.RepositoryInformation.CommitHash">CommitHash</h4>
   <div class="markdown level1 summary"></div>
@@ -319,13 +305,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Services_RepositoryInformation_HasUncommittedChanges.md&amp;value=---%0Auid%3A%20GitProfileManager.Services.RepositoryInformation.HasUncommittedChanges%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Services/RepositoryInformation.cs/#L42">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Services_RepositoryInformation_HasUncommittedChanges_" data-uid="GitProfileManager.Services.RepositoryInformation.HasUncommittedChanges*"></a>
   <h4 id="GitProfileManager_Services_RepositoryInformation_HasUncommittedChanges" data-uid="GitProfileManager.Services.RepositoryInformation.HasUncommittedChanges">HasUncommittedChanges</h4>
   <div class="markdown level1 summary"></div>
@@ -349,13 +330,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Services_RepositoryInformation_HasUnpushedCommits.md&amp;value=---%0Auid%3A%20GitProfileManager.Services.RepositoryInformation.HasUnpushedCommits%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Services/RepositoryInformation.cs/#L34">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Services_RepositoryInformation_HasUnpushedCommits_" data-uid="GitProfileManager.Services.RepositoryInformation.HasUnpushedCommits*"></a>
   <h4 id="GitProfileManager_Services_RepositoryInformation_HasUnpushedCommits" data-uid="GitProfileManager.Services.RepositoryInformation.HasUnpushedCommits">HasUnpushedCommits</h4>
   <div class="markdown level1 summary"></div>
@@ -379,13 +355,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Services_RepositoryInformation_Log.md&amp;value=---%0Auid%3A%20GitProfileManager.Services.RepositoryInformation.Log%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Services/RepositoryInformation.cs/#L50">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Services_RepositoryInformation_Log_" data-uid="GitProfileManager.Services.RepositoryInformation.Log*"></a>
   <h4 id="GitProfileManager_Services_RepositoryInformation_Log" data-uid="GitProfileManager.Services.RepositoryInformation.Log">Log</h4>
   <div class="markdown level1 summary"></div>
@@ -409,13 +380,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Services_RepositoryInformation_TrackedBranchName.md&amp;value=---%0Auid%3A%20GitProfileManager.Services.RepositoryInformation.TrackedBranchName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Services/RepositoryInformation.cs/#L26">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Services_RepositoryInformation_TrackedBranchName_" data-uid="GitProfileManager.Services.RepositoryInformation.TrackedBranchName*"></a>
   <h4 id="GitProfileManager_Services_RepositoryInformation_TrackedBranchName" data-uid="GitProfileManager.Services.RepositoryInformation.TrackedBranchName">TrackedBranchName</h4>
   <div class="markdown level1 summary"></div>
@@ -441,13 +407,8 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Services_RepositoryInformation_Dispose.md&amp;value=---%0Auid%3A%20GitProfileManager.Services.RepositoryInformation.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Services/RepositoryInformation.cs/#L68">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Services_RepositoryInformation_Dispose_" data-uid="GitProfileManager.Services.RepositoryInformation.Dispose*"></a>
   <h4 id="GitProfileManager_Services_RepositoryInformation_Dispose" data-uid="GitProfileManager.Services.RepositoryInformation.Dispose">Dispose()</h4>
   <div class="markdown level1 summary"></div>
@@ -456,11 +417,9 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
   </div>
-  <h5 class="implements">Implements</h5>
-      <div><span class="xref">System.IDisposable.Dispose()</span></div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="GitProfileManager.Extensions.html#GitProfileManager_Extensions_IsAssignableTo__1_System_Object_">Extensions.IsAssignableTo&lt;TTarget&gt;(Object)</a>
+      <span class="xref">System.IDisposable</span>
   </div>
 </article>
           </div>
@@ -469,12 +428,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Services_RepositoryInformation.md&amp;value=---%0Auid%3A%20GitProfileManager.Services.RepositoryInformation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Services/RepositoryInformation.cs/#L8" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

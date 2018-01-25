@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ProfileImportCommand
    | Git Profile Manager ">
-    <meta name="generator" content="docfx 2.19.2.0">
+    <meta name="generator" content="docfx 2.30.0.0">
     
     <link rel="shortcut icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc">
     <meta property="docfx:tocrel" content="toc">
+    
     <meta property="docfx:rel" content="../">
     
   </head>
@@ -94,13 +95,7 @@
                         
                         <ul class="nav level2">
                           <li class="">
-                            <a href="GitProfileManager.DependencyInjectionApp.html" title="DependencyInjectionApp" class="">DependencyInjectionApp</a>
-                          </li>
-                          <li class="">
                             <a href="GitProfileManager.Extensions.html" title="Extensions" class="">Extensions</a>
-                          </li>
-                          <li class="">
-                            <a href="GitProfileManager.GitCommandApp.html" title="GitCommandApp" class="">GitCommandApp</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -108,6 +103,9 @@
                       <a href="GitProfileManager.Commands.html" title="GitProfileManager.Commands" class="">GitProfileManager.Commands</a>
                         
                         <ul class="nav level2">
+                          <li class="">
+                            <a href="GitProfileManager.Commands.ProfileCommandSettings.html" title="ProfileCommandSettings" class="">ProfileCommandSettings</a>
+                          </li>
                           <li class="">
                             <a href="GitProfileManager.Commands.ProfileSettings.html" title="ProfileSettings" class="">ProfileSettings</a>
                           </li>
@@ -135,12 +133,21 @@
                         </ul>  </li>
                     <li class="">
                       <span class="expand-stub"></span>
-                      <a href="GitProfileManager.Commands.Profile.html" title="GitProfileManager.Commands.Profile" class="">GitProfileManager.Commands.Profile</a>
+                      <a href="GitProfileManager.Commands.List.html" title="GitProfileManager.Commands.List" class="">GitProfileManager.Commands.List</a>
                         
                         <ul class="nav level2">
                           <li class="">
-                            <a href="GitProfileManager.Commands.Profile.ProfileCommand.html" title="ProfileCommand" class="">ProfileCommand</a>
+                            <a href="GitProfileManager.Commands.List.ProfileListCommand.html" title="ProfileListCommand" class="">ProfileListCommand</a>
                           </li>
+                          <li class="">
+                            <a href="GitProfileManager.Commands.List.ProfileListCommand.Settings.html" title="ProfileListCommand.Settings" class="">ProfileListCommand.Settings</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="GitProfileManager.Commands.Profile.html" title="GitProfileManager.Commands.Profile" class="">GitProfileManager.Commands.Profile</a>
+                        
+                        <ul class="nav level2">
                           <li class="">
                             <a href="GitProfileManager.Commands.Profile.ProfileCreateCommand.html" title="ProfileCreateCommand" class="">ProfileCreateCommand</a>
                           </li>
@@ -172,10 +179,19 @@
                             <a href="GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html" title="ProfileImportCommand.Settings" class="">ProfileImportCommand.Settings</a>
                           </li>
                           <li class="">
-                            <a href="GitProfileManager.Commands.Profile.ProfileListCommand.html" title="ProfileListCommand" class="">ProfileListCommand</a>
+                            <a href="GitProfileManager.Commands.Profile.ProfileShowCommand.html" title="ProfileShowCommand" class="">ProfileShowCommand</a>
                           </li>
                           <li class="">
-                            <a href="GitProfileManager.Commands.Profile.ProfileListCommand.Settings.html" title="ProfileListCommand.Settings" class="">ProfileListCommand.Settings</a>
+                            <a href="GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.html" title="ProfileShowCommand.Settings" class="">ProfileShowCommand.Settings</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="GitProfileManager.Composition.html" title="GitProfileManager.Composition" class="">GitProfileManager.Composition</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="GitProfileManager.Composition.DependencyInjectionRegistrar.html" title="DependencyInjectionRegistrar" class="">DependencyInjectionRegistrar</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -224,67 +240,19 @@
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Spectre.CommandLine.Command</span>&lt;<a class="xref" href="GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html">ProfileImportCommand.Settings</a>&gt;</div>
-    <div class="level2"><span class="xref">ProfileImportCommand</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">Spectre.CommandLine.Command&lt;GitProfileManager.Commands.Profile.ProfileImportCommand.Settings&gt;.Success</span>
-    </div>
-    <div>
-      <span class="xref">Spectre.CommandLine.Command&lt;GitProfileManager.Commands.Profile.ProfileImportCommand.Settings&gt;.Error</span>
-    </div>
-    <div>
-      <span class="xref">Spectre.CommandLine.Command&lt;GitProfileManager.Commands.Profile.ProfileImportCommand.Settings&gt;.Configure(Spectre.CommandLine.ICommandRegistrar)</span>
-    </div>
-    <div>
-      <span class="xref">Spectre.CommandLine.Command&lt;GitProfileManager.Commands.Profile.ProfileImportCommand.Settings&gt;.Spectre.CommandLine.ICommand.Run(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">Spectre.CommandLine.Command&lt;GitProfileManager.Commands.Profile.ProfileImportCommand.Settings&gt;.Spectre.CommandLine.ICommand.SettingsType</span>
-    </div>
-    <div>
-      <span class="xref">Spectre.CommandLine.Command&lt;GitProfileManager.Commands.Profile.ProfileImportCommand.Settings&gt;.Name</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
+    <div class="level0"><span class="xref">Spectre.CommandLine.Command</span>&lt;<a class="xref" href="GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html">ProfileImportCommand.Settings</a>&gt;</div>
+    <div class="level1"><span class="xref">ProfileImportCommand</span></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="GitProfileManager.Commands.Profile.html">GitProfileManager.Commands.Profile</a></h6>
   <h6><strong>Assembly</strong>: git-profile-manager.dll</h6>
   <h5 id="GitProfileManager_Commands_Profile_ProfileImportCommand_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ProfileImportCommand : Command&lt;ProfileImportCommand.Settings&gt;, ICommand</code></pre>
+    <pre><code class="lang-csharp hljs">public class ProfileImportCommand : Command&lt;ProfileImportCommand.Settings&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Commands_Profile_ProfileImportCommand__ctor_GitProfileManager_Services_IGitProfileStore_GitProfileManager_Services_ICommandFileService_.md&amp;value=---%0Auid%3A%20GitProfileManager.Commands.Profile.ProfileImportCommand.%23ctor(GitProfileManager.Services.IGitProfileStore%2CGitProfileManager.Services.ICommandFileService)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Commands/Profile/ProfileImportCommand.cs/#L12">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Commands_Profile_ProfileImportCommand__ctor_" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.#ctor*"></a>
   <h4 id="GitProfileManager_Commands_Profile_ProfileImportCommand__ctor_GitProfileManager_Services_IGitProfileStore_GitProfileManager_Services_ICommandFileService_" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.#ctor(GitProfileManager.Services.IGitProfileStore,GitProfileManager.Services.ICommandFileService)">ProfileImportCommand(IGitProfileStore, ICommandFileService)</h4>
   <div class="markdown level1 summary"></div>
@@ -317,13 +285,8 @@
   </table>
   <h3 id="properties">Properties
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Commands_Profile_ProfileImportCommand_FileService.md&amp;value=---%0Auid%3A%20GitProfileManager.Commands.Profile.ProfileImportCommand.FileService%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Commands/Profile/ProfileImportCommand.cs/#L19">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Commands_Profile_ProfileImportCommand_FileService_" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.FileService*"></a>
   <h4 id="GitProfileManager_Commands_Profile_ProfileImportCommand_FileService" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.FileService">FileService</h4>
   <div class="markdown level1 summary"></div>
@@ -347,13 +310,8 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Commands_Profile_ProfileImportCommand_Store.md&amp;value=---%0Auid%3A%20GitProfileManager.Commands.Profile.ProfileImportCommand.Store%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Commands/Profile/ProfileImportCommand.cs/#L18">View Source</a>
-  </span>
+  
+  
   <a id="GitProfileManager_Commands_Profile_ProfileImportCommand_Store_" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.Store*"></a>
   <h4 id="GitProfileManager_Commands_Profile_ProfileImportCommand_Store" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.Store">Store</h4>
   <div class="markdown level1 summary"></div>
@@ -379,20 +337,15 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Commands_Profile_ProfileImportCommand_Run_GitProfileManager_Commands_Profile_ProfileImportCommand_Settings_.md&amp;value=---%0Auid%3A%20GitProfileManager.Commands.Profile.ProfileImportCommand.Run(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Commands/Profile/ProfileImportCommand.cs/#L21">View Source</a>
-  </span>
-  <a id="GitProfileManager_Commands_Profile_ProfileImportCommand_Run_" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.Run*"></a>
-  <h4 id="GitProfileManager_Commands_Profile_ProfileImportCommand_Run_GitProfileManager_Commands_Profile_ProfileImportCommand_Settings_" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.Run(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings)">Run(ProfileImportCommand.Settings)</h4>
+  
+  
+  <a id="GitProfileManager_Commands_Profile_ProfileImportCommand_Execute_" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.Execute*"></a>
+  <h4 id="GitProfileManager_Commands_Profile_ProfileImportCommand_Execute_GitProfileManager_Commands_Profile_ProfileImportCommand_Settings_System_Linq_ILookup_System_String_System_String__" data-uid="GitProfileManager.Commands.Profile.ProfileImportCommand.Execute(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings,System.Linq.ILookup{System.String,System.String})">Execute(ProfileImportCommand.Settings, ILookup&lt;String, String&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int Run(ProfileImportCommand.Settings settings)</code></pre>
+    <pre><code class="lang-csharp hljs">public override int Execute(ProfileImportCommand.Settings settings, ILookup&lt;string, string&gt; unmapped)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -407,6 +360,11 @@
       <tr>
         <td><a class="xref" href="GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html">ProfileImportCommand.Settings</a></td>
         <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Linq.ILookup</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">unmapped</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -426,12 +384,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Spectre.CommandLine.Command&lt;GitProfileManager.Commands.Profile.ProfileImportCommand.Settings&gt;.Run(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings)</span></div>
-  <h3 id="extensionmethods">Extension Methods</h3>
-  <div>
-      <a class="xref" href="GitProfileManager.Extensions.html#GitProfileManager_Extensions_IsAssignableTo__1_System_Object_">Extensions.IsAssignableTo&lt;TTarget&gt;(Object)</a>
-  </div>
 </article>
           </div>
           
@@ -439,12 +391,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/agc93/git-profile-manager/new/develop/apiSpec/new?filename=GitProfileManager_Commands_Profile_ProfileImportCommand.md&amp;value=---%0Auid%3A%20GitProfileManager.Commands.Profile.ProfileImportCommand%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/agc93/git-profile-manager/blob/develop/src/GitProfileManager/Commands/Profile/ProfileImportCommand.cs/#L10" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

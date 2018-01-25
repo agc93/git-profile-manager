@@ -8,7 +8,7 @@
     <title>Usage Guide | Git Profile Manager </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Usage Guide | Git Profile Manager ">
-    <meta name="generator" content="docfx 2.19.2.0">
+    <meta name="generator" content="docfx 2.30.0.0">
     
     <link rel="shortcut icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc">
     <meta property="docfx:tocrel" content="toc">
+    
     <meta property="docfx:rel" content="../">
     
   </head>
@@ -140,38 +141,42 @@ Windows/macOS users should use <code>git-profile-manager</code> instead (or add 
 <p>Deactivate is the opposite of activate and will unset any configuration options stored in the profile. Like <code>activate</code>, this applies to the current repository by default, but the <code>--global</code> flag will unset these items globally (use with <strong><em>extreme</em> caution</strong>).</p>
 <h4 id="example-1">Example</h4>
 <pre><code class="lang-bash">gpm deactivate my-oss-project
+</code></pre><h2 id="list">List</h2>
+<p>The list command simply lists all the currently saved Git profiles (from the user&#39;s <code>~/.gitprofile</code>).</p>
+<h4 id="example-2">Example</h4>
+<pre><code class="lang-bash">gpm profile list
 </code></pre><h2 id="profile">Profile</h2>
 <p>The profile command is used to managed saved Git profiles, and includes a number of subcommands.</p>
-<h3 id="create">Create</h3>
+<h3 id="show">Show</h3>
+<p>Show will simply print the configuration items stored in a specific profile.</p>
+<h4 id="example-3">Example</h4>
+<pre><code class="lang-bash">gpm profile show personal
+</code></pre><h3 id="create">Create</h3>
 <p>Create will create a new profile. By default, this profile is blank (i.e. includes no configuration options), but you can optionally provide a source profile for GPM to duplicate.</p>
-<h4 id="example-2">Example</h4>
+<h4 id="example-4">Example</h4>
 <pre><code class="lang-bash">gpm profile create --from personal work
 </code></pre><h3 id="delete">Delete</h3>
 <p>Delete will delete the specified profile from your saved profiles completely. By default, you will be prompted to perform this command, but this can be skipped using the <code>--non-interactive</code> option.</p>
-<h4 id="example-3">Example</h4>
+<h4 id="example-5">Example</h4>
 <pre><code class="lang-bash">gpm profile delete work-profile
 </code></pre><h3 id="edit">Edit</h3>
 <p>Edit allows you to edit already existing profiles (i.e. to add new configuration options to a profile). The profile will be created if it doesn&#39;t exist.</p>
 <p>Configuration options are specified as key-value pairs, similar to <code>git config</code>, separated by an &#39;<code>=</code>&#39; symbol. You can remove a configuration option using the <code>--rm</code> option</p>
-<h4 id="example-4">Example</h4>
+<h4 id="example-6">Example</h4>
 <pre><code class="lang-bash">gpm profile edit work-profile commit.gpgsign=true
 gpm profile edit work-profile gpg.signingkey=123ABCDEF --rm
 </code></pre><h3 id="export">Export</h3>
 <p>If you&#39;d like to use your profiles outside of Git Profile Manager, you can use this option to export your profile into a file you can then copy/run/move as you see fit. The exported file is a plain text file with all the <code>git config</code> commands for your profile, one command per line.</p>
 <p>This file can then be run (through Bash or PowerShell) or used however you like.</p>
-<h4 id="example-5">Example</h4>
+<h4 id="example-7">Example</h4>
 <pre><code class="lang-bash">gpm profile export work-profile command-file.txt
 </code></pre><h3 id="import">Import</h3>
 <p>The opposite operation to export, import accepts a simple command file and creates a profile from it. GPM will read through the input file and create a profile with all of the Git configuration items found in the file. As such, this can be used to import not just from exported GPM profiles, but also from simple shell scripts you may already be using.</p>
 <p>The new profile will be named with the input file&#39;s name, or this can be overriden with the <code>--profile-name</code> option.</p>
 <div class="NOTE"><h5>Note</h5><p>The file parsing logic in GPM is quite &quot;dumb&quot; so it will not, for example, process any of the logic contained in the command file.</p>
 </div>
-<h4 id="example-6">Example</h4>
+<h4 id="example-8">Example</h4>
 <pre><code class="lang-bash">gpm profile import path/to/file.sh -n new-profile
-</code></pre><h3 id="list">List</h3>
-<p>The list command simply lists all the currently saved Git profiles (from the user&#39;s <code>~/.gitprofile</code>).</p>
-<h4 id="example-7">Example</h4>
-<pre><code class="lang-bash">gpm profile list
 </code></pre></article>
           </div>
           

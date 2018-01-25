@@ -8,7 +8,7 @@
     <title>GPM Installation | Git Profile Manager </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="GPM Installation | Git Profile Manager ">
-    <meta name="generator" content="docfx 2.19.2.0">
+    <meta name="generator" content="docfx 2.30.0.0">
     
     <link rel="shortcut icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc">
     <meta property="docfx:tocrel" content="toc">
+    
     <meta property="docfx:rel" content="../">
     
   </head>
@@ -127,17 +128,27 @@
 <h1 id="gpm-installation">GPM Installation</h1>
 
 <p>Installing Git Profile Manager is simple and easy, and supports a huge range of platforms.</p>
-<p>Currently installers are provided for: Windows 10, Ubuntu (16.04, 14.04), RHEL 7, Debian 8, and CentOS 7.</p>
+<p>Currently installers are provided for Windows 10, Ubuntu/Debian, and RPM-based distributions (Fedora/CentOS/RHEL).</p>
 <p>You can also manually install on any of the above, as well as macOS 10.12 <em>Sierra</em>.</p>
+<blockquote><p>Find the download links for your platform <a href="download.html">here</a></p>
+</blockquote>
 <h2 id="linux">Linux</h2>
 <h3 id="debian-ubuntu">Debian, Ubuntu</h3>
 <p>First, you need to install some dependencies:</p>
-<pre><code class="lang-bash">apt-get install -y libicu52 libunwind8
-</code></pre><div class="WARNING"><h5>Warning</h5><p>There is a <a href="https://github.com/dotnet/cli/issues/2018#issuecomment-221633831">known issue</a> with .NET Core packaging that means you will need to add the <code>trusty-security</code> repositories to get <code>libicu52</code> on Ubuntu 16.04</p>
-</div>
-<p>Now, just download the <code>deb</code> for your distro and install it with:</p>
+<pre><code class="lang-bash"># for Ubuntu 14.04, Debian 8
+apt-get install -y libicu52 libunwind8
+# for Ubuntu 16.04
+apt-get install -y libicu55 libunwind8
+</code></pre><p>Now, just <a href="download.html">download</a> the <code>deb</code> for your distro and install it with:</p>
 <pre><code class="lang-bash">dpkg -i git-profile-manager*.deb
 </code></pre><p>This will install the app to <code>/usr/lib/git-profile-manager</code> and automatically add <code>gpm</code> to your <code>PATH</code>.</p>
+<p>Just run <code>gpm</code> to get the help.</p>
+<h3 id="fedora">Fedora</h3>
+<p>Download the <code>rpm</code> for Fedora and install it with:</p>
+<pre><code class="lang-bash">dnf install git-profile-manager*.rpm
+</code></pre><blockquote><p>Despite the naming, this package should work fine for Fedora 25 and 26</p>
+</blockquote>
+<p>This will install the app to <code>/usr/lib/git-profile-manager</code> and automatically add <code>gpm</code> to your <code>PATH</code>.</p>
 <p>Just run <code>gpm</code> to get the help.</p>
 <h3 id="rhel-centos">RHEL, CentOS</h3>
 <p>First, install dependencies:</p>
@@ -149,12 +160,10 @@
 <h2 id="windows">Windows</h2>
 <p>Chocolatey users can quickly install Git Profile Manager using the <code>git-profile-manager.install</code> package:</p>
 <pre><code class="lang-powershell">choco install git-profile-manager.install
-</code></pre><p>This will install the app to the default Chocolatey location and should automatically add <code>git-profile-manager.exe</code> to your PATH.</p>
+</code></pre><p>This will install the app to the default Chocolatey location and should automatically add <code>gpm</code> to your PATH.</p>
 <div class="NOTE"><h5>Note</h5><p>You can also download the release package, extract it somewhere and add that location to your <code>PATH</code> manually.</p>
 </div>
-<p>Just run <code>git-profile-manager</code> to get the help.</p>
-<div class="TIP"><h5>Tip</h5><p>You can use PowerShell&#39;s <code>Set-Alias</code> command to alias <code>git-profile-manager</code> to <code>gpm</code> to cut down on typing</p>
-</div>
+<p>Just run <code>gpm</code> or <code>git-profile-manager</code> to get the help.</p>
 <h2 id="macos">macOS</h2>
 <p>At this time, there is no automated install available for macOS (since building for macOS requires a Mac and I don&#39;t have one).</p>
 <p>10.12/<em>Sierra</em> users can download the release package, extract it to a directory (say <code>/Applications/git-profile-manager</code> for example) and add that folder to your <code>PATH</code>. You can then run <code>git-profile-manager</code> from a terminal to run the app.</p>
@@ -168,6 +177,9 @@
 docker run -it agc93/gpm
 # Advanced usage (for Bash)
 docker run -it -v $PWD:/app -v $HOME/.gitprofiles:/home/app/.gitprofiles -w /app agc93/gpm
+</code></pre><h2 id="net-runtime">.NET Runtime</h2>
+<p>If you&#39;re on another platform, GPM <em>might</em> still work! If you can install the .NET Core runtime on your system (this is bundled with the SDK if you&#39;re on a supported OS), you should be able to use it to run GPM from the <code>dotnet-any</code> package. The main executable is the <code>git-profile-manager.dll</code> file:</p>
+<pre><code class="lang-bash">dotnet git-profile-manager.dll
 </code></pre></article>
           </div>
           

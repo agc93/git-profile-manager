@@ -37,18 +37,21 @@ references:
   commentId: Overload:GitProfileManager.Commands.Activate.ActivateCommand.#ctor
   fullName: GitProfileManager.Commands.Activate.ActivateCommand.ActivateCommand
   nameWithType: ActivateCommand.ActivateCommand
-- uid: GitProfileManager.Commands.Activate.ActivateCommand.Run(GitProfileManager.Commands.Activate.ActivationSettings)
-  name: Run(ActivationSettings)
-  href: api/GitProfileManager.Commands.Activate.ActivateCommand.html#GitProfileManager_Commands_Activate_ActivateCommand_Run_GitProfileManager_Commands_Activate_ActivationSettings_
-  commentId: M:GitProfileManager.Commands.Activate.ActivateCommand.Run(GitProfileManager.Commands.Activate.ActivationSettings)
-  fullName: GitProfileManager.Commands.Activate.ActivateCommand.Run(GitProfileManager.Commands.Activate.ActivationSettings)
-  nameWithType: ActivateCommand.Run(ActivationSettings)
-- uid: GitProfileManager.Commands.Activate.ActivateCommand.Run*
-  name: Run
-  href: api/GitProfileManager.Commands.Activate.ActivateCommand.html#GitProfileManager_Commands_Activate_ActivateCommand_Run_
-  commentId: Overload:GitProfileManager.Commands.Activate.ActivateCommand.Run
-  fullName: GitProfileManager.Commands.Activate.ActivateCommand.Run
-  nameWithType: ActivateCommand.Run
+- uid: GitProfileManager.Commands.Activate.ActivateCommand.Execute(GitProfileManager.Commands.Activate.ActivationSettings,System.Linq.ILookup{System.String,System.String})
+  name: Execute(ActivationSettings, ILookup<String, String>)
+  href: api/GitProfileManager.Commands.Activate.ActivateCommand.html#GitProfileManager_Commands_Activate_ActivateCommand_Execute_GitProfileManager_Commands_Activate_ActivationSettings_System_Linq_ILookup_System_String_System_String__
+  commentId: M:GitProfileManager.Commands.Activate.ActivateCommand.Execute(GitProfileManager.Commands.Activate.ActivationSettings,System.Linq.ILookup{System.String,System.String})
+  name.vb: Execute(ActivationSettings, ILookup(Of String, String))
+  fullName: GitProfileManager.Commands.Activate.ActivateCommand.Execute(GitProfileManager.Commands.Activate.ActivationSettings, System.Linq.ILookup<System.String, System.String>)
+  fullName.vb: GitProfileManager.Commands.Activate.ActivateCommand.Execute(GitProfileManager.Commands.Activate.ActivationSettings, System.Linq.ILookup(Of System.String, System.String))
+  nameWithType: ActivateCommand.Execute(ActivationSettings, ILookup<String, String>)
+  nameWithType.vb: ActivateCommand.Execute(ActivationSettings, ILookup(Of String, String))
+- uid: GitProfileManager.Commands.Activate.ActivateCommand.Execute*
+  name: Execute
+  href: api/GitProfileManager.Commands.Activate.ActivateCommand.html#GitProfileManager_Commands_Activate_ActivateCommand_Execute_
+  commentId: Overload:GitProfileManager.Commands.Activate.ActivateCommand.Execute
+  fullName: GitProfileManager.Commands.Activate.ActivateCommand.Execute
+  nameWithType: ActivateCommand.Execute
 - uid: GitProfileManager.Commands.Activate.ActivateCommand.Service
   name: Service
   href: api/GitProfileManager.Commands.Activate.ActivateCommand.html#GitProfileManager_Commands_Activate_ActivateCommand_Service
@@ -79,6 +82,18 @@ references:
   commentId: T:GitProfileManager.Commands.Activate.ActivationSettings
   fullName: GitProfileManager.Commands.Activate.ActivationSettings
   nameWithType: ActivationSettings
+- uid: GitProfileManager.Commands.Activate.ActivationSettings.#ctor
+  name: ActivationSettings()
+  href: api/GitProfileManager.Commands.Activate.ActivationSettings.html#GitProfileManager_Commands_Activate_ActivationSettings__ctor
+  commentId: M:GitProfileManager.Commands.Activate.ActivationSettings.#ctor
+  fullName: GitProfileManager.Commands.Activate.ActivationSettings.ActivationSettings()
+  nameWithType: ActivationSettings.ActivationSettings()
+- uid: GitProfileManager.Commands.Activate.ActivationSettings.#ctor*
+  name: ActivationSettings
+  href: api/GitProfileManager.Commands.Activate.ActivationSettings.html#GitProfileManager_Commands_Activate_ActivationSettings__ctor_
+  commentId: Overload:GitProfileManager.Commands.Activate.ActivationSettings.#ctor
+  fullName: GitProfileManager.Commands.Activate.ActivationSettings.ActivationSettings
+  nameWithType: ActivationSettings.ActivationSettings
 - uid: GitProfileManager.Commands.Activate.ActivationSettings.ApplyGlobally
   name: ApplyGlobally
   href: api/GitProfileManager.Commands.Activate.ActivationSettings.html#GitProfileManager_Commands_Activate_ActivationSettings_ApplyGlobally
@@ -127,18 +142,21 @@ references:
   commentId: Overload:GitProfileManager.Commands.Deactivate.DeactivateCommand.#ctor
   fullName: GitProfileManager.Commands.Deactivate.DeactivateCommand.DeactivateCommand
   nameWithType: DeactivateCommand.DeactivateCommand
-- uid: GitProfileManager.Commands.Deactivate.DeactivateCommand.Run(GitProfileManager.Commands.Activate.ActivationSettings)
-  name: Run(ActivationSettings)
-  href: api/GitProfileManager.Commands.Deactivate.DeactivateCommand.html#GitProfileManager_Commands_Deactivate_DeactivateCommand_Run_GitProfileManager_Commands_Activate_ActivationSettings_
-  commentId: M:GitProfileManager.Commands.Deactivate.DeactivateCommand.Run(GitProfileManager.Commands.Activate.ActivationSettings)
-  fullName: GitProfileManager.Commands.Deactivate.DeactivateCommand.Run(GitProfileManager.Commands.Activate.ActivationSettings)
-  nameWithType: DeactivateCommand.Run(ActivationSettings)
-- uid: GitProfileManager.Commands.Deactivate.DeactivateCommand.Run*
-  name: Run
-  href: api/GitProfileManager.Commands.Deactivate.DeactivateCommand.html#GitProfileManager_Commands_Deactivate_DeactivateCommand_Run_
-  commentId: Overload:GitProfileManager.Commands.Deactivate.DeactivateCommand.Run
-  fullName: GitProfileManager.Commands.Deactivate.DeactivateCommand.Run
-  nameWithType: DeactivateCommand.Run
+- uid: GitProfileManager.Commands.Deactivate.DeactivateCommand.Execute(GitProfileManager.Commands.Activate.ActivationSettings,System.Linq.ILookup{System.String,System.String})
+  name: Execute(ActivationSettings, ILookup<String, String>)
+  href: api/GitProfileManager.Commands.Deactivate.DeactivateCommand.html#GitProfileManager_Commands_Deactivate_DeactivateCommand_Execute_GitProfileManager_Commands_Activate_ActivationSettings_System_Linq_ILookup_System_String_System_String__
+  commentId: M:GitProfileManager.Commands.Deactivate.DeactivateCommand.Execute(GitProfileManager.Commands.Activate.ActivationSettings,System.Linq.ILookup{System.String,System.String})
+  name.vb: Execute(ActivationSettings, ILookup(Of String, String))
+  fullName: GitProfileManager.Commands.Deactivate.DeactivateCommand.Execute(GitProfileManager.Commands.Activate.ActivationSettings, System.Linq.ILookup<System.String, System.String>)
+  fullName.vb: GitProfileManager.Commands.Deactivate.DeactivateCommand.Execute(GitProfileManager.Commands.Activate.ActivationSettings, System.Linq.ILookup(Of System.String, System.String))
+  nameWithType: DeactivateCommand.Execute(ActivationSettings, ILookup<String, String>)
+  nameWithType.vb: DeactivateCommand.Execute(ActivationSettings, ILookup(Of String, String))
+- uid: GitProfileManager.Commands.Deactivate.DeactivateCommand.Execute*
+  name: Execute
+  href: api/GitProfileManager.Commands.Deactivate.DeactivateCommand.html#GitProfileManager_Commands_Deactivate_DeactivateCommand_Execute_
+  commentId: Overload:GitProfileManager.Commands.Deactivate.DeactivateCommand.Execute
+  fullName: GitProfileManager.Commands.Deactivate.DeactivateCommand.Execute
+  nameWithType: DeactivateCommand.Execute
 - uid: GitProfileManager.Commands.Deactivate.DeactivateCommand.Service
   name: Service
   href: api/GitProfileManager.Commands.Deactivate.DeactivateCommand.html#GitProfileManager_Commands_Deactivate_DeactivateCommand_Service
@@ -163,42 +181,81 @@ references:
   commentId: Overload:GitProfileManager.Commands.Deactivate.DeactivateCommand.Store
   fullName: GitProfileManager.Commands.Deactivate.DeactivateCommand.Store
   nameWithType: DeactivateCommand.Store
+- uid: GitProfileManager.Commands.List
+  name: GitProfileManager.Commands.List
+  href: api/GitProfileManager.Commands.List.html
+  commentId: N:GitProfileManager.Commands.List
+  fullName: GitProfileManager.Commands.List
+  nameWithType: GitProfileManager.Commands.List
+- uid: GitProfileManager.Commands.List.ProfileListCommand
+  name: ProfileListCommand
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.html
+  commentId: T:GitProfileManager.Commands.List.ProfileListCommand
+  fullName: GitProfileManager.Commands.List.ProfileListCommand
+  nameWithType: ProfileListCommand
+- uid: GitProfileManager.Commands.List.ProfileListCommand.#ctor(GitProfileManager.Services.IGitProfileStore)
+  name: ProfileListCommand(IGitProfileStore)
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.html#GitProfileManager_Commands_List_ProfileListCommand__ctor_GitProfileManager_Services_IGitProfileStore_
+  commentId: M:GitProfileManager.Commands.List.ProfileListCommand.#ctor(GitProfileManager.Services.IGitProfileStore)
+  fullName: GitProfileManager.Commands.List.ProfileListCommand.ProfileListCommand(GitProfileManager.Services.IGitProfileStore)
+  nameWithType: ProfileListCommand.ProfileListCommand(IGitProfileStore)
+- uid: GitProfileManager.Commands.List.ProfileListCommand.#ctor*
+  name: ProfileListCommand
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.html#GitProfileManager_Commands_List_ProfileListCommand__ctor_
+  commentId: Overload:GitProfileManager.Commands.List.ProfileListCommand.#ctor
+  fullName: GitProfileManager.Commands.List.ProfileListCommand.ProfileListCommand
+  nameWithType: ProfileListCommand.ProfileListCommand
+- uid: GitProfileManager.Commands.List.ProfileListCommand.Execute(GitProfileManager.Commands.List.ProfileListCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name: Execute(ProfileListCommand.Settings, ILookup<String, String>)
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.html#GitProfileManager_Commands_List_ProfileListCommand_Execute_GitProfileManager_Commands_List_ProfileListCommand_Settings_System_Linq_ILookup_System_String_System_String__
+  commentId: M:GitProfileManager.Commands.List.ProfileListCommand.Execute(GitProfileManager.Commands.List.ProfileListCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name.vb: Execute(ProfileListCommand.Settings, ILookup(Of String, String))
+  fullName: GitProfileManager.Commands.List.ProfileListCommand.Execute(GitProfileManager.Commands.List.ProfileListCommand.Settings, System.Linq.ILookup<System.String, System.String>)
+  fullName.vb: GitProfileManager.Commands.List.ProfileListCommand.Execute(GitProfileManager.Commands.List.ProfileListCommand.Settings, System.Linq.ILookup(Of System.String, System.String))
+  nameWithType: ProfileListCommand.Execute(ProfileListCommand.Settings, ILookup<String, String>)
+  nameWithType.vb: ProfileListCommand.Execute(ProfileListCommand.Settings, ILookup(Of String, String))
+- uid: GitProfileManager.Commands.List.ProfileListCommand.Execute*
+  name: Execute
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.html#GitProfileManager_Commands_List_ProfileListCommand_Execute_
+  commentId: Overload:GitProfileManager.Commands.List.ProfileListCommand.Execute
+  fullName: GitProfileManager.Commands.List.ProfileListCommand.Execute
+  nameWithType: ProfileListCommand.Execute
+- uid: GitProfileManager.Commands.List.ProfileListCommand.Settings
+  name: ProfileListCommand.Settings
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.Settings.html
+  commentId: T:GitProfileManager.Commands.List.ProfileListCommand.Settings
+  fullName: GitProfileManager.Commands.List.ProfileListCommand.Settings
+  nameWithType: ProfileListCommand.Settings
+- uid: GitProfileManager.Commands.List.ProfileListCommand.Settings.#ctor
+  name: Settings()
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.Settings.html#GitProfileManager_Commands_List_ProfileListCommand_Settings__ctor
+  commentId: M:GitProfileManager.Commands.List.ProfileListCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.List.ProfileListCommand.Settings.Settings()
+  nameWithType: ProfileListCommand.Settings.Settings()
+- uid: GitProfileManager.Commands.List.ProfileListCommand.Settings.#ctor*
+  name: Settings
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.Settings.html#GitProfileManager_Commands_List_ProfileListCommand_Settings__ctor_
+  commentId: Overload:GitProfileManager.Commands.List.ProfileListCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.List.ProfileListCommand.Settings.Settings
+  nameWithType: ProfileListCommand.Settings.Settings
+- uid: GitProfileManager.Commands.List.ProfileListCommand.Store
+  name: Store
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.html#GitProfileManager_Commands_List_ProfileListCommand_Store
+  commentId: P:GitProfileManager.Commands.List.ProfileListCommand.Store
+  fullName: GitProfileManager.Commands.List.ProfileListCommand.Store
+  nameWithType: ProfileListCommand.Store
+- uid: GitProfileManager.Commands.List.ProfileListCommand.Store*
+  name: Store
+  href: api/GitProfileManager.Commands.List.ProfileListCommand.html#GitProfileManager_Commands_List_ProfileListCommand_Store_
+  commentId: Overload:GitProfileManager.Commands.List.ProfileListCommand.Store
+  fullName: GitProfileManager.Commands.List.ProfileListCommand.Store
+  nameWithType: ProfileListCommand.Store
 - uid: GitProfileManager.Commands.Profile
   name: GitProfileManager.Commands.Profile
   href: api/GitProfileManager.Commands.Profile.html
   commentId: N:GitProfileManager.Commands.Profile
   fullName: GitProfileManager.Commands.Profile
   nameWithType: GitProfileManager.Commands.Profile
-- uid: GitProfileManager.Commands.Profile.ProfileCommand
-  name: ProfileCommand
-  href: api/GitProfileManager.Commands.Profile.ProfileCommand.html
-  commentId: T:GitProfileManager.Commands.Profile.ProfileCommand
-  fullName: GitProfileManager.Commands.Profile.ProfileCommand
-  nameWithType: ProfileCommand
-- uid: GitProfileManager.Commands.Profile.ProfileCommand.#ctor
-  name: ProfileCommand()
-  href: api/GitProfileManager.Commands.Profile.ProfileCommand.html#GitProfileManager_Commands_Profile_ProfileCommand__ctor
-  commentId: M:GitProfileManager.Commands.Profile.ProfileCommand.#ctor
-  fullName: GitProfileManager.Commands.Profile.ProfileCommand.ProfileCommand()
-  nameWithType: ProfileCommand.ProfileCommand()
-- uid: GitProfileManager.Commands.Profile.ProfileCommand.#ctor*
-  name: ProfileCommand
-  href: api/GitProfileManager.Commands.Profile.ProfileCommand.html#GitProfileManager_Commands_Profile_ProfileCommand__ctor_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileCommand.#ctor
-  fullName: GitProfileManager.Commands.Profile.ProfileCommand.ProfileCommand
-  nameWithType: ProfileCommand.ProfileCommand
-- uid: GitProfileManager.Commands.Profile.ProfileCommand.Configure(Spectre.CommandLine.ICommandRegistrar)
-  name: Configure(ICommandRegistrar)
-  href: api/GitProfileManager.Commands.Profile.ProfileCommand.html#GitProfileManager_Commands_Profile_ProfileCommand_Configure_Spectre_CommandLine_ICommandRegistrar_
-  commentId: M:GitProfileManager.Commands.Profile.ProfileCommand.Configure(Spectre.CommandLine.ICommandRegistrar)
-  fullName: GitProfileManager.Commands.Profile.ProfileCommand.Configure(Spectre.CommandLine.ICommandRegistrar)
-  nameWithType: ProfileCommand.Configure(ICommandRegistrar)
-- uid: GitProfileManager.Commands.Profile.ProfileCommand.Configure*
-  name: Configure
-  href: api/GitProfileManager.Commands.Profile.ProfileCommand.html#GitProfileManager_Commands_Profile_ProfileCommand_Configure_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileCommand.Configure
-  fullName: GitProfileManager.Commands.Profile.ProfileCommand.Configure
-  nameWithType: ProfileCommand.Configure
 - uid: GitProfileManager.Commands.Profile.ProfileCreateCommand
   name: ProfileCreateCommand
   href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.html
@@ -217,6 +274,21 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileCreateCommand.#ctor
   fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.ProfileCreateCommand
   nameWithType: ProfileCreateCommand.ProfileCreateCommand
+- uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Execute(GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name: Execute(ProfileCreateCommand.Settings, ILookup<String, String>)
+  href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_Execute_GitProfileManager_Commands_Profile_ProfileCreateCommand_Settings_System_Linq_ILookup_System_String_System_String__
+  commentId: M:GitProfileManager.Commands.Profile.ProfileCreateCommand.Execute(GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name.vb: Execute(ProfileCreateCommand.Settings, ILookup(Of String, String))
+  fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.Execute(GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings, System.Linq.ILookup<System.String, System.String>)
+  fullName.vb: GitProfileManager.Commands.Profile.ProfileCreateCommand.Execute(GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings, System.Linq.ILookup(Of System.String, System.String))
+  nameWithType: ProfileCreateCommand.Execute(ProfileCreateCommand.Settings, ILookup<String, String>)
+  nameWithType.vb: ProfileCreateCommand.Execute(ProfileCreateCommand.Settings, ILookup(Of String, String))
+- uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Execute*
+  name: Execute
+  href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_Execute_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileCreateCommand.Execute
+  fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.Execute
+  nameWithType: ProfileCreateCommand.Execute
 - uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.FileService
   name: FileService
   href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_FileService
@@ -229,36 +301,24 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileCreateCommand.FileService
   fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.FileService
   nameWithType: ProfileCreateCommand.FileService
-- uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Run(GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings)
-  name: Run(ProfileCreateCommand.Settings)
-  href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_Run_GitProfileManager_Commands_Profile_ProfileCreateCommand_Settings_
-  commentId: M:GitProfileManager.Commands.Profile.ProfileCreateCommand.Run(GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings)
-  fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.Run(GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings)
-  nameWithType: ProfileCreateCommand.Run(ProfileCreateCommand.Settings)
-- uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Run*
-  name: Run
-  href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_Run_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileCreateCommand.Run
-  fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.Run
-  nameWithType: ProfileCreateCommand.Run
 - uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings
   name: ProfileCreateCommand.Settings
   href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.html
   commentId: T:GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings
   fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings
   nameWithType: ProfileCreateCommand.Settings
-- uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.Name
-  name: Name
-  href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_Settings_Name
-  commentId: P:GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.Name
-  fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.Name
-  nameWithType: ProfileCreateCommand.Settings.Name
-- uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.Name*
-  name: Name
-  href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_Settings_Name_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.Name
-  fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.Name
-  nameWithType: ProfileCreateCommand.Settings.Name
+- uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.#ctor
+  name: Settings()
+  href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_Settings__ctor
+  commentId: M:GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.Settings()
+  nameWithType: ProfileCreateCommand.Settings.Settings()
+- uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.#ctor*
+  name: Settings
+  href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_Settings__ctor_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.Settings
+  nameWithType: ProfileCreateCommand.Settings.Settings
 - uid: GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.SourceProfileName
   name: SourceProfileName
   href: api/GitProfileManager.Commands.Profile.ProfileCreateCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileCreateCommand_Settings_SourceProfileName
@@ -301,24 +361,39 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileDeleteCommand.#ctor
   fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.ProfileDeleteCommand
   nameWithType: ProfileDeleteCommand.ProfileDeleteCommand
-- uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Run(GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings)
-  name: Run(ProfileDeleteCommand.Settings)
-  href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Run_GitProfileManager_Commands_Profile_ProfileDeleteCommand_Settings_
-  commentId: M:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Run(GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings)
-  fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Run(GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings)
-  nameWithType: ProfileDeleteCommand.Run(ProfileDeleteCommand.Settings)
-- uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Run*
-  name: Run
-  href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Run_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Run
-  fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Run
-  nameWithType: ProfileDeleteCommand.Run
+- uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Execute(GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name: Execute(ProfileDeleteCommand.Settings, ILookup<String, String>)
+  href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Execute_GitProfileManager_Commands_Profile_ProfileDeleteCommand_Settings_System_Linq_ILookup_System_String_System_String__
+  commentId: M:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Execute(GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name.vb: Execute(ProfileDeleteCommand.Settings, ILookup(Of String, String))
+  fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Execute(GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings, System.Linq.ILookup<System.String, System.String>)
+  fullName.vb: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Execute(GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings, System.Linq.ILookup(Of System.String, System.String))
+  nameWithType: ProfileDeleteCommand.Execute(ProfileDeleteCommand.Settings, ILookup<String, String>)
+  nameWithType.vb: ProfileDeleteCommand.Execute(ProfileDeleteCommand.Settings, ILookup(Of String, String))
+- uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Execute*
+  name: Execute
+  href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Execute_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Execute
+  fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Execute
+  nameWithType: ProfileDeleteCommand.Execute
 - uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings
   name: ProfileDeleteCommand.Settings
   href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.html
   commentId: T:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings
   fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings
   nameWithType: ProfileDeleteCommand.Settings
+- uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.#ctor
+  name: Settings()
+  href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Settings__ctor
+  commentId: M:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.Settings()
+  nameWithType: ProfileDeleteCommand.Settings.Settings()
+- uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.#ctor*
+  name: Settings
+  href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Settings__ctor_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.Settings
+  nameWithType: ProfileDeleteCommand.Settings.Settings
 - uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.NonInteractive
   name: NonInteractive
   href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Settings_NonInteractive
@@ -331,18 +406,6 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.NonInteractive
   fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.NonInteractive
   nameWithType: ProfileDeleteCommand.Settings.NonInteractive
-- uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.ProfileName
-  name: ProfileName
-  href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Settings_ProfileName
-  commentId: P:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.ProfileName
-  fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.ProfileName
-  nameWithType: ProfileDeleteCommand.Settings.ProfileName
-- uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.ProfileName*
-  name: ProfileName
-  href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Settings_ProfileName_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.ProfileName
-  fullName: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Settings.ProfileName
-  nameWithType: ProfileDeleteCommand.Settings.ProfileName
 - uid: GitProfileManager.Commands.Profile.ProfileDeleteCommand.Store
   name: Store
   href: api/GitProfileManager.Commands.Profile.ProfileDeleteCommand.html#GitProfileManager_Commands_Profile_ProfileDeleteCommand_Store
@@ -373,24 +436,39 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileEditCommand.#ctor
   fullName: GitProfileManager.Commands.Profile.ProfileEditCommand.ProfileEditCommand
   nameWithType: ProfileEditCommand.ProfileEditCommand
-- uid: GitProfileManager.Commands.Profile.ProfileEditCommand.Run(GitProfileManager.Commands.Profile.ProfileEditCommand.Settings)
-  name: Run(ProfileEditCommand.Settings)
-  href: api/GitProfileManager.Commands.Profile.ProfileEditCommand.html#GitProfileManager_Commands_Profile_ProfileEditCommand_Run_GitProfileManager_Commands_Profile_ProfileEditCommand_Settings_
-  commentId: M:GitProfileManager.Commands.Profile.ProfileEditCommand.Run(GitProfileManager.Commands.Profile.ProfileEditCommand.Settings)
-  fullName: GitProfileManager.Commands.Profile.ProfileEditCommand.Run(GitProfileManager.Commands.Profile.ProfileEditCommand.Settings)
-  nameWithType: ProfileEditCommand.Run(ProfileEditCommand.Settings)
-- uid: GitProfileManager.Commands.Profile.ProfileEditCommand.Run*
-  name: Run
-  href: api/GitProfileManager.Commands.Profile.ProfileEditCommand.html#GitProfileManager_Commands_Profile_ProfileEditCommand_Run_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileEditCommand.Run
-  fullName: GitProfileManager.Commands.Profile.ProfileEditCommand.Run
-  nameWithType: ProfileEditCommand.Run
+- uid: GitProfileManager.Commands.Profile.ProfileEditCommand.Execute(GitProfileManager.Commands.Profile.ProfileEditCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name: Execute(ProfileEditCommand.Settings, ILookup<String, String>)
+  href: api/GitProfileManager.Commands.Profile.ProfileEditCommand.html#GitProfileManager_Commands_Profile_ProfileEditCommand_Execute_GitProfileManager_Commands_Profile_ProfileEditCommand_Settings_System_Linq_ILookup_System_String_System_String__
+  commentId: M:GitProfileManager.Commands.Profile.ProfileEditCommand.Execute(GitProfileManager.Commands.Profile.ProfileEditCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name.vb: Execute(ProfileEditCommand.Settings, ILookup(Of String, String))
+  fullName: GitProfileManager.Commands.Profile.ProfileEditCommand.Execute(GitProfileManager.Commands.Profile.ProfileEditCommand.Settings, System.Linq.ILookup<System.String, System.String>)
+  fullName.vb: GitProfileManager.Commands.Profile.ProfileEditCommand.Execute(GitProfileManager.Commands.Profile.ProfileEditCommand.Settings, System.Linq.ILookup(Of System.String, System.String))
+  nameWithType: ProfileEditCommand.Execute(ProfileEditCommand.Settings, ILookup<String, String>)
+  nameWithType.vb: ProfileEditCommand.Execute(ProfileEditCommand.Settings, ILookup(Of String, String))
+- uid: GitProfileManager.Commands.Profile.ProfileEditCommand.Execute*
+  name: Execute
+  href: api/GitProfileManager.Commands.Profile.ProfileEditCommand.html#GitProfileManager_Commands_Profile_ProfileEditCommand_Execute_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileEditCommand.Execute
+  fullName: GitProfileManager.Commands.Profile.ProfileEditCommand.Execute
+  nameWithType: ProfileEditCommand.Execute
 - uid: GitProfileManager.Commands.Profile.ProfileEditCommand.Settings
   name: ProfileEditCommand.Settings
   href: api/GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.html
   commentId: T:GitProfileManager.Commands.Profile.ProfileEditCommand.Settings
   fullName: GitProfileManager.Commands.Profile.ProfileEditCommand.Settings
   nameWithType: ProfileEditCommand.Settings
+- uid: GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.#ctor
+  name: Settings()
+  href: api/GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileEditCommand_Settings__ctor
+  commentId: M:GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.Settings()
+  nameWithType: ProfileEditCommand.Settings.Settings()
+- uid: GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.#ctor*
+  name: Settings
+  href: api/GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileEditCommand_Settings__ctor_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.Settings
+  nameWithType: ProfileEditCommand.Settings.Settings
 - uid: GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.ProfileName
   name: ProfileName
   href: api/GitProfileManager.Commands.Profile.ProfileEditCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileEditCommand_Settings_ProfileName
@@ -457,6 +535,21 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileExportCommand.#ctor
   fullName: GitProfileManager.Commands.Profile.ProfileExportCommand.ProfileExportCommand
   nameWithType: ProfileExportCommand.ProfileExportCommand
+- uid: GitProfileManager.Commands.Profile.ProfileExportCommand.Execute(GitProfileManager.Commands.Profile.ProfileExportCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name: Execute(ProfileExportCommand.Settings, ILookup<String, String>)
+  href: api/GitProfileManager.Commands.Profile.ProfileExportCommand.html#GitProfileManager_Commands_Profile_ProfileExportCommand_Execute_GitProfileManager_Commands_Profile_ProfileExportCommand_Settings_System_Linq_ILookup_System_String_System_String__
+  commentId: M:GitProfileManager.Commands.Profile.ProfileExportCommand.Execute(GitProfileManager.Commands.Profile.ProfileExportCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name.vb: Execute(ProfileExportCommand.Settings, ILookup(Of String, String))
+  fullName: GitProfileManager.Commands.Profile.ProfileExportCommand.Execute(GitProfileManager.Commands.Profile.ProfileExportCommand.Settings, System.Linq.ILookup<System.String, System.String>)
+  fullName.vb: GitProfileManager.Commands.Profile.ProfileExportCommand.Execute(GitProfileManager.Commands.Profile.ProfileExportCommand.Settings, System.Linq.ILookup(Of System.String, System.String))
+  nameWithType: ProfileExportCommand.Execute(ProfileExportCommand.Settings, ILookup<String, String>)
+  nameWithType.vb: ProfileExportCommand.Execute(ProfileExportCommand.Settings, ILookup(Of String, String))
+- uid: GitProfileManager.Commands.Profile.ProfileExportCommand.Execute*
+  name: Execute
+  href: api/GitProfileManager.Commands.Profile.ProfileExportCommand.html#GitProfileManager_Commands_Profile_ProfileExportCommand_Execute_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileExportCommand.Execute
+  fullName: GitProfileManager.Commands.Profile.ProfileExportCommand.Execute
+  nameWithType: ProfileExportCommand.Execute
 - uid: GitProfileManager.Commands.Profile.ProfileExportCommand.FileService
   name: FileService
   href: api/GitProfileManager.Commands.Profile.ProfileExportCommand.html#GitProfileManager_Commands_Profile_ProfileExportCommand_FileService
@@ -469,24 +562,24 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileExportCommand.FileService
   fullName: GitProfileManager.Commands.Profile.ProfileExportCommand.FileService
   nameWithType: ProfileExportCommand.FileService
-- uid: GitProfileManager.Commands.Profile.ProfileExportCommand.Run(GitProfileManager.Commands.Profile.ProfileExportCommand.Settings)
-  name: Run(ProfileExportCommand.Settings)
-  href: api/GitProfileManager.Commands.Profile.ProfileExportCommand.html#GitProfileManager_Commands_Profile_ProfileExportCommand_Run_GitProfileManager_Commands_Profile_ProfileExportCommand_Settings_
-  commentId: M:GitProfileManager.Commands.Profile.ProfileExportCommand.Run(GitProfileManager.Commands.Profile.ProfileExportCommand.Settings)
-  fullName: GitProfileManager.Commands.Profile.ProfileExportCommand.Run(GitProfileManager.Commands.Profile.ProfileExportCommand.Settings)
-  nameWithType: ProfileExportCommand.Run(ProfileExportCommand.Settings)
-- uid: GitProfileManager.Commands.Profile.ProfileExportCommand.Run*
-  name: Run
-  href: api/GitProfileManager.Commands.Profile.ProfileExportCommand.html#GitProfileManager_Commands_Profile_ProfileExportCommand_Run_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileExportCommand.Run
-  fullName: GitProfileManager.Commands.Profile.ProfileExportCommand.Run
-  nameWithType: ProfileExportCommand.Run
 - uid: GitProfileManager.Commands.Profile.ProfileExportCommand.Settings
   name: ProfileExportCommand.Settings
   href: api/GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.html
   commentId: T:GitProfileManager.Commands.Profile.ProfileExportCommand.Settings
   fullName: GitProfileManager.Commands.Profile.ProfileExportCommand.Settings
   nameWithType: ProfileExportCommand.Settings
+- uid: GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.#ctor
+  name: Settings()
+  href: api/GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileExportCommand_Settings__ctor
+  commentId: M:GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.Settings()
+  nameWithType: ProfileExportCommand.Settings.Settings()
+- uid: GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.#ctor*
+  name: Settings
+  href: api/GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileExportCommand_Settings__ctor_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.Settings
+  nameWithType: ProfileExportCommand.Settings.Settings
 - uid: GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.FilePath
   name: FilePath
   href: api/GitProfileManager.Commands.Profile.ProfileExportCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileExportCommand_Settings_FilePath
@@ -529,6 +622,21 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileImportCommand.#ctor
   fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.ProfileImportCommand
   nameWithType: ProfileImportCommand.ProfileImportCommand
+- uid: GitProfileManager.Commands.Profile.ProfileImportCommand.Execute(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name: Execute(ProfileImportCommand.Settings, ILookup<String, String>)
+  href: api/GitProfileManager.Commands.Profile.ProfileImportCommand.html#GitProfileManager_Commands_Profile_ProfileImportCommand_Execute_GitProfileManager_Commands_Profile_ProfileImportCommand_Settings_System_Linq_ILookup_System_String_System_String__
+  commentId: M:GitProfileManager.Commands.Profile.ProfileImportCommand.Execute(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name.vb: Execute(ProfileImportCommand.Settings, ILookup(Of String, String))
+  fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.Execute(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings, System.Linq.ILookup<System.String, System.String>)
+  fullName.vb: GitProfileManager.Commands.Profile.ProfileImportCommand.Execute(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings, System.Linq.ILookup(Of System.String, System.String))
+  nameWithType: ProfileImportCommand.Execute(ProfileImportCommand.Settings, ILookup<String, String>)
+  nameWithType.vb: ProfileImportCommand.Execute(ProfileImportCommand.Settings, ILookup(Of String, String))
+- uid: GitProfileManager.Commands.Profile.ProfileImportCommand.Execute*
+  name: Execute
+  href: api/GitProfileManager.Commands.Profile.ProfileImportCommand.html#GitProfileManager_Commands_Profile_ProfileImportCommand_Execute_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileImportCommand.Execute
+  fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.Execute
+  nameWithType: ProfileImportCommand.Execute
 - uid: GitProfileManager.Commands.Profile.ProfileImportCommand.FileService
   name: FileService
   href: api/GitProfileManager.Commands.Profile.ProfileImportCommand.html#GitProfileManager_Commands_Profile_ProfileImportCommand_FileService
@@ -541,24 +649,24 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileImportCommand.FileService
   fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.FileService
   nameWithType: ProfileImportCommand.FileService
-- uid: GitProfileManager.Commands.Profile.ProfileImportCommand.Run(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings)
-  name: Run(ProfileImportCommand.Settings)
-  href: api/GitProfileManager.Commands.Profile.ProfileImportCommand.html#GitProfileManager_Commands_Profile_ProfileImportCommand_Run_GitProfileManager_Commands_Profile_ProfileImportCommand_Settings_
-  commentId: M:GitProfileManager.Commands.Profile.ProfileImportCommand.Run(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings)
-  fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.Run(GitProfileManager.Commands.Profile.ProfileImportCommand.Settings)
-  nameWithType: ProfileImportCommand.Run(ProfileImportCommand.Settings)
-- uid: GitProfileManager.Commands.Profile.ProfileImportCommand.Run*
-  name: Run
-  href: api/GitProfileManager.Commands.Profile.ProfileImportCommand.html#GitProfileManager_Commands_Profile_ProfileImportCommand_Run_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileImportCommand.Run
-  fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.Run
-  nameWithType: ProfileImportCommand.Run
 - uid: GitProfileManager.Commands.Profile.ProfileImportCommand.Settings
   name: ProfileImportCommand.Settings
   href: api/GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html
   commentId: T:GitProfileManager.Commands.Profile.ProfileImportCommand.Settings
   fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.Settings
   nameWithType: ProfileImportCommand.Settings
+- uid: GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.#ctor
+  name: Settings()
+  href: api/GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileImportCommand_Settings__ctor
+  commentId: M:GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.Settings()
+  nameWithType: ProfileImportCommand.Settings.Settings()
+- uid: GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.#ctor*
+  name: Settings
+  href: api/GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileImportCommand_Settings__ctor_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.Settings
+  nameWithType: ProfileImportCommand.Settings.Settings
 - uid: GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.AsConfig
   name: AsConfig
   href: api/GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileImportCommand_Settings_AsConfig
@@ -607,162 +715,183 @@ references:
   commentId: Overload:GitProfileManager.Commands.Profile.ProfileImportCommand.Store
   fullName: GitProfileManager.Commands.Profile.ProfileImportCommand.Store
   nameWithType: ProfileImportCommand.Store
-- uid: GitProfileManager.Commands.Profile.ProfileListCommand
-  name: ProfileListCommand
-  href: api/GitProfileManager.Commands.Profile.ProfileListCommand.html
-  commentId: T:GitProfileManager.Commands.Profile.ProfileListCommand
-  fullName: GitProfileManager.Commands.Profile.ProfileListCommand
-  nameWithType: ProfileListCommand
-- uid: GitProfileManager.Commands.Profile.ProfileListCommand.#ctor(GitProfileManager.Services.IGitProfileStore)
-  name: ProfileListCommand(IGitProfileStore)
-  href: api/GitProfileManager.Commands.Profile.ProfileListCommand.html#GitProfileManager_Commands_Profile_ProfileListCommand__ctor_GitProfileManager_Services_IGitProfileStore_
-  commentId: M:GitProfileManager.Commands.Profile.ProfileListCommand.#ctor(GitProfileManager.Services.IGitProfileStore)
-  fullName: GitProfileManager.Commands.Profile.ProfileListCommand.ProfileListCommand(GitProfileManager.Services.IGitProfileStore)
-  nameWithType: ProfileListCommand.ProfileListCommand(IGitProfileStore)
-- uid: GitProfileManager.Commands.Profile.ProfileListCommand.#ctor*
-  name: ProfileListCommand
-  href: api/GitProfileManager.Commands.Profile.ProfileListCommand.html#GitProfileManager_Commands_Profile_ProfileListCommand__ctor_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileListCommand.#ctor
-  fullName: GitProfileManager.Commands.Profile.ProfileListCommand.ProfileListCommand
-  nameWithType: ProfileListCommand.ProfileListCommand
-- uid: GitProfileManager.Commands.Profile.ProfileListCommand.Run(GitProfileManager.Commands.Profile.ProfileListCommand.Settings)
-  name: Run(ProfileListCommand.Settings)
-  href: api/GitProfileManager.Commands.Profile.ProfileListCommand.html#GitProfileManager_Commands_Profile_ProfileListCommand_Run_GitProfileManager_Commands_Profile_ProfileListCommand_Settings_
-  commentId: M:GitProfileManager.Commands.Profile.ProfileListCommand.Run(GitProfileManager.Commands.Profile.ProfileListCommand.Settings)
-  fullName: GitProfileManager.Commands.Profile.ProfileListCommand.Run(GitProfileManager.Commands.Profile.ProfileListCommand.Settings)
-  nameWithType: ProfileListCommand.Run(ProfileListCommand.Settings)
-- uid: GitProfileManager.Commands.Profile.ProfileListCommand.Run*
-  name: Run
-  href: api/GitProfileManager.Commands.Profile.ProfileListCommand.html#GitProfileManager_Commands_Profile_ProfileListCommand_Run_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileListCommand.Run
-  fullName: GitProfileManager.Commands.Profile.ProfileListCommand.Run
-  nameWithType: ProfileListCommand.Run
-- uid: GitProfileManager.Commands.Profile.ProfileListCommand.Settings
-  name: ProfileListCommand.Settings
-  href: api/GitProfileManager.Commands.Profile.ProfileListCommand.Settings.html
-  commentId: T:GitProfileManager.Commands.Profile.ProfileListCommand.Settings
-  fullName: GitProfileManager.Commands.Profile.ProfileListCommand.Settings
-  nameWithType: ProfileListCommand.Settings
-- uid: GitProfileManager.Commands.Profile.ProfileListCommand.Store
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand
+  name: ProfileShowCommand
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.html
+  commentId: T:GitProfileManager.Commands.Profile.ProfileShowCommand
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand
+  nameWithType: ProfileShowCommand
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand.#ctor(GitProfileManager.Services.IGitProfileStore)
+  name: ProfileShowCommand(IGitProfileStore)
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.html#GitProfileManager_Commands_Profile_ProfileShowCommand__ctor_GitProfileManager_Services_IGitProfileStore_
+  commentId: M:GitProfileManager.Commands.Profile.ProfileShowCommand.#ctor(GitProfileManager.Services.IGitProfileStore)
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand.ProfileShowCommand(GitProfileManager.Services.IGitProfileStore)
+  nameWithType: ProfileShowCommand.ProfileShowCommand(IGitProfileStore)
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand.#ctor*
+  name: ProfileShowCommand
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.html#GitProfileManager_Commands_Profile_ProfileShowCommand__ctor_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileShowCommand.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand.ProfileShowCommand
+  nameWithType: ProfileShowCommand.ProfileShowCommand
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand.Execute(GitProfileManager.Commands.Profile.ProfileShowCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name: Execute(ProfileShowCommand.Settings, ILookup<String, String>)
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.html#GitProfileManager_Commands_Profile_ProfileShowCommand_Execute_GitProfileManager_Commands_Profile_ProfileShowCommand_Settings_System_Linq_ILookup_System_String_System_String__
+  commentId: M:GitProfileManager.Commands.Profile.ProfileShowCommand.Execute(GitProfileManager.Commands.Profile.ProfileShowCommand.Settings,System.Linq.ILookup{System.String,System.String})
+  name.vb: Execute(ProfileShowCommand.Settings, ILookup(Of String, String))
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand.Execute(GitProfileManager.Commands.Profile.ProfileShowCommand.Settings, System.Linq.ILookup<System.String, System.String>)
+  fullName.vb: GitProfileManager.Commands.Profile.ProfileShowCommand.Execute(GitProfileManager.Commands.Profile.ProfileShowCommand.Settings, System.Linq.ILookup(Of System.String, System.String))
+  nameWithType: ProfileShowCommand.Execute(ProfileShowCommand.Settings, ILookup<String, String>)
+  nameWithType.vb: ProfileShowCommand.Execute(ProfileShowCommand.Settings, ILookup(Of String, String))
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand.Execute*
+  name: Execute
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.html#GitProfileManager_Commands_Profile_ProfileShowCommand_Execute_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileShowCommand.Execute
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand.Execute
+  nameWithType: ProfileShowCommand.Execute
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand.Settings
+  name: ProfileShowCommand.Settings
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.html
+  commentId: T:GitProfileManager.Commands.Profile.ProfileShowCommand.Settings
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand.Settings
+  nameWithType: ProfileShowCommand.Settings
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.#ctor
+  name: Settings()
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileShowCommand_Settings__ctor
+  commentId: M:GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.Settings()
+  nameWithType: ProfileShowCommand.Settings.Settings()
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.#ctor*
+  name: Settings
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.html#GitProfileManager_Commands_Profile_ProfileShowCommand_Settings__ctor_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.#ctor
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.Settings
+  nameWithType: ProfileShowCommand.Settings.Settings
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand.Store
   name: Store
-  href: api/GitProfileManager.Commands.Profile.ProfileListCommand.html#GitProfileManager_Commands_Profile_ProfileListCommand_Store
-  commentId: P:GitProfileManager.Commands.Profile.ProfileListCommand.Store
-  fullName: GitProfileManager.Commands.Profile.ProfileListCommand.Store
-  nameWithType: ProfileListCommand.Store
-- uid: GitProfileManager.Commands.Profile.ProfileListCommand.Store*
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.html#GitProfileManager_Commands_Profile_ProfileShowCommand_Store
+  commentId: P:GitProfileManager.Commands.Profile.ProfileShowCommand.Store
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand.Store
+  nameWithType: ProfileShowCommand.Store
+- uid: GitProfileManager.Commands.Profile.ProfileShowCommand.Store*
   name: Store
-  href: api/GitProfileManager.Commands.Profile.ProfileListCommand.html#GitProfileManager_Commands_Profile_ProfileListCommand_Store_
-  commentId: Overload:GitProfileManager.Commands.Profile.ProfileListCommand.Store
-  fullName: GitProfileManager.Commands.Profile.ProfileListCommand.Store
-  nameWithType: ProfileListCommand.Store
+  href: api/GitProfileManager.Commands.Profile.ProfileShowCommand.html#GitProfileManager_Commands_Profile_ProfileShowCommand_Store_
+  commentId: Overload:GitProfileManager.Commands.Profile.ProfileShowCommand.Store
+  fullName: GitProfileManager.Commands.Profile.ProfileShowCommand.Store
+  nameWithType: ProfileShowCommand.Store
+- uid: GitProfileManager.Commands.ProfileCommandSettings
+  name: ProfileCommandSettings
+  href: api/GitProfileManager.Commands.ProfileCommandSettings.html
+  commentId: T:GitProfileManager.Commands.ProfileCommandSettings
+  fullName: GitProfileManager.Commands.ProfileCommandSettings
+  nameWithType: ProfileCommandSettings
+- uid: GitProfileManager.Commands.ProfileCommandSettings.#ctor
+  name: ProfileCommandSettings()
+  href: api/GitProfileManager.Commands.ProfileCommandSettings.html#GitProfileManager_Commands_ProfileCommandSettings__ctor
+  commentId: M:GitProfileManager.Commands.ProfileCommandSettings.#ctor
+  fullName: GitProfileManager.Commands.ProfileCommandSettings.ProfileCommandSettings()
+  nameWithType: ProfileCommandSettings.ProfileCommandSettings()
+- uid: GitProfileManager.Commands.ProfileCommandSettings.#ctor*
+  name: ProfileCommandSettings
+  href: api/GitProfileManager.Commands.ProfileCommandSettings.html#GitProfileManager_Commands_ProfileCommandSettings__ctor_
+  commentId: Overload:GitProfileManager.Commands.ProfileCommandSettings.#ctor
+  fullName: GitProfileManager.Commands.ProfileCommandSettings.ProfileCommandSettings
+  nameWithType: ProfileCommandSettings.ProfileCommandSettings
+- uid: GitProfileManager.Commands.ProfileCommandSettings.ProfileName
+  name: ProfileName
+  href: api/GitProfileManager.Commands.ProfileCommandSettings.html#GitProfileManager_Commands_ProfileCommandSettings_ProfileName
+  commentId: P:GitProfileManager.Commands.ProfileCommandSettings.ProfileName
+  fullName: GitProfileManager.Commands.ProfileCommandSettings.ProfileName
+  nameWithType: ProfileCommandSettings.ProfileName
+- uid: GitProfileManager.Commands.ProfileCommandSettings.ProfileName*
+  name: ProfileName
+  href: api/GitProfileManager.Commands.ProfileCommandSettings.html#GitProfileManager_Commands_ProfileCommandSettings_ProfileName_
+  commentId: Overload:GitProfileManager.Commands.ProfileCommandSettings.ProfileName
+  fullName: GitProfileManager.Commands.ProfileCommandSettings.ProfileName
+  nameWithType: ProfileCommandSettings.ProfileName
 - uid: GitProfileManager.Commands.ProfileSettings
   name: ProfileSettings
   href: api/GitProfileManager.Commands.ProfileSettings.html
   commentId: T:GitProfileManager.Commands.ProfileSettings
   fullName: GitProfileManager.Commands.ProfileSettings
   nameWithType: ProfileSettings
-- uid: GitProfileManager.Commands.ProfileSettings.ProfileName
-  name: ProfileName
-  href: api/GitProfileManager.Commands.ProfileSettings.html#GitProfileManager_Commands_ProfileSettings_ProfileName
-  commentId: P:GitProfileManager.Commands.ProfileSettings.ProfileName
-  fullName: GitProfileManager.Commands.ProfileSettings.ProfileName
-  nameWithType: ProfileSettings.ProfileName
-- uid: GitProfileManager.Commands.ProfileSettings.ProfileName*
-  name: ProfileName
-  href: api/GitProfileManager.Commands.ProfileSettings.html#GitProfileManager_Commands_ProfileSettings_ProfileName_
-  commentId: Overload:GitProfileManager.Commands.ProfileSettings.ProfileName
-  fullName: GitProfileManager.Commands.ProfileSettings.ProfileName
-  nameWithType: ProfileSettings.ProfileName
-- uid: GitProfileManager.DependencyInjectionApp
-  name: DependencyInjectionApp
-  href: api/GitProfileManager.DependencyInjectionApp.html
-  commentId: T:GitProfileManager.DependencyInjectionApp
-  fullName: GitProfileManager.DependencyInjectionApp
-  nameWithType: DependencyInjectionApp
-- uid: GitProfileManager.DependencyInjectionApp.#ctor
-  name: DependencyInjectionApp()
-  href: api/GitProfileManager.DependencyInjectionApp.html#GitProfileManager_DependencyInjectionApp__ctor
-  commentId: M:GitProfileManager.DependencyInjectionApp.#ctor
-  fullName: GitProfileManager.DependencyInjectionApp.DependencyInjectionApp()
-  nameWithType: DependencyInjectionApp.DependencyInjectionApp()
-- uid: GitProfileManager.DependencyInjectionApp.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean)
-  name: DependencyInjectionApp(IServiceCollection, Boolean)
-  href: api/GitProfileManager.DependencyInjectionApp.html#GitProfileManager_DependencyInjectionApp__ctor_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Boolean_
-  commentId: M:GitProfileManager.DependencyInjectionApp.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean)
-  fullName: GitProfileManager.DependencyInjectionApp.DependencyInjectionApp(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Boolean)
-  nameWithType: DependencyInjectionApp.DependencyInjectionApp(IServiceCollection, Boolean)
-- uid: GitProfileManager.DependencyInjectionApp.#ctor*
-  name: DependencyInjectionApp
-  href: api/GitProfileManager.DependencyInjectionApp.html#GitProfileManager_DependencyInjectionApp__ctor_
-  commentId: Overload:GitProfileManager.DependencyInjectionApp.#ctor
-  fullName: GitProfileManager.DependencyInjectionApp.DependencyInjectionApp
-  nameWithType: DependencyInjectionApp.DependencyInjectionApp
-- uid: GitProfileManager.DependencyInjectionApp.Initialize
-  name: Initialize()
-  href: api/GitProfileManager.DependencyInjectionApp.html#GitProfileManager_DependencyInjectionApp_Initialize
-  commentId: M:GitProfileManager.DependencyInjectionApp.Initialize
-  fullName: GitProfileManager.DependencyInjectionApp.Initialize()
-  nameWithType: DependencyInjectionApp.Initialize()
-- uid: GitProfileManager.DependencyInjectionApp.Initialize*
-  name: Initialize
-  href: api/GitProfileManager.DependencyInjectionApp.html#GitProfileManager_DependencyInjectionApp_Initialize_
-  commentId: Overload:GitProfileManager.DependencyInjectionApp.Initialize
-  fullName: GitProfileManager.DependencyInjectionApp.Initialize
-  nameWithType: DependencyInjectionApp.Initialize
-- uid: GitProfileManager.DependencyInjectionApp.RegisterCommand*
-  name: RegisterCommand
-  href: api/GitProfileManager.DependencyInjectionApp.html#GitProfileManager_DependencyInjectionApp_RegisterCommand_
-  commentId: Overload:GitProfileManager.DependencyInjectionApp.RegisterCommand
-  fullName: GitProfileManager.DependencyInjectionApp.RegisterCommand
-  nameWithType: DependencyInjectionApp.RegisterCommand
-- uid: GitProfileManager.DependencyInjectionApp.RegisterCommand``1
-  name: RegisterCommand<TCommand>()
-  href: api/GitProfileManager.DependencyInjectionApp.html#GitProfileManager_DependencyInjectionApp_RegisterCommand__1
-  commentId: M:GitProfileManager.DependencyInjectionApp.RegisterCommand``1
-  name.vb: RegisterCommand(Of TCommand)()
-  fullName: GitProfileManager.DependencyInjectionApp.RegisterCommand<TCommand>()
-  fullName.vb: GitProfileManager.DependencyInjectionApp.RegisterCommand(Of TCommand)()
-  nameWithType: DependencyInjectionApp.RegisterCommand<TCommand>()
-  nameWithType.vb: DependencyInjectionApp.RegisterCommand(Of TCommand)()
-- uid: GitProfileManager.DependencyInjectionApp.Services
-  name: Services
-  href: api/GitProfileManager.DependencyInjectionApp.html#GitProfileManager_DependencyInjectionApp_Services
-  commentId: P:GitProfileManager.DependencyInjectionApp.Services
-  fullName: GitProfileManager.DependencyInjectionApp.Services
-  nameWithType: DependencyInjectionApp.Services
-- uid: GitProfileManager.DependencyInjectionApp.Services*
-  name: Services
-  href: api/GitProfileManager.DependencyInjectionApp.html#GitProfileManager_DependencyInjectionApp_Services_
-  commentId: Overload:GitProfileManager.DependencyInjectionApp.Services
-  fullName: GitProfileManager.DependencyInjectionApp.Services
-  nameWithType: DependencyInjectionApp.Services
+- uid: GitProfileManager.Commands.ProfileSettings.#ctor
+  name: ProfileSettings()
+  href: api/GitProfileManager.Commands.ProfileSettings.html#GitProfileManager_Commands_ProfileSettings__ctor
+  commentId: M:GitProfileManager.Commands.ProfileSettings.#ctor
+  fullName: GitProfileManager.Commands.ProfileSettings.ProfileSettings()
+  nameWithType: ProfileSettings.ProfileSettings()
+- uid: GitProfileManager.Commands.ProfileSettings.#ctor*
+  name: ProfileSettings
+  href: api/GitProfileManager.Commands.ProfileSettings.html#GitProfileManager_Commands_ProfileSettings__ctor_
+  commentId: Overload:GitProfileManager.Commands.ProfileSettings.#ctor
+  fullName: GitProfileManager.Commands.ProfileSettings.ProfileSettings
+  nameWithType: ProfileSettings.ProfileSettings
+- uid: GitProfileManager.Composition
+  name: GitProfileManager.Composition
+  href: api/GitProfileManager.Composition.html
+  commentId: N:GitProfileManager.Composition
+  fullName: GitProfileManager.Composition
+  nameWithType: GitProfileManager.Composition
+- uid: GitProfileManager.Composition.DependencyInjectionRegistrar
+  name: DependencyInjectionRegistrar
+  href: api/GitProfileManager.Composition.DependencyInjectionRegistrar.html
+  commentId: T:GitProfileManager.Composition.DependencyInjectionRegistrar
+  fullName: GitProfileManager.Composition.DependencyInjectionRegistrar
+  nameWithType: DependencyInjectionRegistrar
+- uid: GitProfileManager.Composition.DependencyInjectionRegistrar.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: DependencyInjectionRegistrar(IServiceCollection)
+  href: api/GitProfileManager.Composition.DependencyInjectionRegistrar.html#GitProfileManager_Composition_DependencyInjectionRegistrar__ctor_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:GitProfileManager.Composition.DependencyInjectionRegistrar.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: GitProfileManager.Composition.DependencyInjectionRegistrar.DependencyInjectionRegistrar(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: DependencyInjectionRegistrar.DependencyInjectionRegistrar(IServiceCollection)
+- uid: GitProfileManager.Composition.DependencyInjectionRegistrar.#ctor*
+  name: DependencyInjectionRegistrar
+  href: api/GitProfileManager.Composition.DependencyInjectionRegistrar.html#GitProfileManager_Composition_DependencyInjectionRegistrar__ctor_
+  commentId: Overload:GitProfileManager.Composition.DependencyInjectionRegistrar.#ctor
+  fullName: GitProfileManager.Composition.DependencyInjectionRegistrar.DependencyInjectionRegistrar
+  nameWithType: DependencyInjectionRegistrar.DependencyInjectionRegistrar
+- uid: GitProfileManager.Composition.DependencyInjectionRegistrar.Build
+  name: Build()
+  href: api/GitProfileManager.Composition.DependencyInjectionRegistrar.html#GitProfileManager_Composition_DependencyInjectionRegistrar_Build
+  commentId: M:GitProfileManager.Composition.DependencyInjectionRegistrar.Build
+  fullName: GitProfileManager.Composition.DependencyInjectionRegistrar.Build()
+  nameWithType: DependencyInjectionRegistrar.Build()
+- uid: GitProfileManager.Composition.DependencyInjectionRegistrar.Build*
+  name: Build
+  href: api/GitProfileManager.Composition.DependencyInjectionRegistrar.html#GitProfileManager_Composition_DependencyInjectionRegistrar_Build_
+  commentId: Overload:GitProfileManager.Composition.DependencyInjectionRegistrar.Build
+  fullName: GitProfileManager.Composition.DependencyInjectionRegistrar.Build
+  nameWithType: DependencyInjectionRegistrar.Build
+- uid: GitProfileManager.Composition.DependencyInjectionRegistrar.Register(System.Type,System.Type)
+  name: Register(Type, Type)
+  href: api/GitProfileManager.Composition.DependencyInjectionRegistrar.html#GitProfileManager_Composition_DependencyInjectionRegistrar_Register_System_Type_System_Type_
+  commentId: M:GitProfileManager.Composition.DependencyInjectionRegistrar.Register(System.Type,System.Type)
+  fullName: GitProfileManager.Composition.DependencyInjectionRegistrar.Register(System.Type, System.Type)
+  nameWithType: DependencyInjectionRegistrar.Register(Type, Type)
+- uid: GitProfileManager.Composition.DependencyInjectionRegistrar.Register*
+  name: Register
+  href: api/GitProfileManager.Composition.DependencyInjectionRegistrar.html#GitProfileManager_Composition_DependencyInjectionRegistrar_Register_
+  commentId: Overload:GitProfileManager.Composition.DependencyInjectionRegistrar.Register
+  fullName: GitProfileManager.Composition.DependencyInjectionRegistrar.Register
+  nameWithType: DependencyInjectionRegistrar.Register
+- uid: GitProfileManager.Composition.DependencyInjectionRegistrar.RegisterInstance(System.Type,System.Object)
+  name: RegisterInstance(Type, Object)
+  href: api/GitProfileManager.Composition.DependencyInjectionRegistrar.html#GitProfileManager_Composition_DependencyInjectionRegistrar_RegisterInstance_System_Type_System_Object_
+  commentId: M:GitProfileManager.Composition.DependencyInjectionRegistrar.RegisterInstance(System.Type,System.Object)
+  fullName: GitProfileManager.Composition.DependencyInjectionRegistrar.RegisterInstance(System.Type, System.Object)
+  nameWithType: DependencyInjectionRegistrar.RegisterInstance(Type, Object)
+- uid: GitProfileManager.Composition.DependencyInjectionRegistrar.RegisterInstance*
+  name: RegisterInstance
+  href: api/GitProfileManager.Composition.DependencyInjectionRegistrar.html#GitProfileManager_Composition_DependencyInjectionRegistrar_RegisterInstance_
+  commentId: Overload:GitProfileManager.Composition.DependencyInjectionRegistrar.RegisterInstance
+  fullName: GitProfileManager.Composition.DependencyInjectionRegistrar.RegisterInstance
+  nameWithType: DependencyInjectionRegistrar.RegisterInstance
 - uid: GitProfileManager.Extensions
   name: Extensions
   href: api/GitProfileManager.Extensions.html
   commentId: T:GitProfileManager.Extensions
   fullName: GitProfileManager.Extensions
   nameWithType: Extensions
-- uid: GitProfileManager.Extensions.IsAssignableTo(System.Type,System.Type)
-  name: IsAssignableTo(Type, Type)
-  href: api/GitProfileManager.Extensions.html#GitProfileManager_Extensions_IsAssignableTo_System_Type_System_Type_
-  commentId: M:GitProfileManager.Extensions.IsAssignableTo(System.Type,System.Type)
-  fullName: GitProfileManager.Extensions.IsAssignableTo(System.Type, System.Type)
-  nameWithType: Extensions.IsAssignableTo(Type, Type)
-- uid: GitProfileManager.Extensions.IsAssignableTo*
-  name: IsAssignableTo
-  href: api/GitProfileManager.Extensions.html#GitProfileManager_Extensions_IsAssignableTo_
-  commentId: Overload:GitProfileManager.Extensions.IsAssignableTo
-  fullName: GitProfileManager.Extensions.IsAssignableTo
-  nameWithType: Extensions.IsAssignableTo
-- uid: GitProfileManager.Extensions.IsAssignableTo``1(System.Object)
-  name: IsAssignableTo<TTarget>(Object)
-  href: api/GitProfileManager.Extensions.html#GitProfileManager_Extensions_IsAssignableTo__1_System_Object_
-  commentId: M:GitProfileManager.Extensions.IsAssignableTo``1(System.Object)
-  name.vb: IsAssignableTo(Of TTarget)(Object)
-  fullName: GitProfileManager.Extensions.IsAssignableTo<TTarget>(System.Object)
-  fullName.vb: GitProfileManager.Extensions.IsAssignableTo(Of TTarget)(System.Object)
-  nameWithType: Extensions.IsAssignableTo<TTarget>(Object)
-  nameWithType.vb: Extensions.IsAssignableTo(Of TTarget)(Object)
 - uid: GitProfileManager.Extensions.ToConfig(System.Collections.Generic.IEnumerable{System.String})
   name: ToConfig(IEnumerable<String>)
   href: api/GitProfileManager.Extensions.html#GitProfileManager_Extensions_ToConfig_System_Collections_Generic_IEnumerable_System_String__
@@ -784,51 +913,6 @@ references:
   commentId: Overload:GitProfileManager.Extensions.ToConfig
   fullName: GitProfileManager.Extensions.ToConfig
   nameWithType: Extensions.ToConfig
-- uid: GitProfileManager.GitCommandApp
-  name: GitCommandApp
-  href: api/GitProfileManager.GitCommandApp.html
-  commentId: T:GitProfileManager.GitCommandApp
-  fullName: GitProfileManager.GitCommandApp
-  nameWithType: GitCommandApp
-- uid: GitProfileManager.GitCommandApp.#ctor
-  name: GitCommandApp()
-  href: api/GitProfileManager.GitCommandApp.html#GitProfileManager_GitCommandApp__ctor
-  commentId: M:GitProfileManager.GitCommandApp.#ctor
-  fullName: GitProfileManager.GitCommandApp.GitCommandApp()
-  nameWithType: GitCommandApp.GitCommandApp()
-- uid: GitProfileManager.GitCommandApp.#ctor*
-  name: GitCommandApp
-  href: api/GitProfileManager.GitCommandApp.html#GitProfileManager_GitCommandApp__ctor_
-  commentId: Overload:GitProfileManager.GitCommandApp.#ctor
-  fullName: GitProfileManager.GitCommandApp.GitCommandApp
-  nameWithType: GitCommandApp.GitCommandApp
-- uid: GitProfileManager.GitCommandApp.Initialize
-  name: Initialize()
-  href: api/GitProfileManager.GitCommandApp.html#GitProfileManager_GitCommandApp_Initialize
-  commentId: M:GitProfileManager.GitCommandApp.Initialize
-  fullName: GitProfileManager.GitCommandApp.Initialize()
-  nameWithType: GitCommandApp.Initialize()
-- uid: GitProfileManager.GitCommandApp.Initialize*
-  name: Initialize
-  href: api/GitProfileManager.GitCommandApp.html#GitProfileManager_GitCommandApp_Initialize_
-  commentId: Overload:GitProfileManager.GitCommandApp.Initialize
-  fullName: GitProfileManager.GitCommandApp.Initialize
-  nameWithType: GitCommandApp.Initialize
-- uid: GitProfileManager.GitCommandApp.RegisterCommand*
-  name: RegisterCommand
-  href: api/GitProfileManager.GitCommandApp.html#GitProfileManager_GitCommandApp_RegisterCommand_
-  commentId: Overload:GitProfileManager.GitCommandApp.RegisterCommand
-  fullName: GitProfileManager.GitCommandApp.RegisterCommand
-  nameWithType: GitCommandApp.RegisterCommand
-- uid: GitProfileManager.GitCommandApp.RegisterCommand``1
-  name: RegisterCommand<TCommand>()
-  href: api/GitProfileManager.GitCommandApp.html#GitProfileManager_GitCommandApp_RegisterCommand__1
-  commentId: M:GitProfileManager.GitCommandApp.RegisterCommand``1
-  name.vb: RegisterCommand(Of TCommand)()
-  fullName: GitProfileManager.GitCommandApp.RegisterCommand<TCommand>()
-  fullName.vb: GitProfileManager.GitCommandApp.RegisterCommand(Of TCommand)()
-  nameWithType: GitCommandApp.RegisterCommand<TCommand>()
-  nameWithType.vb: GitCommandApp.RegisterCommand(Of TCommand)()
 - uid: GitProfileManager.Services
   name: GitProfileManager.Services
   href: api/GitProfileManager.Services.html
@@ -841,6 +925,18 @@ references:
   commentId: T:GitProfileManager.Services.CommandFileService
   fullName: GitProfileManager.Services.CommandFileService
   nameWithType: CommandFileService
+- uid: GitProfileManager.Services.CommandFileService.#ctor
+  name: CommandFileService()
+  href: api/GitProfileManager.Services.CommandFileService.html#GitProfileManager_Services_CommandFileService__ctor
+  commentId: M:GitProfileManager.Services.CommandFileService.#ctor
+  fullName: GitProfileManager.Services.CommandFileService.CommandFileService()
+  nameWithType: CommandFileService.CommandFileService()
+- uid: GitProfileManager.Services.CommandFileService.#ctor*
+  name: CommandFileService
+  href: api/GitProfileManager.Services.CommandFileService.html#GitProfileManager_Services_CommandFileService__ctor_
+  commentId: Overload:GitProfileManager.Services.CommandFileService.#ctor
+  fullName: GitProfileManager.Services.CommandFileService.CommandFileService
+  nameWithType: CommandFileService.CommandFileService
 - uid: GitProfileManager.Services.CommandFileService.ReadFromFile(System.IO.FileInfo)
   name: ReadFromFile(FileInfo)
   href: api/GitProfileManager.Services.CommandFileService.html#GitProfileManager_Services_CommandFileService_ReadFromFile_System_IO_FileInfo_
@@ -874,6 +970,18 @@ references:
   commentId: T:GitProfileManager.Services.FileProfileStore
   fullName: GitProfileManager.Services.FileProfileStore
   nameWithType: FileProfileStore
+- uid: GitProfileManager.Services.FileProfileStore.#ctor
+  name: FileProfileStore()
+  href: api/GitProfileManager.Services.FileProfileStore.html#GitProfileManager_Services_FileProfileStore__ctor
+  commentId: M:GitProfileManager.Services.FileProfileStore.#ctor
+  fullName: GitProfileManager.Services.FileProfileStore.FileProfileStore()
+  nameWithType: FileProfileStore.FileProfileStore()
+- uid: GitProfileManager.Services.FileProfileStore.#ctor*
+  name: FileProfileStore
+  href: api/GitProfileManager.Services.FileProfileStore.html#GitProfileManager_Services_FileProfileStore__ctor_
+  commentId: Overload:GitProfileManager.Services.FileProfileStore.#ctor
+  fullName: GitProfileManager.Services.FileProfileStore.FileProfileStore
+  nameWithType: FileProfileStore.FileProfileStore
 - uid: GitProfileManager.Services.FileProfileStore.DeleteProfile(System.String)
   name: DeleteProfile(String)
   href: api/GitProfileManager.Services.FileProfileStore.html#GitProfileManager_Services_FileProfileStore_DeleteProfile_System_String_

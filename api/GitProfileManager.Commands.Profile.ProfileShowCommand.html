@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class GitCommandRunner
+    <title>Class ProfileShowCommand
    | Git Profile Manager </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class GitCommandRunner
+    <meta name="title" content="Class ProfileShowCommand
    | Git Profile Manager ">
     <meta name="generator" content="docfx 2.30.0.0">
     
@@ -178,8 +178,8 @@
                           <li class="">
                             <a href="GitProfileManager.Commands.Profile.ProfileImportCommand.Settings.html" title="ProfileImportCommand.Settings" class="">ProfileImportCommand.Settings</a>
                           </li>
-                          <li class="">
-                            <a href="GitProfileManager.Commands.Profile.ProfileShowCommand.html" title="ProfileShowCommand" class="">ProfileShowCommand</a>
+                          <li class="active">
+                            <a href="GitProfileManager.Commands.Profile.ProfileShowCommand.html" title="ProfileShowCommand" class="active">ProfileShowCommand</a>
                           </li>
                           <li class="">
                             <a href="GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.html" title="ProfileShowCommand.Settings" class="">ProfileShowCommand.Settings</a>
@@ -205,8 +205,8 @@
                           <li class="">
                             <a href="GitProfileManager.Services.FileProfileStore.html" title="FileProfileStore" class="">FileProfileStore</a>
                           </li>
-                          <li class="active">
-                            <a href="GitProfileManager.Services.GitCommandRunner.html" title="GitCommandRunner" class="active">GitCommandRunner</a>
+                          <li class="">
+                            <a href="GitProfileManager.Services.GitCommandRunner.html" title="GitCommandRunner" class="">GitCommandRunner</a>
                           </li>
                           <li class="">
                             <a href="GitProfileManager.Services.GitCommandService.html" title="GitCommandService" class="">GitCommandService</a>
@@ -231,56 +231,129 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="GitProfileManager.Services.GitCommandRunner">
+            <article class="content wrap" id="_content" data-uid="GitProfileManager.Commands.Profile.ProfileShowCommand">
   
   
-  <h1 id="GitProfileManager_Services_GitCommandRunner" data-uid="GitProfileManager.Services.GitCommandRunner" class="text-break">Class GitCommandRunner
+  <h1 id="GitProfileManager_Commands_Profile_ProfileShowCommand" data-uid="GitProfileManager.Commands.Profile.ProfileShowCommand" class="text-break">Class ProfileShowCommand
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">GitCommandRunner</span></div>
+    <div class="level0"><span class="xref">Spectre.CommandLine.Command</span>&lt;<a class="xref" href="GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.html">ProfileShowCommand.Settings</a>&gt;</div>
+    <div class="level1"><span class="xref">ProfileShowCommand</span></div>
   </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><span class="xref">System.IDisposable</span></div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="GitProfileManager.Services.html">GitProfileManager.Services</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GitProfileManager.Commands.Profile.html">GitProfileManager.Commands.Profile</a></h6>
   <h6><strong>Assembly</strong>: git-profile-manager.dll</h6>
-  <h5 id="GitProfileManager_Services_GitCommandRunner_syntax">Syntax</h5>
+  <h5 id="GitProfileManager_Commands_Profile_ProfileShowCommand_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class GitCommandRunner : Object, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class ProfileShowCommand : Command&lt;ProfileShowCommand.Settings&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   
   
-  <a id="GitProfileManager_Services_GitCommandRunner__ctor_" data-uid="GitProfileManager.Services.GitCommandRunner.#ctor*"></a>
-  <h4 id="GitProfileManager_Services_GitCommandRunner__ctor" data-uid="GitProfileManager.Services.GitCommandRunner.#ctor">GitCommandRunner()</h4>
+  <a id="GitProfileManager_Commands_Profile_ProfileShowCommand__ctor_" data-uid="GitProfileManager.Commands.Profile.ProfileShowCommand.#ctor*"></a>
+  <h4 id="GitProfileManager_Commands_Profile_ProfileShowCommand__ctor_GitProfileManager_Services_IGitProfileStore_" data-uid="GitProfileManager.Commands.Profile.ProfileShowCommand.#ctor(GitProfileManager.Services.IGitProfileStore)">ProfileShowCommand(IGitProfileStore)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GitCommandRunner()</code></pre>
+    <pre><code class="lang-csharp hljs">public ProfileShowCommand(IGitProfileStore store)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GitProfileManager.Services.IGitProfileStore.html">IGitProfileStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="GitProfileManager_Commands_Profile_ProfileShowCommand_Store_" data-uid="GitProfileManager.Commands.Profile.ProfileShowCommand.Store*"></a>
+  <h4 id="GitProfileManager_Commands_Profile_ProfileShowCommand_Store" data-uid="GitProfileManager.Commands.Profile.ProfileShowCommand.Store">Store</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IGitProfileStore Store { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GitProfileManager.Services.IGitProfileStore.html">IGitProfileStore</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="GitProfileManager_Services_GitCommandRunner_Dispose_" data-uid="GitProfileManager.Services.GitCommandRunner.Dispose*"></a>
-  <h4 id="GitProfileManager_Services_GitCommandRunner_Dispose" data-uid="GitProfileManager.Services.GitCommandRunner.Dispose">Dispose()</h4>
+  <a id="GitProfileManager_Commands_Profile_ProfileShowCommand_Execute_" data-uid="GitProfileManager.Commands.Profile.ProfileShowCommand.Execute*"></a>
+  <h4 id="GitProfileManager_Commands_Profile_ProfileShowCommand_Execute_GitProfileManager_Commands_Profile_ProfileShowCommand_Settings_System_Linq_ILookup_System_String_System_String__" data-uid="GitProfileManager.Commands.Profile.ProfileShowCommand.Execute(GitProfileManager.Commands.Profile.ProfileShowCommand.Settings,System.Linq.ILookup{System.String,System.String})">Execute(ProfileShowCommand.Settings, ILookup&lt;String, String&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+    <pre><code class="lang-csharp hljs">public override int Execute(ProfileShowCommand.Settings settings, ILookup&lt;string, string&gt; remaining)</code></pre>
   </div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <span class="xref">System.IDisposable</span>
-  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GitProfileManager.Commands.Profile.ProfileShowCommand.Settings.html">ProfileShowCommand.Settings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Linq.ILookup</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">remaining</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
