@@ -13,6 +13,10 @@
     <PackageReference Include="Spectre.CommandLine" Version="0.8.0"/>
     <PackageReference Include="System.ValueTuple" Version="4.4.0"/>
     <PackageReference Include="YamlDotNet" Version="4.2.3"/>
-    <PackageReference Include="Spectre.CommandLine.Extensions.DependencyInjection" Version="0.1.0-unstable0001"/>
+    <PackageReference Include="Spectre.CommandLine.Extensions.DependencyInjection" Version="0.1.0"/>
+    <PackageReference Include="TypEngine" Version="0.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- <ProjectReference Include="../../../spectre.commandline/src/Spectre.CommandLine//Spectre.CommandLine.csproj" /> -->
   </ItemGroup>
 </Project>
