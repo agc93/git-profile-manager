@@ -1,8 +1,8 @@
 # Usage Guide
 
 > [!NOTE]
-> The instructions below are based on the Linux version (which uses `gpm`).
-> Windows/macOS users should use `git-profile-manager` instead (or add an alias).
+> The instructions below are based on the Windows/Linux version (which uses `gpm`).
+> macOS users should use `git-profile-manager` instead (or add an alias).
 
 ## Getting help
 

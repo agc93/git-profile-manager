@@ -78,6 +78,9 @@ This will install the app to the default Chocolatey location and should automati
 
 Just run `gpm` or `git-profile-manager` to get the help.
 
+> [!TIP]
+> You can also download the `nupkg` directly from the [Downloads page](./download.md)
+
 ## macOS
 
 At this time, there is no automated install available for macOS (since building for macOS requires a Mac and I don't have one).
