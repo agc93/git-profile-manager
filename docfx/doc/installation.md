@@ -2,11 +2,9 @@
 
 Installing Git Profile Manager is simple and easy, and supports a huge range of platforms.
 
-Currently installers are provided for Windows 10, Ubuntu/Debian, and RPM-based distributions (Fedora/CentOS/RHEL).
+Currently installers are provided for: Windows 10, Ubuntu (18.04), RHEL 7, Debian 8, and CentOS 7.
 
 You can also manually install on any of the above, as well as macOS 10.12 *Sierra*.
-
-> Find the download links for your platform [here](./download.md)
 
 ## Linux
 
@@ -15,13 +13,13 @@ You can also manually install on any of the above, as well as macOS 10.12 *Sierr
 First, you need to install some dependencies:
 
 ```bash
-# for Ubuntu 14.04, Debian 8
+# for Debian 8
 apt-get install -y libicu52 libunwind8
-# for Ubuntu 16.04
+# for Ubuntu 18.04
 apt-get install -y libicu55 libunwind8
 ```
 
-Now, just [download](./download.md) the `deb` for your distro and install it with:
+Now, just download the `deb` for your distro and install it with:
 
 ```bash
 dpkg -i git-profile-manager*.deb
@@ -39,7 +37,7 @@ Download the `rpm` for Fedora and install it with:
 dnf install git-profile-manager*.rpm
 ```
 
-> Despite the naming, this package should work fine for Fedora 25 and 26
+> Despite the naming, this package should work fine for Fedora 28 and up
 
 This will install the app to `/usr/lib/git-profile-manager` and automatically add `gpm` to your `PATH`.
 
@@ -71,15 +69,12 @@ Chocolatey users can quickly install Git Profile Manager using the `git-profile-
 choco install git-profile-manager.install
 ```
 
-This will install the app to the default Chocolatey location and should automatically add `gpm` to your PATH.
+This will install the app to the default Chocolatey location and should automatically add a `gpm` alias to your PATH.
 
 > [!NOTE]
 > You can also download the release package, extract it somewhere and add that location to your `PATH` manually.
 
-Just run `gpm` or `git-profile-manager` to get the help.
-
-> [!TIP]
-> You can also download the `nupkg` directly from the [Downloads page](./download.md)
+Just run `git-profile-manager` to get the help.
 
 ## macOS
 

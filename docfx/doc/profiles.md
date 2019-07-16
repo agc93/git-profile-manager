@@ -14,7 +14,7 @@ You can also duplicate profiles by creating a new profile and using the `--from`
 
 GPM stores profiles in a file in your home directory called `.gitprofiles`. Linux and macOS users may need to show hidden files in their file manager before it's visible.
 
-This file is in YAML format (because YAML's awesome) and stores each profile as a named key with the configuration items included right in the file.
+This file is in YAML format (because YAML is awesome) and stores each profile as a named key with the configuration items included right in the file.
 
 > [!TIP]
 > If you need to perform bulk editing, you can always directly edit `~/.gitprofiles`. GPM doesn't mind.

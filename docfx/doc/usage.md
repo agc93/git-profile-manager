@@ -1,8 +1,8 @@
 # Usage Guide
 
 > [!NOTE]
-> The instructions below are based on the Windows/Linux version (which uses `gpm`).
-> macOS users should use `git-profile-manager` instead (or add an alias).
+> The instructions below are based on the Linux version (which uses `gpm`).
+> macOS users, and non-Chocolatey Windows users, should use `git-profile-manager` instead (or add an alias).
 
 ## Getting help
 
@@ -30,29 +30,9 @@ Deactivate is the opposite of activate and will unset any configuration options 
 gpm deactivate my-oss-project
 ```
 
-## List
-
-The list command simply lists all the currently saved Git profiles (from the user's `~/.gitprofile`).
-
-#### Example
-
-```bash
-gpm profile list
-```
-
 ## Profile
 
 The profile command is used to managed saved Git profiles, and includes a number of subcommands.
-
-### Show
-
-Show will simply print the configuration items stored in a specific profile.
-
-#### Example
-
-```bash
-gpm profile show personal
-```
 
 ### Create
 
@@ -112,4 +92,14 @@ The new profile will be named with the input file's name, or this can be overrid
 
 ```bash
 gpm profile import path/to/file.sh -n new-profile
+```
+
+### List
+
+The list command simply lists all the currently saved Git profiles (from the user's `~/.gitprofile`).
+
+#### Example
+
+```bash
+gpm profile list
 ```
