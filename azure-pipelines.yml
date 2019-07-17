@@ -1,7 +1,6 @@
 trigger:
+  - master
   - develop
-
-
 
 variables:
   buildConfiguration: 'Release'
@@ -29,3 +28,18 @@ steps:
       command: custom
       custom: cake
       arguments: --settings_skipverification=true --target=$(target)
+  - task: PublishPipelineArtifact@1
+    displayName: Publish packages artifact
+    inputs:
+      path: dist/packages
+      artifact: packages
+  - task: PublishPipelineArtifact@1
+    displayName: Publish build output
+    inputs:
+      path: dist/publish/GitProfileManager
+      artifact: publish
+  - task: PublishPipelineArtifact@1
+    displayName: Publish Warp binaries
+    inputs:
+      path: dist/warp
+      artifact: warp
