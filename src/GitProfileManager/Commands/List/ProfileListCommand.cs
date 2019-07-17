@@ -31,7 +31,7 @@ namespace GitProfileManager.Commands.List
             return 0;
         }
 
-        public sealed class Settings {
+        public sealed class Settings : CommandSettings {
 
         }
     }

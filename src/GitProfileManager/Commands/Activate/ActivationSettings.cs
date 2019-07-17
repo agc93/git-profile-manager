@@ -3,7 +3,7 @@ using Spectre.CommandLine;
 
 namespace GitProfileManager.Commands.Activate
 {
-    public sealed class ActivationSettings
+    public sealed class ActivationSettings : CommandSettings
     {
         [CommandArgument(0, "<PROFILE>")]
         [Description("The Git profile to activate or deactivate")]

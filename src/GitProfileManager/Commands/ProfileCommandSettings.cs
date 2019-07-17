@@ -3,7 +3,7 @@ using Spectre.CommandLine;
 
 namespace GitProfileManager.Commands
 {
-    public class ProfileSettings {}
+    public class ProfileSettings : CommandSettings {}
     public class ProfileCommandSettings : ProfileSettings
     {
         [CommandArgument(0, "<PROFILE>")]

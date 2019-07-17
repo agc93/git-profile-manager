@@ -1,0 +1,37 @@
+trigger:
+  - develop
+
+
+
+variables:
+  buildConfiguration: 'Release'
+  sdkVersion: '2.2.300'
+  target: Publish
+
+jobs:
+  - job: prep_env
+    displayName: Prepare Environment
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: UseDotNet@2
+        displayName: 'Use .NET Core SDK'
+        inputs:
+          packageType: sdk
+          version: $(sdkVersion)
+          installationPath: $(Agent.ToolsDirectory)/dotnet
+      - task: DotNetCoreCLI@2
+        displayName: Install Cake tool
+        inputs:
+          command: custom
+          custom: tool
+          arguments: install -g Cake.Tool --version 0.34.0
+  - job: build
+    displayName: Build and Publish
+    steps:
+      - task: DotNetCoreCLI@2
+        displayName: Run build
+        inputs:
+          command: custom
+          custom: cake
+          arguments: --settings_skipverification=true --target=$(target)
