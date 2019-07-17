@@ -29,7 +29,7 @@ var projects = GetProjects(solutionPath, configuration);
 var artifacts = "./dist/";
 var testResultsPath = MakeAbsolute(Directory(artifacts + "./test-results"));
 var frameworks = new List<string> { "netcoreapp2.0" };
-var runtimes = new List<string> { "win-x64", "osx.10.12-x64", "linux-x64" };
+var runtimes = new List<string> { "win-x64", "osx-x64", "linux-x64" };
 // var PackagedRuntimes = new List<string> { "centos", "ubuntu", "debian", "fedora", "rhel" };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -211,11 +211,13 @@ Task("Build-Linux-Packages")
 				Rm = true,
 				//User = "1000"
 			};
-			var opts = @"-s dir -a x86_64 --force
-			-m 'Alistair Chapman <alistair@agchapman.com>'
-			-n 'git-profile-manager'
-			--after-install /src/post-install.sh
-			--before-remove /src/pre-remove.sh";
+			var opts = string.Join(" ", new List<string> {
+				"-s dir -a x86_64 --force",
+				"-m \"Alistair Chapman <alistair@agchapman.com>\"",
+				"-n git-profile-manager",
+				"--after-install /src/post-install.sh",
+				"--before-remove /src/pre-remove.sh"
+			});
 			Information("Starting {0} for {1} ({2})", runSettings.Name, runtime, "linux-x64");
 			DockerRun(runSettings, "tenzer/fpm", $"{opts} -v {packageVersion} {runtimeRef.Value} /src/=/usr/lib/git-profile-manager/");
 		}
@@ -245,9 +247,7 @@ Task("Build-Windows-Packages")
 				Workdir = "/src",
 				Rm = true
 			};
-			var opts = @"-y -v
-				--outputdirectory /out/
-				/src/package.nuspec";
+			var opts = @"-y -v --outputdirectory /out/ /src/package.nuspec";
 			DockerRun(runSettings, "agc93/mono-choco", $"choco pack --version {packageVersion} {opts}");
 		}
 	}
@@ -261,6 +261,23 @@ Task("Build-Runtime-Package")
 	foreach(var project in projects.SourceProjects) {
 		CreateDirectory($"{artifacts}packages/dotnet-any");
 		Zip($"{artifacts}publish/{project.Name}/dotnet-any/", $"{artifacts}packages/dotnet-any/gpm-dotnet.zip");
+	}
+});
+
+#load "build/warp.cake"
+
+Task("Build-Warp-Package")
+	.IsDependentOn("Publish-Runtimes")
+	.Does(() =>
+{
+	Information("Building Warp packages");
+	CreateDirectory($"{artifacts}warp");
+	foreach(var runtime in runtimes) {
+		CreateDirectory($"{artifacts}warp/{runtime}");
+		Warp($"./dist/publish/GitProfileManager/{runtime}",
+			$"git-profile-manager{(runtime.StartsWith("win") ? ".exe" : string.Empty)}",
+			$"{artifacts}warp/{runtime}/gpm{(runtime.StartsWith("win") ? ".exe" : string.Empty)}",
+			GetWarpPlatform(runtime));
 	}
 });
 
@@ -291,7 +308,8 @@ Task("Publish")
 	.IsDependentOn("Build-Linux-Packages")
 	.IsDependentOn("Build-Windows-Packages")
 	.IsDependentOn("Build-Runtime-Package")
-	.IsDependentOn("Build-Docker-Image")
+	// .IsDependentOn("Build-Docker-Image")
+	.IsDependentOn("Build-Warp-Package")
 	.IsDependentOn("Generate-Docs");
 
 RunTarget(target);
