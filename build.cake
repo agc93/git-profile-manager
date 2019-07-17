@@ -28,7 +28,7 @@ var solutionPath = File("./src/GitProfileManager.sln");
 var projects = GetProjects(solutionPath, configuration);
 var artifacts = "./dist/";
 var testResultsPath = MakeAbsolute(Directory(artifacts + "./test-results"));
-var frameworks = new List<string> { "netcoreapp2.0" };
+var frameworks = new List<string> { "netcoreapp2.1" };
 var runtimes = new List<string> { "win-x64", "osx-x64", "linux-x64" };
 // var PackagedRuntimes = new List<string> { "centos", "ubuntu", "debian", "fedora", "rhel" };
 
@@ -168,7 +168,7 @@ Task("Publish-Runtimes")
 				};
 				DotNetCoreRestore(project.Path.FullPath, rSettings);
 				var settings = new DotNetCorePublishSettings {
-					ArgumentCustomization = args => args.Append("-r " + runtime),
+					ArgumentCustomization = args => args.Append("-r " + runtime).Append("/p:PackAsTool=false"),
 					Configuration = configuration
 				};
 				DotNetCorePublish(project.Path.FullPath, settings);
@@ -260,7 +260,13 @@ Task("Build-Runtime-Package")
 	Information("Building dotnet package");
 	foreach(var project in projects.SourceProjects) {
 		CreateDirectory($"{artifacts}packages/dotnet-any");
-		Zip($"{artifacts}publish/{project.Name}/dotnet-any/", $"{artifacts}packages/dotnet-any/gpm-dotnet.zip");
+		var packSettings = new DotNetCorePackSettings {
+			ArgumentCustomization = args => args.Append($"/p:Version={packageVersion}"),
+			Configuration = configuration,
+			OutputDirectory = $"{artifacts}packages/dotnet-any/"
+		};
+		DotNetCorePack(project.Path.FullPath, packSettings);
+		// Zip($"{artifacts}publish/{project.Name}/dotnet-any/", $"{artifacts}packages/dotnet-any/gpm-dotnet.zip");
 	}
 });
 

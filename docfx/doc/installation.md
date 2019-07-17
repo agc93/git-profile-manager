@@ -6,6 +6,16 @@ Currently installers are provided for: Windows 10, Ubuntu (18.04), RHEL 7, Debia
 
 You can also manually install on any of the above, as well as macOS 10.12 *Sierra*.
 
+## .NET Core Global Tool
+
+GPM is now also shipped as a .NET Core *Global Tool*. This means, you can run the following command to install GPM and the .NET Core CLI should make the `gpm` command available in your environment.
+
+```bash
+dotnet tool install -g git-profile-manager
+```
+
+Note that it's possible (especially on non-Windows platforms) that the global .NET Core tools location is not on your `PATH` so you may need to manually add it (or just install GPM using one of the below methods).
+
 ## Linux
 
 ### Debian, Ubuntu
@@ -89,6 +99,8 @@ At this time, there is no automated install available for macOS (since building 
 > Add `alias gpm=git-profile-manager` to your `~/.bashrc` to cut down on typing
 
 ## Docker
+
+> Given the general difficulty of working with a shared workspace in Docker, this is definitely not recommended
 
 We do also provide a Docker image, based on CentOS 7, that you can use to quickly test out GPM without installing it on your local machine. Note that this is not a recommended way of running GPM as it requires you to bind your current directory into the container using volumes, and profiles won't be shared with the host unless you also bind `~/.gitprofiles` into the container.
 
