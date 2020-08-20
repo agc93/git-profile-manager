@@ -2,7 +2,7 @@ Task("Copy-To-Azure")
 .IsDependentOn("Publish")
 .Does(() => {
     Information("Uploading packages for {0} using AzCopy...", packageVersion);
-    AzCopy($"{artifacts}packages/", $"https://appstored.blob.core.windows.net/gpm/{packageVersion}", settings => {
+    /* AzCopy($"{artifacts}packages/", $"https://appstored.blob.core.windows.net/gpm/{packageVersion}", settings => {
         settings.CopyRecursively()
             .UseDestinationAccountKey(EnvironmentVariable("AZURE_STORAGE_KEY"));
     });
@@ -10,13 +10,35 @@ Task("Copy-To-Azure")
     AzCopy($"{artifacts}packages/", $"https://appstored.blob.core.windows.net/gpm/latest", settings => {
         settings.CopyRecursively()
             .UseDestinationAccountKey(EnvironmentVariable("AZURE_STORAGE_KEY"));
-    });
+    }); */
 });
 
-Task("Publish-To-GitHub")
-.IsDependentOn("Publish")
+Task("Build-Archives")
+.IsDependentOn("Build-Warp-Package")
+.WithCriteria(() => EnvironmentVariable("GITHUB_REF").StartsWith("refs/tags/v"))
 .Does(() => {
-    Information("Publishing to GitHub...");
+    var warpDir = $"{artifacts}warp/";
+    CreateDirectory($"{artifacts}archive");
+    foreach (var file in GetFiles(warpDir + "**/*"))
+    {
+        var dir = file.GetDirectory();
+        Information("Building archive for {0}", dir);
+        Zip(dir, $"{artifacts}archive/gpm-{dir.GetDirectoryName()}.zip");
+    }
+});
+
+Task("Publish-NuGet-Package")
+.IsDependentOn("Build-NuGet-Package")
+.WithCriteria(() => !string.IsNullOrWhiteSpace(EnvironmentVariable("NUGET_TOKEN")))
+.WithCriteria(() => EnvironmentVariable("GITHUB_REF").StartsWith("refs/tags/v"))
+.Does(() => {
+    var nupkgDir = $"{artifacts}packages";
+    var nugetToken = EnvironmentVariable("NUGET_TOKEN");
+    var pkgFiles = GetFiles($"{nupkgDir}/dotnet-any/*.nupkg");
+    NuGetPush(pkgFiles, new NuGetPushSettings {
+      Source = "https://api.nuget.org/v3/index.json",
+      ApiKey = nugetToken
+    });
 });
 
 /*Task("Build-Downlink-Image")

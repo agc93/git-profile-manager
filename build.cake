@@ -3,7 +3,7 @@
 #tool nuget:?package=docfx.console
 #addin nuget:?package=Cake.DocFx
 #addin nuget:?package=Cake.Docker
-#addin nuget:?package=Cake.AzCopy&version=0.1.1
+//#addin nuget:?package=Cake.AzCopy&version=0.1.1
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -28,7 +28,7 @@ var solutionPath = File("./src/GitProfileManager.sln");
 var projects = GetProjects(solutionPath, configuration);
 var artifacts = "./dist/";
 var testResultsPath = MakeAbsolute(Directory(artifacts + "./test-results"));
-var frameworks = new List<string> { "netcoreapp2.1" };
+var frameworks = new List<string> { "netcoreapp3.1" };
 var runtimes = new List<string> { "win-x64", "osx-x64", "linux-x64" };
 // var PackagedRuntimes = new List<string> { "centos", "ubuntu", "debian", "fedora", "rhel" };
 
@@ -169,6 +169,8 @@ Task("Publish-Runtimes")
 				DotNetCoreRestore(project.Path.FullPath, rSettings);
 				var settings = new DotNetCorePublishSettings {
 					ArgumentCustomization = args => args.Append("-r " + runtime).Append("/p:PackAsTool=false"),
+					PublishSingleFile = true,
+					PublishTrimmed = true,
 					Configuration = configuration
 				};
 				DotNetCorePublish(project.Path.FullPath, settings);
@@ -253,7 +255,7 @@ Task("Build-Windows-Packages")
 	}
 });
 
-Task("Build-Runtime-Package")
+Task("Build-NuGet-Package")
 	.IsDependentOn("Publish-Runtimes")
 	.Does(() => 
 {
@@ -308,14 +310,15 @@ Task("Default")
 Task("Package")
 	.IsDependentOn("Build-Linux-Packages")
 	.IsDependentOn("Build-Windows-Packages")
-	.IsDependentOn("Build-Runtime-Package");
+	.IsDependentOn("Build-NuGet-Package");
 
 Task("Publish")
 	.IsDependentOn("Build-Linux-Packages")
 	.IsDependentOn("Build-Windows-Packages")
-	.IsDependentOn("Build-Runtime-Package")
+	.IsDependentOn("Build-NuGet-Package")
 	// .IsDependentOn("Build-Docker-Image")
-	.IsDependentOn("Build-Warp-Package")
-	.IsDependentOn("Generate-Docs");
+	// .IsDependentOn("Generate-Docs")
+	.IsDependentOn("Build-Archives")
+	.IsDependentOn("Build-Warp-Package");
 
 RunTarget(target);
