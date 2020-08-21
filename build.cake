@@ -1,7 +1,5 @@
 #tool "nuget:?package=GitVersion.CommandLine"
 #load "build/helpers.cake"
-#tool nuget:?package=docfx.console
-#addin nuget:?package=Cake.DocFx
 #addin nuget:?package=Cake.Docker
 //#addin nuget:?package=Cake.AzCopy&version=0.1.1
 
@@ -119,12 +117,10 @@ Task("Run-Unit-Tests")
 });
 
 Task("Generate-Docs")
-.IsDependentOn("Post-Build") //since we're now using assemblies because docfx broke Linux compat
+.IsDependentOn("Post-Build")
 	.Does(() => 
 {
-	DocFxMetadata("./docfx/docfx.json");
-	DocFxBuild("./docfx/docfx.json");
-	Zip("./docfx/_site/", artifacts + "/docfx.zip");
+	
 })
 .OnError(ex => 
 {
