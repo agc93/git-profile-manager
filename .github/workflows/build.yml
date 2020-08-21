@@ -38,7 +38,7 @@ jobs:
       name: Upload Artifacts
       with:
         name: gpm-publish
-        path: dist/publish/GitProfileManager/
+        path: dist/packages/
     - uses: actions/upload-artifact@v1
       name: Upload Binaries
       with:
