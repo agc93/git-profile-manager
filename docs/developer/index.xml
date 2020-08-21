@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git Profile Manager – Developer Guide</title><link>/docs/developer/</link><description>Recent content in Developer Guide on Git Profile Manager</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/developer/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Contributing Guide</title><link>/docs/developer/contributing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/developer/contributing/</guid><description>
+&lt;p>This is very much an active project so any and all contributions are welcome, even just finding issues!&lt;/p>
+&lt;h2 id="reporting-issues">Reporting issues&lt;/h2>
+&lt;p>All issues should be tracked on &lt;a href="https://github.com/agc93/git-profile-manager">GitHub&lt;/a>, with enough information to reproduce the issue.&lt;/p>
+&lt;h2 id="code-contributions">Code Contributions&lt;/h2>
+&lt;p>This repository is based around the Git Flow workflow, using feature branches and pull requests to manage incoming changes and fixes. Generally speaking, the process can be summarised as follows:&lt;/p>
+&lt;ul>
+&lt;li>Find a change or fix you want to implement&lt;/li>
+&lt;li>Fork the repo&lt;/li>
+&lt;li>Create a new branch named &lt;code>feature/&amp;lt;your-feature-name&amp;gt;&lt;/code> and make your changes&lt;/li>
+&lt;li>Open a PR from your feature branch against the &lt;code>develop&lt;/code> branch (include the GitHub issue number for fixes)&lt;/li>
+&lt;li>Success! I will provide feedback if needed, or just accept the changes directly and they should appear in the next release&lt;/li>
+&lt;/ul>
+&lt;h2 id="documentation">Documentation&lt;/h2>
+&lt;p>This documentation should include &lt;em>Edit this page&lt;/em> and &lt;em>Create documentation issues&lt;/em> buttons in the upper right. Click them to quickly jump to the source of the current documentation, or quickly create an issue. You can then fork, branch and issue a PR just as with code contributions (see above).&lt;/p>
+&lt;h2 id="license">License&lt;/h2>
+&lt;p>Note that this project (and all contributions) fall under the MIT License terms.&lt;/p></description></item></channel></rss>

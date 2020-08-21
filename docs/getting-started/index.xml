@@ -1,0 +1,110 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git Profile Manager – Installation and Usage</title><link>/docs/getting-started/</link><description>Recent content in Installation and Usage on Git Profile Manager</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GPM Installation</title><link>/docs/getting-started/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/getting-started/installation/</guid><description>
+&lt;p>Installing Git Profile Manager is simple and easy, and supports a huge range of platforms.&lt;/p>
+&lt;p>Currently installers are provided for: Windows 10, Ubuntu (18.04), RPM-based Linux distros and Debian/Ubuntu.&lt;/p>
+&lt;p>You can also manually install on any of the above, as well as macOS (unsupported).&lt;/p>
+&lt;h2 id="net-core-global-tool">.NET Core Global Tool&lt;/h2>
+&lt;p>GPM is now also shipped as a .NET Core &lt;em>Global Tool&lt;/em>. This means, you can run the following command to install GPM and the .NET Core CLI should make the &lt;code>gpm&lt;/code> command available in your environment.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dotnet tool install -g git-profile-manager
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that it&amp;rsquo;s possible (especially on non-Windows platforms) that the global .NET Core tools location is not on your &lt;code>PATH&lt;/code> so you may need to manually add it (or just install GPM using one of the below methods).&lt;/p>
+&lt;h2 id="linux">Linux&lt;/h2>
+&lt;h3 id="debian-ubuntu">Debian, Ubuntu&lt;/h3>
+&lt;p>First, you need to install some dependencies:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8f5902;font-style:italic"># for Debian 8&lt;/span>
+apt-get install -y libicu52 libunwind8
+&lt;span style="color:#8f5902;font-style:italic"># for Ubuntu 18.04&lt;/span>
+apt-get install -y libicu55 libunwind8
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, just download the &lt;code>deb&lt;/code> for your distro and install it with:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dpkg -i git-profile-manager*.deb
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the app to &lt;code>/usr/lib/git-profile-manager&lt;/code> and automatically add &lt;code>gpm&lt;/code> to your &lt;code>PATH&lt;/code>.&lt;/p>
+&lt;p>Just run &lt;code>gpm&lt;/code> to get the help.&lt;/p>
+&lt;h3 id="fedora">Fedora&lt;/h3>
+&lt;p>Download the &lt;code>rpm&lt;/code> for Fedora and install it with:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dnf install git-profile-manager*.rpm
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Despite the naming, this package should work fine for most modern Fedora versions&lt;/p>
+&lt;/blockquote>
+&lt;p>This will install the app to &lt;code>/usr/lib/git-profile-manager&lt;/code> and automatically add &lt;code>gpm&lt;/code> to your &lt;code>PATH&lt;/code>.&lt;/p>
+&lt;p>Just run &lt;code>gpm&lt;/code> to get the help.&lt;/p>
+&lt;h3 id="rhel-centos">RHEL, CentOS&lt;/h3>
+&lt;p>First, install dependencies:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">yum install -y libicu libunwind
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, download the &lt;code>rpm&lt;/code> for your flavour and install it with:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">rpm -i git-profile-manager*.rpm
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the app to &lt;code>/usr/lib/git-profile-manager&lt;/code> and automatically add &lt;code>gpm&lt;/code> to your &lt;code>PATH&lt;/code>.&lt;/p>
+&lt;p>Just run &lt;code>gpm&lt;/code> to get the help.&lt;/p>
+&lt;h2 id="windows">Windows&lt;/h2>
+&lt;p>Chocolatey users can quickly install Git Profile Manager using the &lt;code>git-profile-manager.install&lt;/code> package:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000">choco&lt;/span> &lt;span style="color:#000">install&lt;/span> &lt;span style="color:#000">git-profile-manager&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">install&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will install the app to the default Chocolatey location and should automatically add a &lt;code>gpm&lt;/code> alias to your PATH.&lt;/p>
+&lt;blockquote>
+&lt;p>You can also download the release package, extract it somewhere and add that location to your &lt;code>PATH&lt;/code> manually.&lt;/p>
+&lt;/blockquote>
+&lt;p>Just run &lt;code>gpm&lt;/code> to get the help.&lt;/p>
+&lt;h2 id="macos">macOS&lt;/h2>
+&lt;p>At this time, there is no automated install available for macOS (since building for macOS requires a Mac and I don&amp;rsquo;t have one).&lt;/p>
+&lt;p>MacOS users can download the relevant archive, extract it to a directory (say &lt;code>/Applications/git-profile-manager&lt;/code> for example) and add that folder to your &lt;code>PATH&lt;/code>. You can then run &lt;code>gpm&lt;/code> from a terminal to run the app.&lt;/p>
+&lt;blockquote>
+&lt;p>Note that the macOS version is largely untested and may be somewhat unstable. Please report issues and bugs on GitHub.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="net-runtime">.NET Runtime&lt;/h2>
+&lt;p>If you&amp;rsquo;re on another platform, GPM &lt;em>might&lt;/em> still work! If you can install the .NET Core runtime on your system (this is bundled with the SDK if you&amp;rsquo;re on a supported OS), you should be able to use it to run GPM from the &lt;code>dotnet-any&lt;/code> package. The main executable is the &lt;code>git-profile-manager.dll&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dotnet git-profile-manager.dll
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Usage</title><link>/docs/getting-started/usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/getting-started/usage/</guid><description>
+&lt;h2 id="getting-help">Getting help&lt;/h2>
+&lt;p>You can always run &lt;code>gpm --help&lt;/code> to get info on the top-level commands available. Note that each command also has it&amp;rsquo;s own &lt;code>--help&lt;/code> option for easy assistance.&lt;/p>
+&lt;h2 id="activate">Activate&lt;/h2>
+&lt;p>The activate command is the essential command for &lt;code>gpm&lt;/code>. Activating a profile automatically applies all configuration options stored in the profile, applied to the current repository.&lt;/p>
+&lt;p>You can also add the &lt;code>-g&lt;/code> or &lt;code>--global&lt;/code> flag to apply a profile globally (use with care).&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">gpm activate work-profile
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="deactivate">Deactivate&lt;/h2>
+&lt;p>Deactivate is the opposite of activate and will unset any configuration options stored in the profile. Like &lt;code>activate&lt;/code>, this applies to the current repository by default, but the &lt;code>--global&lt;/code> flag will unset these items globally (use with &lt;strong>&lt;em>extreme&lt;/em> caution&lt;/strong>).&lt;/p>
+&lt;h4 id="example-1">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">gpm deactivate my-oss-project
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="profile">Profile&lt;/h2>
+&lt;p>The profile command is used to managed saved Git profiles, and includes a number of subcommands.&lt;/p>
+&lt;h3 id="create">Create&lt;/h3>
+&lt;p>Create will create a new profile. By default, this profile is blank (i.e. includes no configuration options), but you can optionally provide a source profile for GPM to duplicate.&lt;/p>
+&lt;h4 id="example-2">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">gpm profile create --from personal work
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="delete">Delete&lt;/h3>
+&lt;p>Delete will delete the specified profile from your saved profiles completely. By default, you will be prompted to perform this command, but this can be skipped using the &lt;code>--non-interactive&lt;/code> option.&lt;/p>
+&lt;h4 id="example-3">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">gpm profile delete work-profile
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="edit">Edit&lt;/h3>
+&lt;p>Edit allows you to edit already existing profiles (i.e. to add new configuration options to a profile). The profile will be created if it doesn&amp;rsquo;t exist.&lt;/p>
+&lt;p>Configuration options are specified as key-value pairs, similar to &lt;code>git config&lt;/code>, separated by an &amp;lsquo;&lt;code>=&lt;/code>&amp;rsquo; symbol. You can remove a configuration option using the &lt;code>--rm&lt;/code> option&lt;/p>
+&lt;h4 id="example-4">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">gpm profile edit work-profile commit.gpgsign&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span>
+gpm profile edit work-profile gpg.signingkey&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>123ABCDEF --rm
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="export">Export&lt;/h3>
+&lt;p>If you&amp;rsquo;d like to use your profiles outside of Git Profile Manager, you can use this option to export your profile into a file you can then copy/run/move as you see fit. The exported file is a plain text file with all the &lt;code>git config&lt;/code> commands for your profile, one command per line.&lt;/p>
+&lt;p>This file can then be run (through Bash or PowerShell) or used however you like.&lt;/p>
+&lt;h4 id="example-5">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">gpm profile &lt;span style="color:#204a87">export&lt;/span> work-profile command-file.txt
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="import">Import&lt;/h3>
+&lt;p>The opposite operation to export, import accepts a simple command file and creates a profile from it. GPM will read through the input file and create a profile with all of the Git configuration items found in the file. As such, this can be used to import not just from exported GPM profiles, but also from simple shell scripts you may already be using.&lt;/p>
+&lt;p>The new profile will be named with the input file&amp;rsquo;s name, or this can be overriden with the &lt;code>--profile-name&lt;/code> option.&lt;/p>
+&lt;blockquote>
+&lt;p>The file parsing logic in GPM is quite &amp;ldquo;dumb&amp;rdquo; so it will not, for example, process any of the logic contained in the command file.&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="example-6">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">gpm profile import path/to/file.sh -n new-profile
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="list">List&lt;/h3>
+&lt;p>The list command simply lists all the currently saved Git profiles (from the user&amp;rsquo;s &lt;code>~/.gitprofile&lt;/code>).&lt;/p>
+&lt;h4 id="example-7">Example&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">gpm profile list
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Profiles</title><link>/docs/getting-started/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/getting-started/profiles/</guid><description>
+&lt;h2 id="whats-in-a-profile">What&amp;rsquo;s in a profile?&lt;/h2>
+&lt;p>Essentially a Git &amp;ldquo;profile&amp;rdquo; is just a collection of configuration key-value pairs. For example &lt;code>commit.gpgsign=true&lt;/code> is a single configuration item as is &lt;code>user.name=&amp;quot;Alistair Chapman&amp;quot;&lt;/code>.&lt;/p>
+&lt;h2 id="can-multiple-profiles-be-active">Can multiple profiles be active?&lt;/h2>
+&lt;p>Absolutely! Since profiles are just a configuration collection, you can activate as many profiles as you want! Note that profiles you activate will overwrite any previous configuration values so start generic and go specific.&lt;/p>
+&lt;p>You can also duplicate profiles by creating a new profile and using the &lt;code>--from&lt;/code> option to specify an existing profile. You can then edit your new profile without affecting the old one.&lt;/p>
+&lt;h2 id="where-are-they">Where are they?&lt;/h2>
+&lt;p>GPM stores profiles in a file in your home directory called &lt;code>.gitprofiles&lt;/code>. Linux and macOS users may need to show hidden files in their file manager before it&amp;rsquo;s visible.&lt;/p>
+&lt;p>This file is in YAML format and stores each profile as a named key with the configuration items included right in the file.&lt;/p>
+&lt;blockquote>
+&lt;p>If you need to perform bulk editing, you can always directly edit &lt;code>~/.gitprofiles&lt;/code>. GPM doesn&amp;rsquo;t mind.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="how-do-i-createeditdelete-profiles">How do I create/edit/delete profiles?&lt;/h2>
+&lt;p>Profiles can be managed using the &lt;code>gpm profile&lt;/code> command and all of its subcommands, detailed in full in the &lt;a href="../../docs/getting-started/usage">usage documentation&lt;/a>.&lt;/p></description></item></channel></rss>
