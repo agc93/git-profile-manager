@@ -19,8 +19,7 @@ namespace GitProfileManager
             app.Configure(config =>
             {
                 // Set additional information.
-                config.SetApplicationName("Git Profile Manager");
-                // app.SetHelpText("Create, manage and activate git profiles for multiple projects");
+                config.SetApplicationName("gpm");
 
                 /*// Register commands. */
                 config.AddCommand<Commands.Activate.ActivateCommand>("activate");

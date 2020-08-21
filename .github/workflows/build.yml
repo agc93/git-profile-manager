@@ -30,7 +30,7 @@ jobs:
     - name: Run the Cake script
       uses: cake-build/cake-action@v1
       with:
-        target: Publish
+        target: Release
         cake-bootstrap: true
       env:
         NUGET_TOKEN: ${{secrets.NUGET_TOKEN}}
