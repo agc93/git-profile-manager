@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package 
+    xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+    <metadata>
+        <id>git-profile-manager.install</id>
+        <version>0.0.1</version>
+        <title>Git Profile Manager (Install)</title>
+        <authors>Alistair Chapman</authors>
+        <projectUrl>https://agc93.github.io/git-profile-manager/</projectUrl>
+        <copyright>Alistair Chapman 2017</copyright>
+        <licenseUrl>https://raw.githubusercontent.com/agc93/git-profile-manager/master/LICENSE</licenseUrl>
+        <projectSourceUrl>https://github.com/agc93/git-profile-manager</projectSourceUrl>
+        <packageSourceUrl>https://github.com/agc93/git-profile-manager</packageSourceUrl>
+        <releaseNotes>https://github.com/agc93/git-profile-manager/tree/master/ReleaseNotes.md</releaseNotes>
+        <tags>git profile manager script</tags>
+        <summary>Easily manage and activate multiple git config profiles</summary>
+        <description>
+## Git Profile Manager
+
+*Work on a lot of projects? Constantly needing to update git configs for different projects or teams?*
+
+Now, you can quickly create and manage a collection of Git profiles with unique config and easily activate them in one easy command, making repo config simple!
+        </description>
+    </metadata>
+    <files>
+        <file src="win-x64/**" target="tools" />
+        <file src="**/chocolateyInstall.ps1" target="tools" />
+        <file src="**/chocolateyUninstall.ps1" target="tools" />
+        <file src="**/*.txt" target="tools" />
+    </files>
+</package>

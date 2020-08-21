@@ -1,0 +1,57 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: GPM CI Build
+
+on:
+  push:
+    branches: [ develop, master ]
+    paths-ignore:
+      - "docs/**"
+      - ".github/workflows/docs.yml"
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches: [ master ]
+    paths-ignore:
+      - "docs/**"
+      - ".github/workflows/docs.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.101'
+    - name: Run the Cake script
+      uses: cake-build/cake-action@v1
+      with:
+        target: Publish
+        cake-bootstrap: true
+      env:
+        NUGET_TOKEN: ${{secrets.NUGET_TOKEN}}
+    - uses: actions/upload-artifact@v1
+      name: Upload Artifacts
+      with:
+        name: gpm-publish
+        path: dist/packages/
+    - uses: actions/upload-artifact@v1
+      name: Upload Binaries
+      with:
+        name: gpm-binaries
+        path: dist/warp/
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        body: |
+          Download and unpack the archive for your system (Windows/Linux/macOS) from below.
+        files: |
+          ./dist/archive/*.zip
+          ./dist/packages/**/*
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

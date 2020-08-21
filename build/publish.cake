@@ -1,22 +1,30 @@
-Task("Copy-To-Azure")
-.IsDependentOn("Publish")
+Task("Build-Archives")
+.IsDependentOn("Build-Warp-Package")
+.WithCriteria(() => HasEnvironmentVariable("GITHUB_REF"))
+.WithCriteria(() => EnvironmentVariable("GITHUB_REF").StartsWith("refs/tags/v"))
 .Does(() => {
-    Information("Uploading packages for {0} using AzCopy...", versionInfo.FullSemVer);
-    AzCopy($"{artifacts}packages/", $"https://appstored.blob.core.windows.net/gpm/{versionInfo.FullSemVer}", settings => {
-        settings.CopyRecursively()
-            .UseDestinationAccountKey(EnvironmentVariable("AZURE_STORAGE_KEY"));
-    });
-    Information("Uploading packages for {0} using AzCopy...", "latest");
-    AzCopy($"{artifacts}packages/", $"https://appstored.blob.core.windows.net/gpm/latest", settings => {
-        settings.CopyRecursively()
-            .UseDestinationAccountKey(EnvironmentVariable("AZURE_STORAGE_KEY"));
-    });
+    var warpDir = $"{artifacts}warp/";
+    CreateDirectory($"{artifacts}archive");
+    foreach (var file in GetFiles(warpDir + "**/*"))
+    {
+        var dir = file.GetDirectory();
+        Information("Building archive for {0}", dir);
+        Zip(dir, $"{artifacts}archive/gpm-{dir.GetDirectoryName()}.zip");
+    }
 });
 
-Task("Publish-To-GitHub")
-.IsDependentOn("Publish")
+Task("Publish-NuGet-Package")
+.IsDependentOn("Build-NuGet-Package")
+.WithCriteria(() => HasEnvironmentVariable("NUGET_TOKEN"))
+.WithCriteria(() => EnvironmentVariable("GITHUB_REF").StartsWith("refs/tags/v"))
 .Does(() => {
-    Information("Publishing to GitHub...");
+    var nupkgDir = $"{artifacts}packages";
+    var nugetToken = EnvironmentVariable("NUGET_TOKEN");
+    var pkgFiles = GetFiles($"{nupkgDir}/dotnet-any/*.nupkg");
+    NuGetPush(pkgFiles, new NuGetPushSettings {
+      Source = "https://api.nuget.org/v3/index.json",
+      ApiKey = nugetToken
+    });
 });
 
 /*Task("Build-Downlink-Image")

@@ -1,9 +1,7 @@
 #tool "nuget:?package=GitVersion.CommandLine"
 #load "build/helpers.cake"
-#tool nuget:?package=docfx.console
-#addin nuget:?package=Cake.DocFx
 #addin nuget:?package=Cake.Docker
-#addin nuget:?package=Cake.AzCopy&prerelease
+//#addin nuget:?package=Cake.AzCopy&version=0.1.1
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -11,6 +9,14 @@
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
+var fallbackVersion = Argument<string>("force-version", EnvironmentVariable("FALLBACK_VERSION") ?? "0.2.0");
+
+///////////////////////////////////////////////////////////////////////////////
+// VERSIONING
+///////////////////////////////////////////////////////////////////////////////
+
+var packageVersion = string.Empty;
+#load "build/version.cake"
 
 ///////////////////////////////////////////////////////////////////////////////
 // GLOBAL VARIABLES
@@ -20,10 +26,9 @@ var solutionPath = File("./src/GitProfileManager.sln");
 var projects = GetProjects(solutionPath, configuration);
 var artifacts = "./dist/";
 var testResultsPath = MakeAbsolute(Directory(artifacts + "./test-results"));
-GitVersion versionInfo = null;
-var frameworks = new List<string> { "netcoreapp1.1" };
-var runtimes = new List<string> { "win10-x64", "osx.10.12-x64", "ubuntu.16.04-x64", "ubuntu.14.04-x64", "centos.7-x64", "debian.8-x64", "rhel.7-x64" };
-var PackagedRuntimes = new List<string> { "centos", "ubuntu", "debian", "fedora", "rhel" };
+var frameworks = new List<string> { "netcoreapp3.1" };
+var runtimes = new List<string> { "win-x64", "osx-x64", "linux-x64" };
+// var PackagedRuntimes = new List<string> { "centos", "ubuntu", "debian", "fedora", "rhel" };
 
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
@@ -33,8 +38,11 @@ Setup(ctx =>
 {
 	// Executed BEFORE the first task.
 	Information("Running tasks...");
-	versionInfo = GitVersion();
-	Information("Building for version {0}", versionInfo.FullSemVer);
+	packageVersion = BuildVersion(fallbackVersion);
+	if (FileExists("./build/.dotnet/dotnet.exe")) {
+		Information("Using local install of `dotnet` SDK!");
+		Context.Tools.RegisterFile("./build/.dotnet/dotnet.exe");
+	}
 	Verbose("Building for " + string.Join(", ", frameworks));
 });
 
@@ -109,11 +117,10 @@ Task("Run-Unit-Tests")
 });
 
 Task("Generate-Docs")
+.IsDependentOn("Post-Build")
 	.Does(() => 
 {
-	DocFxMetadata("./docfx/docfx.json");
-	DocFxBuild("./docfx/docfx.json");
-	Zip("./docfx/_site/", artifacts + "/docfx.zip");
+	
 })
 .OnError(ex => 
 {
@@ -156,13 +163,16 @@ Task("Publish-Runtimes")
 				};
 				DotNetCoreRestore(project.Path.FullPath, rSettings);
 				var settings = new DotNetCorePublishSettings {
-					ArgumentCustomization = args => args.Append("-r " + runtime),
+					ArgumentCustomization = args => args.Append("-r " + runtime).Append("/p:PackAsTool=false"),
+					PublishSingleFile = true,
+					PublishTrimmed = true,
 					Configuration = configuration
 				};
 				DotNetCorePublish(project.Path.FullPath, settings);
 				var publishDir = $"{project.Path.GetDirectory()}/bin/{configuration}/{framework}/{runtime}/publish/";
 				CopyDirectory(publishDir, runtimeDir);
-				CopyFiles(GetFiles("./build/*.sh"), runtimeDir);
+				CopyFiles(GetFiles("./scripts/*.sh"), runtimeDir);
+				CopyFiles(GetFiles("./scripts/*.ps1"), runtimeDir);
 			}
 			// platform (dotnet) publish
 			var pDir = MakeAbsolute(Directory($"{projectDir}/dotnet-any/"));
@@ -181,26 +191,32 @@ Task("Build-Linux-Packages")
 	.WithCriteria(IsRunningOnUnix())
 	.Does(() => 
 {
-	Information("Building packages in new container");
+	Information("Building packages in fpm containers");
 	CreateDirectory($"{artifacts}/packages/");
 	foreach(var project in projects.SourceProjects) {
-		foreach(var runtime in runtimes.Where(rt => PackagedRuntimes.Any(r => rt.Contains(r)))) {
-			var publishDir = $"{artifacts}publish/{project.Name}/{runtime}";
+		Information("Packaging {0}", project.Name);
+		foreach(var runtimeRef in Runtimes) {
+			var runtime = runtimeRef.Key;
+			// var publishDir = $"{artifacts}publish/{project.Name}/{runtime}";
+			var publishDir = $"{artifacts}publish/{project.Name}/linux-x64";
 			var sourceDir = MakeAbsolute(Directory(publishDir));
 			var packageDir = MakeAbsolute(Directory($"{artifacts}packages/{runtime}"));
-			var runSettings = new DockerRunSettings {
+			var runSettings = new DockerContainerRunSettings {
 				Name = $"docker-fpm-{(runtime.Replace(".", "-"))}",
 				Volume = new[] { $"{sourceDir}:/src:ro", $"{packageDir}:/out:rw"},
 				Workdir = "/out",
 				Rm = true,
 				//User = "1000"
 			};
-			var opts = @"-s dir -a x86_64 --force
-			-m 'Alistair Chapman <alistair@agchapman.com>'
-			-n 'git-profile-manager'
-			--after-install /src/post-install.sh
-			--before-remove /src/pre-remove.sh";
-			DockerRun(runSettings, "tenzer/fpm", $"{opts} -v {versionInfo.FullSemVer} {GetRuntimeBuild(runtime)} /src/=/usr/lib/git-profile-manager/");
+			var opts = string.Join(" ", new List<string> {
+				"-s dir -a x86_64 --force",
+				"-m \"Alistair Chapman <alistair@agchapman.com>\"",
+				"-n git-profile-manager",
+				"--after-install /src/post-install.sh",
+				"--before-remove /src/pre-remove.sh"
+			});
+			Information("Starting {0} for {1} ({2})", runSettings.Name, runtime, "linux-x64");
+			DockerRun(runSettings, "tenzer/fpm", $"{opts} -v {packageVersion} {runtimeRef.Value} /src/=/usr/lib/git-profile-manager/");
 		}
 	}
 });
@@ -215,10 +231,10 @@ Task("Build-Windows-Packages")
 	foreach(var project in projects.SourceProjects) {
 		foreach(var runtime in runtimes.Where(r => r.StartsWith("win"))) {
 			var publishDir = $"{artifacts}publish/{project.Name}/{runtime}";
-			CopyFiles(GetFiles($"./build/{runtime}.nuspec"), publishDir);
+			CopyFiles(GetFiles($"./build/{runtime}.nuspec") + GetFiles("./build/choco/*"), publishDir);
 			var sourceDir = MakeAbsolute(Directory(publishDir));
 			var packageDir = MakeAbsolute(Directory($"{artifacts}packages/{runtime}"));
-			var runSettings = new DockerRunSettings {
+			var runSettings = new DockerContainerRunSettings {
 				Name = $"docker-choco-{(runtime.Replace(".", "-"))}",
 				Volume = new[] { 
 					$"{sourceDir}:/src/{runtime}:ro",
@@ -228,50 +244,67 @@ Task("Build-Windows-Packages")
 				Workdir = "/src",
 				Rm = true
 			};
-			var opts = @"-y -v
-				--outputdirectory /out/
-				/src/package.nuspec";
-			DockerRun(runSettings, "agc93/mono-choco", $"choco pack --version {versionInfo.NuGetVersionV2} {opts}");
+			var opts = @"-y -v --outputdirectory /out/ /src/package.nuspec";
+			DockerRun(runSettings, "agc93/mono-choco", $"choco pack --version {packageVersion} {opts}");
 		}
 	}
 });
 
-Task("Build-Runtime-Package")
+Task("Build-NuGet-Package")
 	.IsDependentOn("Publish-Runtimes")
 	.Does(() => 
 {
 	Information("Building dotnet package");
 	foreach(var project in projects.SourceProjects) {
 		CreateDirectory($"{artifacts}packages/dotnet-any");
-		Zip($"{artifacts}publish/{project.Name}/dotnet-any/", $"{artifacts}packages/dotnet-any/gpm-dotnet.zip");
+		var packSettings = new DotNetCorePackSettings {
+			ArgumentCustomization = args => args.Append($"/p:Version={packageVersion}"),
+			Configuration = configuration,
+			OutputDirectory = $"{artifacts}packages/dotnet-any/"
+		};
+		DotNetCorePack(project.Path.FullPath, packSettings);
+		// Zip($"{artifacts}publish/{project.Name}/dotnet-any/", $"{artifacts}packages/dotnet-any/gpm-dotnet.zip");
 	}
 });
 
-Task("Build-Docker-Image")
-	.WithCriteria(IsRunningOnUnix())
-	.IsDependentOn("Build-Linux-Packages")
+#load "build/warp.cake"
+
+Task("Build-Warp-Package")
+	.IsDependentOn("Publish-Runtimes")
 	.Does(() =>
 {
-	Information("Building Docker image...");
-	CopyFileToDirectory("./build/Dockerfile", artifacts);
-	var bSettings = new DockerBuildSettings { Tag = new[] { $"agc93/gpm:{versionInfo.FullSemVer}"}};
-	DockerBuild(bSettings, artifacts);
-	DeleteFile(artifacts + "Dockerfile");
+	Information("Building Warp packages");
+	CreateDirectory($"{artifacts}warp");
+	foreach(var runtime in runtimes) {
+		CreateDirectory($"{artifacts}warp/{runtime}");
+		Warp($"./dist/publish/GitProfileManager/{runtime}",
+			$"git-profile-manager{(runtime.StartsWith("win") ? ".exe" : string.Empty)}",
+			$"{artifacts}warp/{runtime}/gpm{(runtime.StartsWith("win") ? ".exe" : string.Empty)}",
+			GetWarpPlatform(runtime));
+	}
 });
+
 
 #load "build/publish.cake"
 Task("Release")
 .IsDependentOn("Publish")
-.IsDependentOn("Copy-To-Azure");
+.IsDependentOn("Publish-NuGet-Package");
 
 Task("Default")
     .IsDependentOn("Post-Build");
 
+Task("Package")
+	.IsDependentOn("Build-Linux-Packages")
+	.IsDependentOn("Build-Windows-Packages")
+	.IsDependentOn("Build-NuGet-Package");
+
 Task("Publish")
 	.IsDependentOn("Build-Linux-Packages")
 	.IsDependentOn("Build-Windows-Packages")
-	.IsDependentOn("Build-Runtime-Package")
-	.IsDependentOn("Build-Docker-Image")
-	.IsDependentOn("Generate-Docs");
+	.IsDependentOn("Build-NuGet-Package")
+	// .IsDependentOn("Build-Docker-Image")
+	// .IsDependentOn("Generate-Docs")
+	.IsDependentOn("Build-Archives")
+	.IsDependentOn("Build-Warp-Package");
 
 RunTarget(target);

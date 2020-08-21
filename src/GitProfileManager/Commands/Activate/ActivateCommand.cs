@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using GitProfileManager.Services;
-using Spectre.CommandLine;
+using Spectre.Cli;
 
 namespace GitProfileManager.Commands.Activate
 {
     [Description("Activates a profile")]
     public class ActivateCommand : Command<ActivationSettings>
     {
-        public ActivateCommand(IGitConfigService command, IGitProfileStore store) : base("activate") {
+        public ActivateCommand(IGitConfigService command, IGitProfileStore store) {
             Service = command;
             Store = store;
         }
@@ -18,9 +18,8 @@ namespace GitProfileManager.Commands.Activate
         public IGitConfigService Service { get; private set; }
         public IGitProfileStore Store { get; private set; }
 
-        public override int Run(ActivationSettings settings)
+        public override int Execute(CommandContext context, ActivationSettings settings)
         {
-            //Console.WriteLine($"Service loaded: {Service != null}");
             var profile = Store.ReadProfile(settings.ProfileName);
             var list = new List<bool>();
             var results = profile.Select(c => Service.SetValue(c.Key, c.Value, settings.ApplyGlobally)).ToList();

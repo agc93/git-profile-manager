@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
-using Spectre.CommandLine;
+using Spectre.Cli;
 
 namespace GitProfileManager
 {
@@ -15,7 +15,7 @@ namespace GitProfileManager
         }
 
         public DependencyInjectionApp(IServiceCollection services, bool disableAutoRegistration = false)
-            : this(new CommandAppSettings { Resolver = new InjectionResolver(services) })
+            : this(new CommandAppSettings { Resolver = new DependencyInjectionResolver(services) })
         {
             if (!disableAutoRegistration) {
                 var commands = services.Where(s => s.ImplementationType.IsAssignableTo(typeof(ICommand))).ToList();

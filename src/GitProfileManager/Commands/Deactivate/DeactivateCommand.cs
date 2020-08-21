@@ -4,14 +4,14 @@ using System.ComponentModel;
 using System.Linq;
 using GitProfileManager.Commands.Activate;
 using GitProfileManager.Services;
-using Spectre.CommandLine;
+using Spectre.Cli;
 
 namespace GitProfileManager.Commands.Deactivate
 {
     [Description("Deactivates a profile")]
     public class DeactivateCommand : Command<ActivationSettings>
     {
-        public DeactivateCommand(IGitConfigService command, IGitProfileStore store) : base("deactivate") {
+        public DeactivateCommand(IGitConfigService command, IGitProfileStore store) {
             Service = command;
             Store = store;
         }
@@ -19,9 +19,8 @@ namespace GitProfileManager.Commands.Deactivate
         public IGitConfigService Service { get; private set; }
         public IGitProfileStore Store { get; private set; }
 
-        public override int Run(ActivationSettings settings)
+        public override int Execute(CommandContext context, ActivationSettings settings)
         {
-            //Console.WriteLine($"Service loaded: {Service != null}");
             var profile = Store.ReadProfile(settings.ProfileName);
             var list = new List<bool>();
             var results = profile.Select(c => Service.UnsetValue(c.Key, c.Value, settings.ApplyGlobally)).ToList();

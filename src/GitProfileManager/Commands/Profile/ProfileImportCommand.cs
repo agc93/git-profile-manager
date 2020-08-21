@@ -2,14 +2,16 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using GitProfileManager.Services;
-using Spectre.CommandLine;
+using Spectre.Cli;
 
 namespace GitProfileManager.Commands.Profile
 {
+    [Description("Import a new profile from a command file or existing config")]
     public class ProfileImportCommand : Command<ProfileImportCommand.Settings>
     {
-        public ProfileImportCommand(IGitProfileStore store, ICommandFileService fileService) : base("import")
+        public ProfileImportCommand(IGitProfileStore store, ICommandFileService fileService)
         {
             Store = store;
             FileService = fileService;
@@ -18,7 +20,7 @@ namespace GitProfileManager.Commands.Profile
         public IGitProfileStore Store { get; private set; }
         public ICommandFileService FileService { get; private set; }
 
-        public override int Run(Settings settings)
+        public override int Execute(CommandContext context, Settings settings)
         {
             if (settings.AsConfig) {
                 Console.WriteLine("Sorry, this functionality is not yet available :(");
@@ -50,17 +52,17 @@ namespace GitProfileManager.Commands.Profile
             return settings.ProfileName;
         }
 
-        public sealed class Settings
+        public sealed class Settings : ProfileSettings
         {
-            [Argument("<FILE>", Order = 0)]
+            [CommandArgument(0, "<FILE>")]
             [Description("A file of git commands to create a profile from.")]
             public string CommandFile { get; set; }
 
-            [Option("-n|--profile-name")]
+            [CommandOption("-n|--profile-name")]
             [Description("Name of the profile to create. Defaults to the input file name")]
             public string ProfileName {get;set;}
 
-            [Option("--from-config")]
+            [CommandOption("--from-config")]
             [Description("Read commands from config, rather than command file")]
             public bool AsConfig { get; set; }
         }
