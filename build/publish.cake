@@ -1,20 +1,6 @@
-Task("Copy-To-Azure")
-.IsDependentOn("Publish")
-.Does(() => {
-    Information("Uploading packages for {0} using AzCopy...", packageVersion);
-    /* AzCopy($"{artifacts}packages/", $"https://appstored.blob.core.windows.net/gpm/{packageVersion}", settings => {
-        settings.CopyRecursively()
-            .UseDestinationAccountKey(EnvironmentVariable("AZURE_STORAGE_KEY"));
-    });
-    Information("Uploading packages for {0} using AzCopy...", "latest");
-    AzCopy($"{artifacts}packages/", $"https://appstored.blob.core.windows.net/gpm/latest", settings => {
-        settings.CopyRecursively()
-            .UseDestinationAccountKey(EnvironmentVariable("AZURE_STORAGE_KEY"));
-    }); */
-});
-
 Task("Build-Archives")
 .IsDependentOn("Build-Warp-Package")
+.WithCriteria(() => HasEnvironmentVariable("GITHUB_REF"))
 .WithCriteria(() => EnvironmentVariable("GITHUB_REF").StartsWith("refs/tags/v"))
 .Does(() => {
     var warpDir = $"{artifacts}warp/";
@@ -29,7 +15,7 @@ Task("Build-Archives")
 
 Task("Publish-NuGet-Package")
 .IsDependentOn("Build-NuGet-Package")
-.WithCriteria(() => !string.IsNullOrWhiteSpace(EnvironmentVariable("NUGET_TOKEN")))
+.WithCriteria(() => HasEnvironmentVariable("NUGET_TOKEN"))
 .WithCriteria(() => EnvironmentVariable("GITHUB_REF").StartsWith("refs/tags/v"))
 .Does(() => {
     var nupkgDir = $"{artifacts}packages";

@@ -10,4 +10,4 @@ Full documentation, including all installation instructions, is available [here]
 
 ## Contributing
 
-Run `./build.ps1` or `./build.sh` to build the project. More information on developing and contributing is available in the [developer guide](https://agc93.github.io/git-profile-manager/doc/developers.html).
+Run `dotnet tool restore` then `dotnet cake` to build the project. More information on developing and contributing is available in the [developer guide](https://agc93.github.io/git-profile-manager/docs/developer).

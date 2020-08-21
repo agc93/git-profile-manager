@@ -146,7 +146,6 @@ Task("Post-Build")
 			CopyFiles(files, frameworkDir);
 		}
 	}
-	CopyFileToDirectory("./build/Dockerfile", artifacts);
 });
 
 Task("Publish-Runtimes")
@@ -289,20 +288,11 @@ Task("Build-Warp-Package")
 	}
 });
 
-Task("Build-Docker-Image")
-	.WithCriteria(IsRunningOnUnix())
-	.IsDependentOn("Build-Linux-Packages")
-	.Does(() =>
-{
-	Information("Building Docker image...");
-	var bSettings = new DockerImageBuildSettings { Tag = new[] { $"agc93/gpm:{packageVersion}"}};
-	DockerBuild(bSettings, artifacts);
-});
 
 #load "build/publish.cake"
 Task("Release")
 .IsDependentOn("Publish")
-.IsDependentOn("Copy-To-Azure");
+.IsDependentOn("Publish-NuGet-Package");
 
 Task("Default")
     .IsDependentOn("Post-Build");
