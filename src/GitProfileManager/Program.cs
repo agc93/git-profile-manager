@@ -1,10 +1,8 @@
 ﻿using System;
 using GitProfileManager.Composition;
 using GitProfileManager.Services;
-using LightInject;
-using LightInject.Microsoft.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using Spectre.CommandLine;
+using Spectre.Cli;
 
 namespace GitProfileManager
 {
@@ -28,7 +26,7 @@ namespace GitProfileManager
                 config.AddCommand<Commands.Activate.ActivateCommand>("activate");
                 config.AddCommand<Commands.Deactivate.DeactivateCommand>("deactivate");
                 config.AddCommand<Commands.List.ProfileListCommand>("list");
-                config.AddCommand<Commands.ProfileSettings>("profile", profile =>
+                config.AddBranch<Commands.ProfileSettings>("profile", profile => 
                 {
                     profile.SetDescription("Commands for working with Git profiles");
                     profile.AddCommand<Commands.Profile.ProfileCreateCommand>("create");

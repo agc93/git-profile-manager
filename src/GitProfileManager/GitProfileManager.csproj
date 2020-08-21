@@ -18,15 +18,15 @@
     <Compile Remove="DependencyInjectionApp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="LightInject.Microsoft.DependencyInjection" Version="2.3.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
-    <PackageReference Include="Spectre.CommandLine" Version="0.10.0" />
+    <!-- <PackageReference Include="LightInject.Microsoft.DependencyInjection" Version="2.3.0" /> -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
+    <PackageReference Include="Spectre.Cli" Version="0.36.0" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-    <PackageReference Include="YamlDotNet" Version="6.1.1" />
-    <PackageReference Include="Spectre.CommandLine.Extensions.DependencyInjection" Version="0.1.0" />
+    <PackageReference Include="YamlDotNet" Version="8.1.2" />
+    <PackageReference Include="Spectre.Cli.Extensions.DependencyInjection" Version="0.2.0" />
     <PackageReference Include="TypEngine" Version="0.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <!-- <ProjectReference Include="../../../spectre.commandline/src/Spectre.CommandLine//Spectre.CommandLine.csproj" /> -->
+    <!-- <ProjectReference Include="../../../Spectre.Cli/src/Spectre.Cli//Spectre.Cli.csproj" /> -->
   </ItemGroup>
 </Project>

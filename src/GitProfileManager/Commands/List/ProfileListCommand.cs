@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using GitProfileManager.Services;
-using Spectre.CommandLine;
+using Spectre.Cli;
 
 namespace GitProfileManager.Commands.List
 {
@@ -15,7 +15,7 @@ namespace GitProfileManager.Commands.List
 
         public IGitProfileStore Store { get; private set; }
 
-        public override int Execute(Settings settings, ILookup<string, string> unmapped)
+        public override int Execute(CommandContext context, Settings settings)
         {
             var profiles = Store.GetProfiles();
             Console.WriteLine("Currently stored profiles: ");

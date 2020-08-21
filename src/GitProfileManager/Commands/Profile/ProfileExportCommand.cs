@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using GitProfileManager.Services;
-using Spectre.CommandLine;
+using Spectre.Cli;
 
 namespace GitProfileManager.Commands.Profile
 {
@@ -19,7 +19,7 @@ namespace GitProfileManager.Commands.Profile
         public IGitProfileStore Store { get; private set; }
         public ICommandFileService FileService { get; private set; }
 
-        public override int Execute(Settings settings, ILookup<string, string> unmapped)
+        public override int Execute(CommandContext context, Settings settings)
         {
             if (string.IsNullOrWhiteSpace(settings.ProfileName)) {
                 Console.Error.WriteLine("No profile name provided!");

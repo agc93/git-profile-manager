@@ -1,6 +1,6 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
-using Spectre.CommandLine;
+using Spectre.Cli;
 
 namespace GitProfileManager.Composition
 {

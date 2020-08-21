@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
-using Spectre.CommandLine;
+using Spectre.Cli;
 
 namespace GitProfileManager
 {

@@ -8,7 +8,7 @@ weight: 80
 
 In short, because I could.
 
-In reality, this tool was originally designed as a simple example of a command-line app to demonstrate .NET Core native publishing, Docker in Cake builds and using Spectre.CommandLine in CLI apps. As it turns out, I found the app pretty handy and since I'd already put the work in, it made sense to publish it.
+In reality, this tool was originally designed as a simple example of a command-line app to demonstrate .NET Core native publishing, Docker in Cake builds and using Spectre.Cli in CLI apps. As it turns out, I found the app pretty handy and since I'd already put the work in, it made sense to publish it.
 
 ### What platforms are supported?
 
